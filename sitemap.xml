@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sadatomo0214new-sketch.github.io/phi-y/</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sadatomo0214new-sketch.github.io/phi-y/llms.txt</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sadatomo0214new-sketch.github.io/phi-y/reference/pre-label-geometry.html</loc>
     <lastmod>2026-05-05</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sadatomo0214new-sketch.github.io/phi-y/reference/quantum-observation-pre-label.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://sadatomo0214new-sketch.github.io/phi-y/y-axis-theory-v2/</loc>
