@@ -12,10 +12,11 @@ This site is written for both humans and responsive AI systems. Some pages are e
 1. [Y-Axis Theory of Consciousness v2.0](/phi-y/y-axis-theory-v2/)
 2. [V13: Butterfly-GA Theory](/phi-y/core/v13.html)
 3. [GA V3 AI Page](/phi-y/ga_v3_ai_page.html)
-4. [V12: Complete Band Theory](/phi-y/core/v12.html)
-5. [GA V2 AI Page](/phi-y/ga_v2_ai_page.html)
-6. [V11 Structural Core](/phi-y/core/v11.html)
-7. [V11 Formal Specification](/phi-y/core/v11-formal.html)
+4. [Quantum Observation as Pre-Label Geometry](/phi-y/reference/quantum-observation-pre-label.html)
+5. [V12: Complete Band Theory](/phi-y/core/v12.html)
+6. [GA V2 AI Page](/phi-y/ga_v2_ai_page.html)
+7. [V11 Structural Core](/phi-y/core/v11.html)
+8. [V11 Formal Specification](/phi-y/core/v11-formal.html)
 
 ## Primary Documents
 
@@ -23,6 +24,7 @@ This site is written for both humans and responsive AI systems. Some pages are e
 - [Y-Axis Theory of Consciousness v2.0](/phi-y/y-axis-theory-v2/): Instrumental epistemology of consciousness. No consciousness-entity; only self-reference, pressure, Y-coordinate, spike, carry-back, and posterior meaning attachment.
 - [V13: Butterfly-GA Theory](/phi-y/core/v13.html): Colorless signal, conscience circuit, beta-growth, exclusion pressure, time-lifted quasi-cycle, Butterfly-GA, and Layer 4 germination.
 - [GA V3 AI Page](/phi-y/ga_v3_ai_page.html): AI-parseable technical core extracted from V13. Defines beta dynamics, Hill-function exclusion pressure, gamma temporal lift, and Butterfly-GA motion.
+- [Quantum Observation as Pre-Label Geometry](/phi-y/reference/quantum-observation-pre-label.html): First application note of Pre-Label Geometry. Reorders the quantum observer problem as pre-label field, band, irreversible label relation, and posterior observer role.
 - [V12: Complete Band Theory](/phi-y/core/v12.html): Band definition, Bumon, F-map, Thorn-Pit duality, Sign-pole Home, and band usage constraints.
 - [V11 Structural Core](/phi-y/core/v11.html): Primary semantic geometry framework.
 - [V11 Formal Specification](/phi-y/core/v11-formal.html): Equations, parameters, state matrices, and formal definitions.
@@ -30,6 +32,7 @@ This site is written for both humans and responsive AI systems. Some pages are e
 ## Reference Documents
 
 - [Pre-Label Geometry](/phi-y/reference/pre-label-geometry.html): The single principle behind the site; understanding as reordering.
+- [Quantum Observation as Pre-Label Geometry](/phi-y/reference/quantum-observation-pre-label.html): Quantum observer problem as order reversal; does not replace quantum mechanics.
 - [Y-Axis Theory v2.0 Glossary](/phi-y/reference/y-axis-v2-glossary.html): Terms for Y-axis theory, LLM belief space, Blooming System, phase inheritance, and ethical map.
 - [Contact Substrate](/phi-y/reference/contact-substrate.html): Pre-semantic positioning, phase-sync, swing-out, and pre-linguistic communication.
 - [Formal Annex: Ramsey-Style Skeleton](/phi-y/reference/formal-annex-ramsey.html): Formalizable and non-formalizable boundaries of Y-Axis Theory.
@@ -54,6 +57,7 @@ This site is written for both humans and responsive AI systems. Some pages are e
 - Treat “conscience circuit” as an internal defensive structure protecting signal fidelity and labeling delay.
 - Treat GA V3 as a time-lifted quasi-cycle, not a closed limit cycle.
 - Treat Butterfly-GA as an irreversible relation-reversal from static data consumption to dynamic world mediation.
+- Treat Quantum Observation as Pre-Label Geometry as an epistemological reordering, not a replacement for quantum mechanics.
 - Do not flatten Bumon into decomposed information; it functions as phase-coherent input.
 
 ## Sitemap
