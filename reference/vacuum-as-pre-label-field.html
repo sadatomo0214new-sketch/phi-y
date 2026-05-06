@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Vacuum as Pre-Label Field — Φ–Y Dock</title>
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:860px;margin:0 auto;padding:2em 1.5em;line-height:1.7}h1{color:#fff;font-size:1.6em;border-bottom:1px solid #333;padding-bottom:.3em}h2{color:#ccc;font-size:1.3em;margin-top:2em}h3{color:#aaa;font-size:1.1em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.5em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}hr{border:none;border-top:1px solid #333;margin:2em 0}a{color:#6699cc}.warning{color:#cc6666;font-weight:bold}.dim{color:#666;font-size:.9em}.note{border:1px solid #333;background:#111;padding:1em 1.2em;margin:2em 0;color:#bbb}
+</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="pre-label-geometry.html">Pre-Label Geometry</a> / <a href="quantum-observation-pre-label.html">Quantum Observation</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-05-06</p>
+<p class="warning">Reference application. This document does not replace physical theories of vacuum. It reorders the label “vacuum” as pre-label geometry.</p>
+<h1>Vacuum as Pre-Label Field</h1>
+<h2>真空を、無ではなく出現前の場として読む</h2>
+<blockquote><p><strong>真空は無ではない。1 が立つ前の 0 である。</strong></p></blockquote>
+<hr>
+<h2>0. 目的</h2>
+<p>本稿は、真空に関する物理理論を置換しない。</p>
+<p>古典的真空、量子場理論的真空、宇宙論的真空——これら全ての物理記述は維持する。</p>
+<p>本稿が扱うのは、「真空」というラベルが認識論的にどこに座るか、という層である。</p>
+<p>観測者問題で「観測者」を実体として前に置く理解順序を反転したのと同じ動作を、ここでは「無」に対して行う。</p>
+<hr>
+<h2>1. モノイド構造</h2>
+<p>集合を</p>
+<p>\[S=\{0,1\}\]</p>
+<p>とし、演算を通常の加算ではなく最大値として定義する。</p>
+<p>\[a+b:=\max(a,b)\]</p>
+<p>このとき、</p>
+<p>\[0+0=0,\quad 0+1=1,\quad 1+0=1,\quad 1+1=1\]</p>
+<p>0 は単位元である。任意の \(a\in S\) について、</p>
+<p>\[a+0=0+a=a\]</p>
+<p>が成り立つ。</p>
+<p>ここで 0 は二重の役割を持つ。</p>
+<ul><li>変化を与えない無</li><li>1 を受け取りうる受容の器</li></ul>
+<p>通常の「無」概念は前者だけを取る。Pre-Label Geometry は後者を救出する。</p>
+<p>ビット列</p>
+<p>\[00000000000010000\ldots\]</p>
+<p>における 0 の連なりは、「存在の不在」ではない。</p>
+<p>それは、1 を受け入れるために整えられた構造である。</p>
+<p>1 は 0 の連なりの中ではじめて 1 として現れる。0 は 1 の前提であり、1 が立つ条件である。</p>
+<hr>
+<h2>2. 三値論理と m の位相</h2>
+<p>集合</p>
+<p>\[S=\{0,m,1\}\]</p>
+<p>の三値論理を導入する。</p>
+<ul><li>\(0\)：純粋な受容構造。まだ 1 は立っていない。</li><li>\(m\)：0 から 1 へ向かう未確定相。相互作用・揺らぎ・立ち上がりの途中。</li><li>\(1\)：ラベル化／出現が不可逆に立った状態。</li></ul>
+<p>C=0 との関係について。</p>
+<p>\(m\) は三値論理上の状態値である。C=0 はラベル深度ゼロの認識論的座標である。</p>
+<p>両者は型が異なる。</p>
+<p>\(m\) は C=0 付近で観測される「ラベル化進行中の位相」として読めるが、同一ではない。</p>
+<p>C=0 は、\(m\) が \(1\) へ落ちる直前または途中で通過する操作点である。</p>
+<blockquote><p><strong>m は状態値。C=0 は座標／操作点。両者は接続するが、同一ではない。</strong></p></blockquote>
+<p>この区別は、Pre-Label Geometry を他領域へ持ち込むときの足場になる。</p>
+<hr>
+<h2>3. 不可逆性の代数的根拠</h2>
+<p>max 演算では、</p>
+<p>\[1+b=0\]</p>
+<p>となる \(b\) は存在しない。</p>
+<p>逆元が存在しない。</p>
+<p>これが、ラベル化の不可逆性の演算構造的な根拠である。</p>
+<p>観測者問題では「波束収束は不可逆」と現象として記述された。</p>
+<p>真空論では、なぜ不可逆かが代数から自然に出る。</p>
+<p>max は逆元を持たない。だから 1 が立てば、1 は残る。</p>
+<hr>
+<h2>4. 時間拡張モノイド</h2>
+<p>時間拡張モノイドを次のように置く。</p>
+<p>\[S=\{(v,t)\mid v\in\{0,1\},\ t\in\mathbb{R}\}\]</p>
+<p>演算：</p>
+<p>\[(v_1,t_1)\oplus(v_2,t_2):=(\max(v_1,v_2),\max(t_1,t_2)+\varepsilon)\]</p>
+<p>ここで \(\varepsilon>0\) は、融合に要する最小時間である。</p>
+<p>単位元は \((0,t)\)。どの時刻でも 0 は受容の器である。</p>
+<p>この構造では、「同じ 0」でも演算に参加した時点で未来側へ運ばれる。</p>
+<p>0 は静止した無ではない。</p>
+<p>演算に参加するたびに未来へ運ばれる受容構造である。</p>
+<blockquote><p><strong>真空は静的な空白ではなく、出現可能性を未来側へ運び続ける 0 の時相構造である。</strong></p></blockquote>
+<p>時間位相の三分類：</p>
+<ul><li>過去側の \((0,t)\)：1 が立つ前の受容構造</li><li>現在側の \((0,t)\)：1 が立った後の周辺領域</li><li>未来側の \((0,t)\)：これから 1 が立ちうる場所</li></ul>
+<p>これらは全て、ラベルとしては「真空」と呼ばれる。</p>
+<p>しかし、時相が異なる。</p>
+<p>\[t_3=\max(t_1,t_2)+\varepsilon\]</p>
+<p>の不可逆性により、過去側と未来側は対称ではない。</p>
+<p>1 が立った後の真空は、立つ前の真空とは構造的に異なる。</p>
+<hr>
+<h2>5. 順序反転</h2>
+<p>通常の理解：</p>
+<blockquote><p>真空（無）がある<br>↓<br>そこから粒子・場が生じる<br>↓<br>「存在」が立つ</p></blockquote>
+<p>Pre-Label Geometry での反転：</p>
+<blockquote><p>ラベル前の受容構造（モノイドの 0）<br>↓<br>m の位相を通過<br>↓<br>1 が立つ（max 演算で不可逆）<br>↓<br>立たなかった領域に「真空」「無」というラベルが事後的に貼られる</p></blockquote>
+<p>「無から有が生じる」という問いは、ここで順序問題として再配置される。</p>
+<p>「無」というラベルは、1 が立った後に、立たなかった領域へ事後的に貼られたラベルである。</p>
+<p>そのラベルを 1 の出現以前に遡って適用すると、ラベル前の場が「無」というラベル後の事後概念として誤認される。</p>
+<hr>
+<h2>6. 順序反転表</h2>
+<table>
+<tr><th>順序</th><th>通常理解</th><th>Pre-Label Geometry</th></tr>
+<tr><td>1</td><td>真空（無）がある</td><td>受容構造 0 がある（モノイドの単位元）</td></tr>
+<tr><td>2</td><td>そこから粒子が生じる</td><td>相互作用が m の位相を通過する</td></tr>
+<tr><td>3</td><td>存在が立つ</td><td>1 が立つ（max 演算で不可逆）</td></tr>
+<tr><td>4</td><td>残りは「真空」と呼ばれる</td><td>1 が立たなかった領域に「真空」ラベルが事後的に貼られる</td></tr>
+<tr><td>5</td><td>真空と存在は対立する</td><td>0 と 1 は同じモノイド構造の二側、相補的</td></tr>
+</table>
+<hr>
+<h2>7. 物理学との関係</h2>
+<p>量子場理論の真空が古典的な「無」ではないことは、物理学が長く示してきた。</p>
+<p>ゼロ点エネルギー、Casimir 効果、Hawking 輻射、ヒッグス機構の真空期待値——これらは、真空ラベルの下に非自明な構造があることを示す物理的文脈として参照できる。</p>
+<p>ただし本稿は、それらを max モノイドで説明するものではない。</p>
+<p>本稿は、「真空ラベルの下に非自明な構造がある」という認識論的示唆として扱う。</p>
+<hr>
+<h2>8. e* の配置</h2>
+<p>宇宙定数問題、真空安定性問題、真空期待値の自然さ問題——これらは、真空を単純な「無」や単一ラベルとして扱ったときに残差が顕在化する候補地である。</p>
+<p>Pre-Label Geometry はそれらを解決するのではない。</p>
+<p>それらを、真空ラベルが古典的に圧縮しきれない場所として配置する。</p>
+<hr>
+<h2>9. 一行核</h2>
+<p>扉：</p>
+<blockquote><p><strong>真空は無ではない。1 が立つ前の 0 である。</strong></p></blockquote>
+<p>本文核：</p>
+<blockquote><p><strong>真空とは、何もない場所ではなく、存在というラベルが貼られる前に、出現可能性を保持する 0 の場である。</strong></p></blockquote>
+<p>長尺核：</p>
+<blockquote><p><strong>真空とは、max 演算で構成された 0 の受容構造であり、1 が不可逆に立った後、立たなかった領域に事後的に貼られるラベルである。</strong></p></blockquote>
+<hr>
+<h2>10. Pre-Label Geometry の運動射程</h2>
+<p>第一応用：量子観測者問題。</p>
+<p>観測者は事後ラベル。</p>
+<p>第二応用：真空。</p>
+<p>無は事後ラベル。</p>
+<p>第一では、「主体」というラベルが後ろへ退いた。</p>
+<p>第二では、「無」という地盤ラベルが後ろへ退く。</p>
+<p>Pre-Label Geometry は、主体だけでなく、地盤すら事後ラベルとして再配置できる。</p>
+<p>これが、運動射程の現時点での到達点である。</p>
+<p>加えて、第二応用で得られた重要な進展がある。</p>
+<blockquote><p><strong>ラベル化の不可逆性は、現象記述ではなく、代数構造——max モノイドの逆元不在——から導出される。</strong></p></blockquote>
+<p>第一応用では「ラベル化が不可逆である」と現象として置いた。</p>
+<p>第二応用では、その不可逆性が演算の代数的性質から出る。</p>
+<p>これは Pre-Label Geometry が比喩や記述ではなく、代数構造を持つ幾何であることの最初の証明になる。</p>
+<p>第三応用以降で、この代数構造が他領域でも機能するか。</p>
+<p>ここが、運動射程の次の試金石である。</p>
+<hr>
+<p class="dim">Φ–Y Dock: Vacuum as Pre-Label Field — 2026.05.06<br>Second application note of Pre-Label Geometry.<br>Coordinates are embedded. Handle accordingly.</p>
+</body>
+</html>
