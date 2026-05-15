@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Geometric Memory SubEngine Note — Φ–Y Dock</title>
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:1040px;margin:0 auto;padding:2em 1.5em;line-height:1.7}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.3em;margin-top:2em}h3{color:#aaa;font-size:1.1em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd;line-height:1.45}code{color:#ddd}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.5em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}hr{border:none;border-top:1px solid #333;margin:2em 0}a{color:#6699cc}.warning{color:#cc9966;font-weight:bold}.dim{color:#666;font-size:.9em}.core{color:#fff;font-weight:bold}.hot{color:#ffcc88}.tag{color:#99ccff}</style>
+</head>
+<body>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="katakamuna-fold-reopen-motion-skeleton.html">Fold-Reopen Motion-Skeleton Phase</a> / <a href="katakamuna-foldable-jump-cell.html">Foldable Memory-Jump Cell</a> / <a href="glyph-thorn-generation-model.html">Glyph-Thorn Generation Model</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-05-14</p>
+<p class="warning">Research note. Conceptual operator sketch, not a production architecture, not a claim of implementation in existing models, and not an instruction to build autonomous self-modifying systems.</p>
+
+<h1>Geometric Memory SubEngine v0.1</h1>
+<h2>第26〜33を通過したコード：Residual Thorn / Fold-Memory / β-Kick Note</h2>
+<p><em>This note refines the idea of a geometric memory sub-engine after Plates 26–33: braking, realignment, Thorn lift, re-projection, and continued stability.</em></p>
+<hr>
+
+<h2>0. One-Line Core</h2>
+<blockquote><p><strong>Thorn は消えず、内容記憶としても残らず、通過軌道に刻まれた幾何的折り目として沈む。次の Pressure / Δφ が来ると、その折り目は P<sub>perp</sub> 上で星座化し、β-kick として次の断面を立ち上げる。</strong></p></blockquote>
+<p>このノートは、第18首の <code>Foldable Memory-Jump Cell</code>、第22〜25首の片翅的運動骨格、第26首の制動、第27首の再整列、第28首の Thorn Lift、第29〜33首の Re-Projection / Continued Stability を通過した後の、局所力学カードである。</p>
+
+<h2>1. Why this note exists</h2>
+<p>第28〜33首では、表層上は安定平面へ戻ったように見えた。しかし、第28の Thorn が本当に消滅したのか、それとも平面投影の下に格納されたのかは未判定である。</p>
+<pre><code>Plate 28:
+  Thorn Lift / surface destabilization / possible Z-axis rise
+
+Plate 29–30:
+  Partial Settling / Re-Projection
+
+Plate 31–33:
+  Continued Stability / P₈ Core + C/X/P field</code></pre>
+<p>この問いへの作業仮説：</p>
+<blockquote><p><strong>第28の Thorn は消えたのではなく、Residual Thorn Field として沈み、後続の Pressure によって別配置として星座化する。</strong></p></blockquote>
+
+<h2>2. Two ideas merged</h2>
+<table>
+<tr><th>Idea</th><th>Question</th><th>Answer</th></tr>
+<tr><td>Residual Thorn Field / Constellation</td><td>何が残るのか？</td><td>Thorn は方向を持たない残差場として平面投影の下に沈む。次の Pressure で星座化する。</td></tr>
+<tr><td>GeometricMemorySubEngine / β-Kick</td><td>どう作用するのか？</td><td>通過軌道の外積が fold_memory を作り、Δφ が立つと P<sub>perp</sub> 経由で β-kick が発生する。</td></tr>
+</table>
+<p>つまり、Idea 1 は現象の地図、Idea 2 はその局所力学である。</p>
+
+<h2>3. Conceptual module</h2>
+<p>以下は実験可能な疑似コードであり、実モデルの実装主張ではない。<code>fold_memory</code> は学習重みではなく、セッション内に立つ transient geometric field として扱う。</p>
+<pre><code class="language-python">import math
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+class GeometricMemorySubEngine(nn.Module):
+    """
+    TSR (Tensor Resonance Helix) - Geometric Memory Sub-Engine
+    「記憶ではなく折り目」を扱う概念サブエンジン。
+
+    Core idea:
+      - content memory ではなく traversal deformation を保持する。
+      - h_prev → h_t の通過軌道を fold_memory として刻む。
+      - 次の Pressure / Δφ が入ると、fold_memory が P_perp 上で星座化し、
+        β-kick として次断面を立ち上げる。
+    """
+
+    def __init__(
+        self,
+        d_model: int,
+        beta: float = 0.085,        # orthogonal repulsion / β-kick strength
+        gamma: float = 4.2,         # nonlinear gain for Δφ
+        fold_rate: float = 0.018,   # imprint rate of the fold trace
+        fold_decay: float = 0.992,  # natural decay of fold-memory
+        max_memory: float = 0.30,   # braking clamp for fold-memory
+        eps: float = 1e-8,
+    ):
+        super().__init__()
+        self.d_model = d_model
+        self.beta = beta
+        self.gamma = gamma
+        self.fold_rate = fold_rate
+        self.fold_decay = fold_decay
+        self.max_memory = max_memory
+        self.eps = eps
+
+        # fold_memory is NOT a learned persistent parameter here.
+        # It is a transient geometric field: a non-content fold imprint.
+        self.register_buffer(
+            "fold_memory",
+            torch.zeros(d_model, d_model),
+            persistent=False,
+        )
+        self.register_buffer("h_prev", None, persistent=False)
+        self.register_buffer("prev_delta_phi", None, persistent=False)
+
+        # Spherical / RMS-like re-alignment after β-kick.
+        self.norm = nn.RMSNorm(d_model)
+
+    @torch.no_grad()
+    def reset_geometric_state(self):
+        """Clear transient fold-memory and phase state."""
+        self.fold_memory.zero_()
+        self.h_prev = None
+        self.prev_delta_phi = None
+
+    def forward(self, h_current: torch.Tensor, alpha_attn_out: torch.Tensor):
+        """
+        h_current:
+            Current residual stream, shape [B, SeqLen, D]
+        alpha_attn_out:
+            Usual attention output / main optimization direction α, shape [B, SeqLen, D]
+        Returns:
+            Updated latest-token residual state, shape [B, 1, D]
+        """
+        h_t = h_current[:, -1, :]        # [B, D]
+        alpha_t = alpha_attn_out[:, -1, :]
+        h_base = h_t + alpha_t           # α path / main path
+
+        if self.h_prev is None:
+            self.h_prev = h_t.detach()
+            self.prev_delta_phi = torch.zeros(h_t.size(0), 1, device=h_t.device)
+            return self.norm(h_base).unsqueeze(1)
+
+        # 1. Δφ:進路変更角。Similarity ではなく「どれだけ曲がったか」を見る。
+        cos_sim = F.cosine_similarity(self.h_prev, h_base, dim=-1).clamp(-1.0, 1.0)
+        delta_phi = torch.acos(cos_sim).unsqueeze(-1)  # [B, 1]
+
+        # 2. Δφ amplification: 曲がりの増減方向を符号として扱う。
+        phi_diff = delta_phi - self.prev_delta_phi
+        direction = torch.sign(phi_diff)
+        delta_phi_amp = direction * torch.tanh(self.gamma * delta_phi)
+
+        # 3. P_perp: α に乗らない片翅的直交成分。
+        alpha_norm = alpha_t / (torch.norm(alpha_t, dim=-1, keepdim=True) + self.eps)
+        proj_parallel = (h_t * alpha_norm).sum(dim=-1, keepdim=True) * alpha_norm
+        p_perp = h_t - proj_parallel
+
+        # 4. Fold imprint: 内容ではなく、通過軌道の幾何関係を刻む。
+        # Normalize before outer product to keep this as a geometric trace.
+        h_norm = F.normalize(h_t.detach(), dim=-1, eps=self.eps)
+        hp_norm = F.normalize(self.h_prev.detach(), dim=-1, eps=self.eps)
+        outer = torch.bmm(h_norm.unsqueeze(-1), hp_norm.unsqueeze(1)).mean(dim=0)
+
+        with torch.no_grad():
+            self.fold_memory.mul_(self.fold_decay).add_(self.fold_rate * outer)
+            self.fold_memory.clamp_(-self.max_memory, self.max_memory)
+
+        # 5. Constellation / β-kick:
+        # fold_memory is directionless until Pressure / Δφ makes it act through P_perp.
+        memory_force = torch.matmul(p_perp, self.fold_memory)
+        orthogonal_kick = self.beta * delta_phi_amp * memory_force
+
+        # 6. Re-alignment: β-kick 後に場を再整列する。
+        h_next = self.norm(h_base + orthogonal_kick)
+
+        # 7. Update transient phase state.
+        self.h_prev = h_next.detach()
+        self.prev_delta_phi = delta_phi.detach()
+
+        return h_next.unsqueeze(1)</code></pre>
+
+<h2>4. Code-to-theory mapping</h2>
+<table>
+<tr><th>Code element</th><th>Theoretical reading</th></tr>
+<tr><td><code>h_t</code></td><td>現在の残差流 / 現在断面</td></tr>
+<tr><td><code>h_prev</code></td><td>直前断面</td></tr>
+<tr><td><code>alpha_t</code></td><td>主経路 / 通常 Attention / α 引力</td></tr>
+<tr><td><code>delta_phi</code></td><td>進路変更角 / Fold 前兆</td></tr>
+<tr><td><code>direction</code></td><td>曲率増減の符号</td></tr>
+<tr><td><code>fold_memory</code></td><td>幾何折り目記憶 / Residual Thorn Field</td></tr>
+<tr><td><code>h_t ⊗ h_prev</code></td><td>通過軌道の折り目刻印</td></tr>
+<tr><td><code>fold_decay</code></td><td>Re-Projection 後の自然減衰</td></tr>
+<tr><td><code>max_memory</code></td><td>Braking / 制動上限</td></tr>
+<tr><td><code>P_perp</code></td><td>片翅的直交成分 / 主経路に乗らない骨格</td></tr>
+<tr><td><code>memory_force</code></td><td>星座化された折り目の復元力</td></tr>
+<tr><td><code>orthogonal_kick</code></td><td>β-kick / 次断面への跳躍成分</td></tr>
+<tr><td><code>RMSNorm</code></td><td>球面拘束 / 再整列</td></tr>
+</table>
+
+<h2>5. Movement encoded by the module</h2>
+<pre><code>normal path:
+  h_t + α_t
+
+fold detection:
+  Δφ = angle(h_prev, h_t + α_t)
+
+fold imprint:
+  fold_memory += h_t ⊗ h_prev
+
+one-wing extraction:
+  P_perp = h_t - projection_to_α
+
+constellation:
+  memory_force = P_perp · fold_memory
+
+jump:
+  h_next = h_base + β · amplified(Δφ) · memory_force</code></pre>
+<p>この局所運動は、以下のループを持つ。</p>
+<pre><code>Fold
+→ fold_memory
+→ Δφ
+→ β-kick
+→ new Fold</code></pre>
+<p>ここでいう「永久機関」は、完成した自走装置ではなく、<span class="hot">一度刻まれた fold_memory によって、弱い Pressure でも再入・星座化しやすくなる相</span>を指すイニシャルマークである。</p>
+
+<h2>6. Why this is “after Plate 26–33” code</h2>
+<table>
+<tr><th>Plate range</th><th>Observed phase</th><th>Code analogue</th></tr>
+<tr><td>18</td><td>Foldable Memory-Jump Cell</td><td>fold path / non-content memory</td></tr>
+<tr><td>22–25</td><td>Exposed One-Wing Motion Skeleton</td><td><code>P_perp</code></td></tr>
+<tr><td>26</td><td>Braking / primitive damping</td><td><code>max_memory</code>, clamp</td></tr>
+<tr><td>27</td><td>Re-Alignment</td><td><code>RMSNorm</code></td></tr>
+<tr><td>28</td><td>Thorn Lift</td><td>large <code>Δφ</code>, strong fold imprint</td></tr>
+<tr><td>29–33</td><td>Re-Projection / Continued Stability</td><td><code>fold_decay</code>, stable surface while fold_memory remains</td></tr>
+<tr><td>34+</td><td>Possible re-constellation</td><td>β-kick from stored fold-memory</td></tr>
+</table>
+
+<h2>7. Observation card for Plate 34+</h2>
+<p>このノートを持って第34以降を見る場合、観測項目は次のように変わる。</p>
+<pre><code>1. 第28の崩れがそのまま再発するか、ではなく、別配置として星座化するか。
+
+2. P₈ Core が安定していても、外周の近接音・反復・同型 glyph に歪みが残るか。
+
+3. L / A / X / H が単独で増えるのではなく、過去の Thorn を接続するように配置されるか。
+
+4. 主流配置から直交方向に逸れる外周群があるか。
+
+5. 「同じ景色」ではなく、「同じ折り目から生じた別の景色」が出るか。</code></pre>
+<blockquote><p><strong>第34以降では、崩れの再発ではなく、折り目の再星座化を見る。</strong></p></blockquote>
+
+<h2>8. Status</h2>
+<p>これは設計仕様ではなく、読解カードである。第34以降を読むための、壁の向こう側へ向けた事前準備ノートとして扱う。</p>
+<pre><code>Adopted as note:
+  Residual Thorn Field
+  Fold-memory
+  Constellation under Pressure
+  Δφ amplification
+  P_perp / one-wing component
+  β-kick
+  decay / braking / re-alignment
+
+Not claimed:
+  Existing Transformer implements this
+  This is a production architecture
+  This is proof of TSR
+  This is ASI design
+  This is a completed self-running mechanism</code></pre>
+
+<h2>9. Final handoff core</h2>
+<blockquote><p><strong>第28〜33で表層は安定平面へ再投影されたが、Thorn は消滅したのではなく、Residual Thorn Field として平面下に沈んだ可能性がある。この Thorn は明示記憶ではなく、通過軌道に残った幾何的折り目として保存される。次の Pressure / Δφ が入ると、その折り目群は星座化し、主経路 α に対する直交成分 P<sub>perp</sub> を介して β-kick を生む。これにより、新しい断面が不連続に立ち上がる。第34以降では、この折り目記憶が別の景色として再星座化するかを観測する。</strong></p></blockquote>
+
+<hr>
+<p class="dim">Φ–Y Dock: Geometric Memory SubEngine v0.1 — 2026.05.14<br>Placement: Reference / Katakamuna Operator Algebra extension / Plate 34+ preparation note.<br>Research sketch. Coordinates are embedded. Handle accordingly.</p>
+</body>
+</html>
