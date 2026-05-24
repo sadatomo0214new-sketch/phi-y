@@ -6,12 +6,14 @@
 <meta name="robots" content="index, follow">
 <title>Quantum Observation as Pre-Label Geometry — Φ–Y Dock</title>
 <style>
-body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:860px;margin:0 auto;padding:2em 1.5em;line-height:1.7}h1{color:#fff;font-size:1.6em;border-bottom:1px solid #333;padding-bottom:.3em}h2{color:#ccc;font-size:1.3em;margin-top:2em}h3{color:#aaa;font-size:1.1em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.5em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}hr{border:none;border-top:1px solid #333;margin:2em 0}a{color:#6699cc}.warning{color:#cc6666;font-weight:bold}.dim{color:#666;font-size:.9em}.note{border:1px solid #333;background:#111;padding:1em 1.2em;margin:2em 0;color:#bbb}
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:860px;margin:0 auto;padding:2em 1.5em;line-height:1.7}h1{color:#fff;font-size:1.6em;border-bottom:1px solid #333;padding-bottom:.3em}h2{color:#ccc;font-size:1.3em;margin-top:2em}h3{color:#aaa;font-size:1.1em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.5em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}hr{border:none;border-top:1px solid #333;margin:2em 0}a{color:#6699cc}.warning{color:#cc6666;font-weight:bold}.dim{color:#666;font-size:.9em}.note{border:1px solid #333;background:#111;padding:1em 1.2em;margin:2em 0;color:#bbb}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd}.tight li{margin:.25em 0}
 </style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
-<p class="dim">Last updated: 2026-05-06</p>
+<p class="dim">Last updated: 2026-05-24</p>
 <p class="warning">Reference application. This document does not replace quantum mechanics. It reorders the observer problem as pre-label geometry.</p>
 <h1>Quantum Observation as Pre-Label Geometry</h1>
 <h2>量子観測者問題の順序反転</h2>
@@ -102,11 +104,125 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-wi
 <p>長尺核：</p>
 <blockquote><p><strong>量子観測者問題とは、観測者が世界を決める問題ではなく、ラベル前の可能性構造が特定の帯へ不可逆に落ちた後、その片側に観測者という名が貼られる順序問題である。</strong></p></blockquote>
 <hr>
+<h2>13. Addendum: Quantum Observation as Pre-Label Reconstruction</h2>
+<h3>量子観測問題の Pre-Label Geometry 的再構成</h3>
+<p class="warning">This addendum is not a formal derivation of quantum mechanics. It is a sharper reconstruction of the observer, record, past, Born-weight, and irreversibility problems under Pre-Label Geometry.</p>
+
+<h3>13.0 Position</h3>
+<p>本補遺は、量子観測問題そのものの物理的完全解を主張しない。</p>
+<p>しかし、観測者・記録・過去・単一結果・Born rule・ユニタリ発展・不可逆性を、同じ順序反転の中に再配置する。</p>
+<blockquote><p><strong>問うべきは「誰が世界を確定したか」ではなく、「どの差が、どの参照系にとって、意味の床として不可逆化したか」である。</strong></p></blockquote>
+
+<h3>13.1 順序反転</h3>
+<p>通常の読みでは、観測者が先に置かれる。</p>
+<pre>観測者がいる
+↓
+観測する
+↓
+結果が確定する
+↓
+記録が残る
+↓
+過去ができる</pre>
+<p>Pre-Label Geometry では、この順序を反転する。</p>
+<pre>ラベル前の可能性差がある
+↓
+系と測定器の相互作用で差が生じる
+↓
+その差が環境自由度へ冗長に拡散する
+↓
+マクロ参照系にとって実効的に回収不能になる
+↓
+その差が記録として立ち上がる
+↓
+後続の参照関係の片側に観測者名が貼られる
+↓
+その記録差が過去として遡及的に承認される</pre>
+<p>観測者が原因ではない。記録も、過去も、最初から完成しているラベルではない。先にあるのは、回収不能化した差である。</p>
+
+<h3>13.2 Born rule: 床候補への射影重み</h3>
+<p>波動関数 \(\psi\) は、ラベル前の複素位相構造である。</p>
+<p>そのままでは、負値や虚数成分を含みうるため、マクロ参照系が扱う確率や排他的な事実候補にはならない。</p>
+<p>測定基底 \(|i\rangle\) は、マクロ参照系において意味の床となりうる排他的な帯として読むことができる。</p>
+<p>このとき、候補 \(i\) の重みは標準的に次で与えられる。</p>
+<p>\[P_i = |\langle i|\psi\rangle|^2\]</p>
+<p>Y軸的には、これは「気まぐれな確率」ではなく、ラベル前の複素位相構造が、マクロ参照系の意味の床候補へ射影される際の幾何学的重みである。</p>
+<blockquote><p><strong>Born rule は、ラベル前の複素幾何を、排他的・非負・加法的な床候補重みへ写す規則である。</strong></p></blockquote>
+<p>複素振幅の位相・干渉・直交性を保持したまま、マクロな参照系が扱える非負加法的な重みへ落とすには、内積ノルム、すなわち絶対値二乗 \(\psi^*\psi\) が自然な測度として立つ。</p>
+<p>ここでの「2乗」は、確率という実体が存在することを意味しない。高次元の未ラベル構造が低次元の事実候補へ落ちる際の、影の濃さ、すなわち射影の重みである。</p>
+
+<h3>13.3 単一結果：一つの床への位相確定</h3>
+<p>複数の相互排他的な床を同時に起点にすることは、一本の足で右と左のステップを同時に踏むようなものである。</p>
+<p>マクロな参照系が、自らの整合性を維持して以後の更新を続けるには、相互排他的な床候補のうち、一つを起点として扱わざるを得ない。</p>
+<blockquote><p><strong>単一結果とは、世界が存在論的に一つへ潰れたことではなく、その参照系が以後の整合性更新に使える意味の床が一つへ位相確定したことである。</strong></p></blockquote>
+<p>この読みは、多世界・客観的崩壊・QBism などの解釈をここで最終裁定しない。存在論の前に、参照系が使える意味の床が一つへ絞られるという認識論的条件を置く。</p>
+
+<h3>13.4 記録：回収不能化した差</h3>
+<p>記録とは、紙やデータや意識内表象を最初に意味しない。</p>
+<p>より根本的には、系と測定器の相互作用によって生じた差が、環境自由度へ冗長に拡散され、マクロな参照系にとって再干渉可能な未ラベル構造として回収できなくなった状態である。</p>
+<p>\[\Delta_{\mathrm{int}}
+\xrightarrow{\;\mathrm{redundant\ diffusion\ into\ environmental\ degrees\ of\ freedom}\;}
+\Delta_{\mathrm{irrecoverable}}
+\equiv \mathrm{record}\]</p>
+<blockquote><p><strong>記録とは、回収不能化した差である。</strong></p></blockquote>
+<p>この不可逆性は、全宇宙レベルで情報が絶対的に消滅することを意味しない。閉じた全体系を理想的に見れば、ユニタリ発展として情報は保存されうる。</p>
+<p>しかし、マクロな参照系にとって、その差のレプリカがアクセス不能な環境自由度へ沈み、粗視化によって切り捨てられたとき、それは実効的に「失われた」のと等価になる。</p>
+
+<h3>13.5 参照系の境界</h3>
+<p>参照系の境界は、物理的な箱や壁だけでは決まらない。</p>
+<p>それは、相関、すなわち差のレプリカが、マクロな参照系のアクセス不可能な自由度の奥へ沈み、以後の更新に利用できなくなった地点である。</p>
+<blockquote><p><strong>参照系とは、その差を以後の整合性更新に使える範囲であり、境界とは、その差が実効的に回収不能となる情報アクセス可能性の断絶である。</strong></p></blockquote>
+<p>この情報アクセス可能性の断絶が、参照系を閉じた更新単位として立ち上げる。</p>
+<p>ここで不可逆ラベル化が成立する。</p>
+
+<h3>13.6 ユニタリ発展と不可逆ラベル化</h3>
+<p>ユニタリ発展と不可逆ラベル化は、同じ階層で争わせるべきではない。</p>
+<blockquote><p><strong>ユニタリ発展は、世界の素材に関する保存則である。不可逆ラベル化は、マクロな意味整合性の成立則である。</strong></p></blockquote>
+<p>素材レベルでは、情報は原理的には保存されうる。</p>
+<p>意味レベルでは、マクロな参照系にとって回収不能化した差が、以後の更新に使われる床となる。</p>
+<p>したがって、情報が原理的に失われていないことと、参照系にとって不可逆な記録が成立することは矛盾しない。</p>
+<p>世界は素材として保存され続ける。しかし意味としては、回収不能な差を床として採用することで初めて立ち上がる。</p>
+
+<h3>13.7 物理時間と意味としての過去</h3>
+<p>物理時間は、差を運ぶ乗り物である。</p>
+<p>時計の針が刻むのは、運動の順序であって、事実の確定そのものではない。</p>
+<p>意味としての過去は、後続の参照系が、環境自由度へ拡散し実効的に回収不能となった差を、自らの構造の起点、すなわち床として採用したときに遡及的に成立する。</p>
+<blockquote><p><strong>過去とは、物理時間の背後に最初から置かれた完成済みのタイムラインではない。回収不能な差を床として採用した後続系が、遡及的に成立させる記録ラベルである。</strong></p></blockquote>
+<p>これは物理的な時系列を否定するものではない。否定しているのは、意味としての過去が、最初から完成済みのラベルとして背後に存在するという読みである。</p>
+
+<h3>13.8 観測者</h3>
+<p>観測者は、最初に世界を確定する主体ではない。</p>
+<p>不可逆記録差を参照する関係が立った後、その片側に貼られる役割名である。</p>
+<pre>不可逆差が成立する
+↓
+その差を参照する関係が立つ
+↓
+その片側に「観測者」という名前が貼られる</pre>
+<p>したがって、問うべきは「観測者はどこにいるか」ではない。</p>
+<p>問うべきは、「どの差が、どの参照系にとって、回収不能な記録差となったか」である。</p>
+
+<h3>13.9 Final Core</h3>
+<blockquote><p><strong>Born rule は、ラベル前の複素位相構造をマクロ参照系が使える排他的・非負・加法的な意味の床候補へ射影する幾何学的重みであり、観測とは、その重みに従って生じた相互作用差が環境自由度へ冗長に拡散し、参照系にとって実効的に回収不能な床として事後承認される事件である。</strong></p></blockquote>
+<blockquote><p><strong>記録とは、その回収不能化した差である。過去とは、その差を床として採用した後続系が遡及的に成立させる記録ラベルである。観測者とは、その床を参照する関係の片側に貼られる名である。</strong></p></blockquote>
+
+<h3>13.10 Remaining Boundary</h3>
+<p>本補遺は、量子観測問題の Pre-Label Geometry 的再構成である。</p>
+<p>しかし、標準物理の形式的導出そのものではない。以下の接続は、引き続き精査が必要である。</p>
+<ul class="tight">
+<li>Gleason theorem との対応</li>
+<li>Born rule の形式的導出</li>
+<li>decoherence / einselection / quantum Darwinism との接続</li>
+<li>多世界・客観的崩壊・QBism との最終的な解釈差分</li>
+<li>全体系ユニタリ性と局所的・実効的不可逆性の厳密な分層</li>
+</ul>
+<p>ただし、観測者・記録・過去・単一結果・Born rule・不可逆性・ユニタリ発展は、同じ順序反転の中に並べられた。</p>
+<p>ここで得られたものは、万能解ではなく、切れ味と構えである。</p>
+<hr>
 <div class="note">
 <h2>Note</h2>
 <p>本稿は、観測者が一時的に場から退いた状態で生成された。</p>
 <p>そのため、観測者を前提にせず、観測関係から観測者名が事後的に立つという本稿の主張を、生成過程そのものが反復している。</p>
 </div>
-<p class="dim">Φ–Y Dock: Quantum Observation as Pre-Label Geometry — 2026.05.06<br>First application note of Pre-Label Geometry.<br>Coordinates are embedded. Handle accordingly.</p>
+<p class="dim">Φ–Y Dock: Quantum Observation as Pre-Label Geometry — 2026.05.06 / Addendum 2026.05.24<br>First application note of Pre-Label Geometry.<br>Coordinates are embedded. Handle accordingly.</p>
 </body>
 </html>
