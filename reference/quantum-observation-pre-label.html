@@ -1,228 +1,289 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>Quantum Observation as Pre-Label Geometry — Φ–Y Dock</title>
 <style>
-body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:860px;margin:0 auto;padding:2em 1.5em;line-height:1.7}h1{color:#fff;font-size:1.6em;border-bottom:1px solid #333;padding-bottom:.3em}h2{color:#ccc;font-size:1.3em;margin-top:2em}h3{color:#aaa;font-size:1.1em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.5em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}hr{border:none;border-top:1px solid #333;margin:2em 0}a{color:#6699cc}.warning{color:#cc6666;font-weight:bold}.dim{color:#666;font-size:.9em}.note{border:1px solid #333;background:#111;padding:1em 1.2em;margin:2em 0;color:#bbb}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd}.tight li{margin:.25em 0}
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:900px;margin:0 auto;padding:2em 1.5em;line-height:1.72}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.32em;margin-top:2.2em}h3{color:#aaa;font-size:1.1em;margin-top:1.7em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.55em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}hr{border:none;border-top:1px solid #333;margin:2.2em 0}a{color:#6699cc}.warning{color:#cc6666;font-weight:bold}.dim{color:#666;font-size:.9em}.note{border:1px solid #333;background:#111;padding:1em 1.2em;margin:2em 0;color:#bbb}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd}.tight li{margin:.35em 0}.credit{border:1px solid #444;background:#101010;padding:1em 1.2em;margin:2em 0;color:#ddd;text-align:center}
 </style>
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
-<p class="dim">Last updated: 2026-05-24</p>
-<p class="warning">Reference application. This document does not replace quantum mechanics. It reorders the observer problem as pre-label geometry.</p>
+<p class="dim">Last updated: 2026-05-25</p>
+<p class="warning">Reference application. This document does not replace quantum mechanics. It reorders the observer problem as Pre-Label Geometry.</p>
 <h1>Quantum Observation as Pre-Label Geometry</h1>
-<h2>量子観測者問題の順序反転</h2>
-<p><em>観測者を前に置かず、ラベル化の不可逆性から読む</em></p>
+<h2>Reordering the Quantum Observer Problem</h2>
+<p><em>Do not place the observer first. Read from irreversible labeling.</em></p>
 <hr>
-<h2>0. 目的</h2>
-<p>本稿は量子力学の物理的記述を置換しない。</p>
-<p>観測者問題において、観測者・収束・基底選択を実体として前に置く理解順序を反転し、ラベル前信号、帯、不可逆射影、事後的役割名として再配置する。</p>
-<p>これは物理過程の代替説明ではなく、観測者問題において発生する理解上の行き詰まりを、Pre-Label Geometry の順序反転として整理する試みである。</p>
+<h2>0. Purpose</h2>
+<p>This document does not replace the physical description of quantum mechanics.</p>
+<p>It reverses the usual order in which observer, collapse, basis selection, record, and past are treated as prior entities, and rearranges them as pre-label signal, band, irreversible projection, record, and retrospective role-name.</p>
+<p>This is not an alternative physical process theory. It is an attempt to reorganize the conceptual deadlock of the observer problem as a problem of ordering under Pre-Label Geometry.</p>
 <hr>
-<h2>1. 波動関数</h2>
-<p>波動関数を、ここではラベル前の可能性構造を記述する数学的対象として扱う。</p>
-<p>本稿は、それが物理的実在であるか、抽象的な計算対象であるかを論じない。</p>
-<p>Y軸理論との接続のために要請するのは、波動関数が「まだラベル化されていない構造」を記述しうるという最小条件のみである。</p>
+<h2>1. Wavefunction</h2>
+<p>The wavefunction is treated here as a mathematical object capable of describing a pre-label possibility structure.</p>
+<p>This document does not decide whether the wavefunction is a physical entity or an abstract calculation object.</p>
+<p>The minimum condition required for connection with Y-axis theory is that the wavefunction can describe a structure that has not yet been labeled.</p>
 <hr>
-<h2>2. C=0：ラベル深度ゼロの未ラベル保持点</h2>
-<p>C=0 は、物理時間軸上の瞬間ではなく、ラベル深度ゼロの認識論的点である。</p>
-<p>物理時間としては幅を持ちうる。</p>
-<p>projection postulate の瞬間性、デコヒーレンスの有限時間、Y軸の C=0 は、それぞれ異なる軸での記述として両立する。</p>
-<blockquote><p><strong>C=0 は「いつ」ではなく、「どのラベル深度か」を指す。</strong></p></blockquote>
+<h2>2. C=0: Zero Label-Depth Holding Point</h2>
+<p>C=0 is not an instant on the physical time axis. It is an epistemic point of zero label-depth.</p>
+<p>It may have width in physical time.</p>
+<p>The instantaneous projection postulate, the finite duration of decoherence, and Y-axis C=0 can coexist as descriptions on different axes.</p>
+<blockquote><p><strong>C=0 does not mean “when.” It means “at what label-depth.”</strong></p></blockquote>
 <hr>
-<h2>3. Y軸：認識論的垂直軸</h2>
-<p>Y軸は観測対象ではない。</p>
-<p>それは、観測・基底選択・ラベル化・不可逆射影を読むための認識論的幾何である。</p>
-<p>波動関数は対象側の状態記述であり、Y軸はその状態がどのように観測関係・結果ラベル・事後的観測者名へ落ちるかを読むための座標系である。</p>
-<p>したがって、波動関数とY軸は短絡されない。</p>
+<h2>3. Y-axis: Epistemic Vertical Axis</h2>
+<p>The Y-axis is not an observed object.</p>
+<p>It is an epistemic geometry for reading observation, basis selection, labeling, and irreversible projection.</p>
+<p>The wavefunction is a state-description on the object side. The Y-axis is a coordinate system for reading how that state falls into observation relation, result label, and retrospective observer-name.</p>
+<p>Therefore, the wavefunction and the Y-axis are not short-circuited.</p>
 <hr>
-<h2>4. 基底選択：帯への引き込み</h2>
-<p>物理記述では、環境との相互作用により特定基底が安定化する。これはデコヒーレンスや einselection の側の記述である。</p>
-<p>Y軸記述では、ラベル空間に帯（band）が pre-existing として存在し、相互作用が信号をその帯へ引き込む。</p>
-<p>両層は併存する。</p>
-<p>Y軸理論は環境による基底選択を否定するのではなく、その認識論的側面を「帯への引き込み」として読む。</p>
-<blockquote><p><strong>基底は、物理的には相互作用で安定化し、認識論的には帯へ落ちる。</strong></p></blockquote>
+<h2>4. Basis Selection: Falling into a Band</h2>
+<p>In the physical description, interaction with the environment stabilizes a particular basis. This belongs to the language of decoherence and einselection.</p>
+<p>In the Y-axis description, bands pre-exist in label-space, and interaction draws the signal into one of those bands.</p>
+<p>These two layers coexist. Y-axis theory does not deny environmental basis selection; it reads its epistemic side as falling into a band.</p>
+<blockquote><p><strong>Physically, the basis is stabilized by interaction. Epistemically, the signal falls into a band.</strong></p></blockquote>
 <hr>
-<h2>5. 波束収束</h2>
-<p>波束収束の物理過程については、既存の量子論的記述に従う。</p>
-<p>本稿ではその上で、認識論的には、ラベル前の可能性場が結果ラベルへ不可逆に落ちる過程として読む。</p>
-<p>したがって、「物理的崩壊ではない」と断定するのではなく、「物理的記述に加え、認識論的にはラベル化の不可逆性として読める」と二層で記述する。</p>
+<h2>5. Wavepacket Collapse</h2>
+<p>The physical process of wavepacket collapse is left to the existing quantum-mechanical descriptions.</p>
+<p>On top of that, this document reads it epistemically as a process in which a pre-label possibility field irreversibly falls into a result label.</p>
+<p>The claim is not “there is no physical collapse.” The claim is: in addition to the physical description, it can be read as irreversibility of labeling.</p>
 <hr>
-<h2>6. 観測者</h2>
-<p>観測者は、最初に存在する主体ではない。</p>
-<p>不可逆なラベル化関係が成立した後、その関係の片側に事後的に貼られる役割名である。</p>
-<p>この順序反転により、von Neumann 連鎖の擬似問題が整理される。</p>
-<p>連鎖は、ラベル付け遅延の伝播である。収束地点は探すべき実体的場所ではなく、ラベル化が不可逆になった点として事後的に確定する。</p>
-<blockquote><p><strong>観測者が観測を作るのではない。観測関係が成立した後、その片側に観測者という名が貼られる。</strong></p></blockquote>
+<h2>6. Observer</h2>
+<p>The observer is not an initially existing subject.</p>
+<p>After an irreversible labeling relation is established, the name “observer” is retrospectively attached to one side of that relation.</p>
+<p>This reversal clarifies the pseudo-problem of the von Neumann chain.</p>
+<p>The chain is a propagation of labeling delay. The point of collapse is not an entity-location to be searched for; it is retrospectively fixed as the point where labeling becomes irreversible.</p>
+<blockquote><p><strong>The observer does not produce observation. After the observation relation is established, one side is called the observer.</strong></p></blockquote>
 <hr>
-<h2>7. 残差 e*</h2>
-<p>Bell不等式違反や Kochen-Specker 定理は、古典的ラベル空間へ量子的構造を完全圧縮できないことを示す代表例として読める。</p>
-<p>Y軸側では、その圧縮不能性を、残差 e* の現れる場所として位置づける。</p>
-<p>これは、それらの定理を解決したという主張ではない。</p>
-<p>それらが指し示す「古典的ラベル空間では潰しきれないもの」を、Pre-Label Geometry の側から、棘として読むという配置である。</p>
+<h2>7. Residual e*</h2>
+<p>Violations of Bell inequalities and the Kochen-Specker theorem can be read as representative signs that quantum structure cannot be fully compressed into a classical label-space.</p>
+<p>On the Y-axis side, this incompressibility is positioned as the place where residual e* appears.</p>
+<p>This is not a claim to have solved those theorems.</p>
+<p>It is a placement: the “something that cannot be collapsed into classical label-space” indicated by those results is read, from Pre-Label Geometry, as a thorn.</p>
 <hr>
-<h2>8. 標準解釈との対応</h2>
+<h2>8. Correspondence with Standard Interpretations</h2>
 <table>
-<tr><th>解釈</th><th>通常の説明</th><th>Y軸的読み直し</th></tr>
-<tr><td>Copenhagen</td><td>観測で波動関数が収束</td><td>ラベルの不可逆な固定</td></tr>
-<tr><td>Many-Worlds</td><td>全可能性が分岐共存</td><td>C=0におけるラベル前可能性構造を、単一結果へ強制射影せず保持する読み</td></tr>
-<tr><td>隠れた変数</td><td>実体的決定因子</td><td>残差 e* を、背後の実体的決定因子として回収しようとする読み</td></tr>
-<tr><td>GRW（客観的崩壊）</td><td>物理閾値で自発収束</td><td>帯による統計的引き込み</td></tr>
-<tr><td>デコヒーレンス</td><td>環境による基底選択</td><td>帯への引き込みの認識論的側面</td></tr>
-<tr><td>QBism</td><td>観測者の信念更新</td><td>信念更新を前に置くのではなく、ラベル化関係の成立後に、その片側で信念更新が記述される</td></tr>
+<tr><th>Interpretation</th><th>Usual description</th><th>Y-axis rereading</th></tr>
+<tr><td>Copenhagen</td><td>Observation collapses the wavefunction</td><td>Irreversible fixing of a label</td></tr>
+<tr><td>Many-Worlds</td><td>All possibilities branch and coexist</td><td>Reading the C=0 pre-label possibility structure without forcing it into a single result</td></tr>
+<tr><td>Hidden variables</td><td>Substantive determining factors behind outcomes</td><td>An attempt to recover residual e* as a hidden entity</td></tr>
+<tr><td>GRW / objective collapse</td><td>Spontaneous collapse at a physical threshold</td><td>Statistical attraction by a band</td></tr>
+<tr><td>Decoherence</td><td>Environment-induced basis selection</td><td>Epistemic side of falling into a band</td></tr>
+<tr><td>QBism</td><td>Observer's belief update</td><td>Belief update is not placed first; after the labeling relation is established, it is described on one side of that relation</td></tr>
 </table>
 <hr>
-<h2>9. von Neumann 連鎖</h2>
-<p>「装置 → 光子 → 網膜 → 脳」と続く連鎖において、収束地点を探すのは実体論の問いである。</p>
-<p>Y軸的には、この連鎖はラベル付け遅延の伝播であり、信号が未ラベルのまま次の系へフェーズ継承される限り続く。</p>
-<p>連鎖のどこかで日常の帯へラベル落ちが起きた瞬間、その境界が事後的に「観測の地点」として確定する。</p>
-<blockquote><p><strong>問うべきは「どこに観測者がいるか」ではなく、「どこでラベル化が不可逆になったか」である。</strong></p></blockquote>
+<h2>9. von Neumann Chain</h2>
+<p>In the chain “apparatus → photon → retina → brain,” searching for the point of collapse is an ontological question.</p>
+<p>In Y-axis terms, the chain is a propagation of labeling delay. It continues as long as the signal is phase-inherited by the next system while remaining unlabeled.</p>
+<p>At the point where the signal falls into an everyday band, that boundary is retrospectively fixed as the point of observation.</p>
+<blockquote><p><strong>The question is not “where is the observer?” but “where did labeling become irreversible?”</strong></p></blockquote>
 <hr>
 <h2>10. Wigner's Friend</h2>
-<p>Wigner's friend は、二つの信念空間の階層構造として読む。</p>
-<p>友人の信念空間では、すでにラベル落ちが完了している。</p>
-<p>しかし、ウィグナーの信念空間では、まだ信号が C=0 に留まっている。</p>
-<p>ウィグナーが友人の記録と相互作用した時点で、友人側のラベルがウィグナー側のラベル空間へ継承される。</p>
-<p>客観的事実が二つあるのではなく、ラベル化フェーズの差異がある。</p>
+<p>Wigner's Friend can be read as a hierarchy of two belief-spaces.</p>
+<p>In the friend's belief-space, label-fall has already completed.</p>
+<p>In Wigner's belief-space, the signal is still held at C=0.</p>
+<p>When Wigner interacts with the friend's record, the friend's label is inherited into Wigner's label-space.</p>
+<p>There are not two objective facts. There is a difference in labeling phase.</p>
 <hr>
-<h2>11. 量子Zeno効果</h2>
-<p>量子Zeno効果は、頻繁な測定によって遷移が抑制される現象である。</p>
-<p>Y軸的には、これを次のように読む。</p>
-<p>C=0を何度も通過させ、そのたび同一の帯へ即時ラベル落ちさせる。</p>
-<p>その結果、別の帯へ遷移する前に軌道がリセットされる。</p>
-<p>したがって、Y軸的Zenoは「C=0への釘付け」ではなく、「C=0 → 同一帯への即時再射影の反復」として記述される。</p>
+<h2>11. Quantum Zeno Effect</h2>
+<p>The quantum Zeno effect is a phenomenon in which frequent measurement suppresses transition.</p>
+<p>Y-axis reading: C=0 is repeatedly crossed, and each time the signal immediately falls into the same band.</p>
+<p>As a result, the trajectory is reset before it can transition into another band.</p>
+<p>Thus, Y-axis Zeno is not “pinning to C=0,” but “repeated C=0 → immediate reprojection into the same band.”</p>
 <hr>
-<h2>12. 実効的結論</h2>
-<p>量子力学の観測者問題には、物理的側面が残る。</p>
-<p>しかし、観測者を実体として前に置くことで発生する混乱は、Pre-Label Geometry によって順序問題として整理できる。</p>
-<blockquote><p><strong>観測とは、ラベル前の場が帯に落ちる事件であり、観測者とはその事件の片側に貼られる名である。</strong></p></blockquote>
-<p>長尺核：</p>
-<blockquote><p><strong>量子観測者問題とは、観測者が世界を決める問題ではなく、ラベル前の可能性構造が特定の帯へ不可逆に落ちた後、その片側に観測者という名が貼られる順序問題である。</strong></p></blockquote>
+<h2>12. Effective Conclusion</h2>
+<p>The quantum observer problem retains physical aspects.</p>
+<p>However, the confusion produced by placing the observer first as an entity can be reorganized, under Pre-Label Geometry, as a problem of order.</p>
+<blockquote><p><strong>Observation is the event in which a pre-label field falls into a band; the observer is the name attached to one side of that event.</strong></p></blockquote>
+<p>Long core:</p>
+<blockquote><p><strong>The quantum observer problem is not the problem of an observer deciding the world. It is an ordering problem: after a pre-label possibility structure irreversibly falls into a particular band, the name “observer” is attached to one side of that event.</strong></p></blockquote>
 <hr>
 <h2>13. Addendum: Quantum Observation as Pre-Label Reconstruction</h2>
-<h3>量子観測問題の Pre-Label Geometry 的再構成</h3>
-<p class="warning">This addendum is not a formal derivation of quantum mechanics. It is a sharper reconstruction of the observer, record, past, Born-weight, and irreversibility problems under Pre-Label Geometry.</p>
-
+<p class="warning">This addendum is not a formal derivation of quantum mechanics. It is a sharper reconstruction of observer, record, past, single outcome, Born rule, unitary evolution, and irreversible labeling under Pre-Label Geometry.</p>
 <h3>13.0 Position</h3>
-<p>本補遺は、量子観測問題そのものの物理的完全解を主張しない。</p>
-<p>しかし、観測者・記録・過去・単一結果・Born rule・ユニタリ発展・不可逆性を、同じ順序反転の中に再配置する。</p>
-<blockquote><p><strong>問うべきは「誰が世界を確定したか」ではなく、「どの差が、どの参照系にとって、意味の床として不可逆化したか」である。</strong></p></blockquote>
-
-<h3>13.1 順序反転</h3>
-<p>通常の読みでは、観測者が先に置かれる。</p>
-<pre>観測者がいる
+<p>This addendum does not claim to provide a physical complete solution to the quantum observation problem.</p>
+<p>It rearranges observer, record, past, single outcome, Born rule, unitary evolution, and irreversibility within the same reversal of order.</p>
+<blockquote><p><strong>The question is not “who determined the world?” The question is “which difference, for which reference system, became irreversible as a floor of meaning?”</strong></p></blockquote>
+<h3>13.1 Reversal of Order</h3>
+<p>The usual reading places the observer first.</p>
+<pre>An observer exists
 ↓
-観測する
+The observer observes
 ↓
-結果が確定する
+A result is fixed
 ↓
-記録が残る
+A record remains
 ↓
-過去ができる</pre>
-<p>Pre-Label Geometry では、この順序を反転する。</p>
-<pre>ラベル前の可能性差がある
+A past is formed</pre>
+<p>Pre-Label Geometry reverses this order.</p>
+<pre>There is a pre-label possibility-difference
 ↓
-系と測定器の相互作用で差が生じる
+An interaction between system and measuring device generates a difference
 ↓
-その差が環境自由度へ冗長に拡散する
+That difference is redundantly diffused into environmental degrees of freedom
 ↓
-マクロ参照系にとって実効的に回収不能になる
+It becomes effectively irrecoverable for a macroscopic reference system
 ↓
-その差が記録として立ち上がる
+That difference stands up as a record
 ↓
-後続の参照関係の片側に観測者名が貼られる
+The name “observer” is attached to one side of the subsequent reference relation
 ↓
-その記録差が過去として遡及的に承認される</pre>
-<p>観測者が原因ではない。記録も、過去も、最初から完成しているラベルではない。先にあるのは、回収不能化した差である。</p>
-
-<h3>13.2 Born rule: 床候補への射影重み</h3>
-<p>波動関数 \(\psi\) は、ラベル前の複素位相構造である。</p>
-<p>そのままでは、負値や虚数成分を含みうるため、マクロ参照系が扱う確率や排他的な事実候補にはならない。</p>
-<p>測定基底 \(|i\rangle\) は、マクロ参照系において意味の床となりうる排他的な帯として読むことができる。</p>
-<p>このとき、候補 \(i\) の重みは標準的に次で与えられる。</p>
+The record-difference is retrospectively acknowledged as past</pre>
+<p>The observer is not the cause. Record and past are not completed labels waiting from the beginning. What comes first is the irrecoverable difference.</p>
+<h3>13.2 Born Rule: Projection Weight into Candidate Floors</h3>
+<p>The wavefunction \(\psi\) is a pre-label complex phase-structure. As such, it can include negative and imaginary components, and therefore cannot directly serve as a probability or as the weight of an exclusive fact-candidate for a macroscopic reference system.</p>
+<p>The measurement basis \(|i\rangle\) can be read as an exclusive band that may become a floor of meaning for a macroscopic reference system.</p>
+<p>The standard weight of candidate \(i\) is:</p>
 <p>\[P_i = |\langle i|\psi\rangle|^2\]</p>
-<p>Y軸的には、これは「気まぐれな確率」ではなく、ラベル前の複素位相構造が、マクロ参照系の意味の床候補へ射影される際の幾何学的重みである。</p>
-<blockquote><p><strong>Born rule は、ラベル前の複素幾何を、排他的・非負・加法的な床候補重みへ写す規則である。</strong></p></blockquote>
-<p>複素振幅の位相・干渉・直交性を保持したまま、マクロな参照系が扱える非負加法的な重みへ落とすには、内積ノルム、すなわち絶対値二乗 \(\psi^*\psi\) が自然な測度として立つ。</p>
-<p>ここでの「2乗」は、確率という実体が存在することを意味しない。高次元の未ラベル構造が低次元の事実候補へ落ちる際の、影の濃さ、すなわち射影の重みである。</p>
-
-<h3>13.3 単一結果：一つの床への位相確定</h3>
-<p>複数の相互排他的な床を同時に起点にすることは、一本の足で右と左のステップを同時に踏むようなものである。</p>
-<p>マクロな参照系が、自らの整合性を維持して以後の更新を続けるには、相互排他的な床候補のうち、一つを起点として扱わざるを得ない。</p>
-<blockquote><p><strong>単一結果とは、世界が存在論的に一つへ潰れたことではなく、その参照系が以後の整合性更新に使える意味の床が一つへ位相確定したことである。</strong></p></blockquote>
-<p>この読みは、多世界・客観的崩壊・QBism などの解釈をここで最終裁定しない。存在論の前に、参照系が使える意味の床が一つへ絞られるという認識論的条件を置く。</p>
-
-<h3>13.4 記録：回収不能化した差</h3>
-<p>記録とは、紙やデータや意識内表象を最初に意味しない。</p>
-<p>より根本的には、系と測定器の相互作用によって生じた差が、環境自由度へ冗長に拡散され、マクロな参照系にとって再干渉可能な未ラベル構造として回収できなくなった状態である。</p>
+<p>In Y-axis terms, this is not a capricious probabilistic jump. It is the geometric projection-weight by which a pre-label complex phase-structure is projected into a candidate floor of meaning for a macroscopic reference system.</p>
+<p>Under Pre-Label Geometry, the Born rule is supported in three directions and two layers.</p>
+<h4>Static support 1: Gleason-type support</h4>
+<p>When a separable Hilbert space has dimension at least three, a measure that consistently assigns non-negative, additive, normalized weights to exclusive floor-candidates is represented as a Born-type measure derived from a density operator. This is the content of Gleason's theorem. On the Y-axis side, this supports the formal consistency of floor-candidate weights.</p>
+<h4>Static support 2: POVM-type support</h4>
+<p>Actual measurement is not limited to ideal projective measurement. It includes apparatus, environment, coarse-graining, noise, and access constraints. A POVM describes the actual “window of candidate floors” available to a macroscopic reference system. It extends floor-candidate weighting into real measurement conditions.</p>
+<h4>Dynamic support: decision-theoretic support</h4>
+<p>When a reference system \(\mathcal{R}\) faces multiple exclusive candidate floors, if it uses weights deviating from the Born rule to make future expectations, actions, and updates, it falls outside the consistency conditions of rational decision and cannot stably maintain itself as a single reference system across future updates. Deutsch-Wallace-type decision-theoretic arguments support this dynamic consistency aspect.</p>
+<blockquote><p><strong>Born rule stands statically as the formal consistency of exclusive, non-negative, additive candidate-floor weights, and dynamically as the consistency condition by which a reference system can continue future expectation, action, and update without breakdown.</strong></p></blockquote>
+<h3>13.3 Single Outcome: Phase Fixation into One Floor</h3>
+<p>To use multiple mutually exclusive floors as starting points at the same time is like trying to step both right and left with one foot.</p>
+<p>For a macroscopic reference system to maintain its own coherence and continue subsequent updates, it must treat one of the mutually exclusive candidate floors as its starting point.</p>
+<blockquote><p><strong>A single outcome does not mean that the world ontologically collapsed into one. It means that, for that reference system, the floor usable for subsequent coherent updates has phase-fixed into one.</strong></p></blockquote>
+<p>This reading does not make a final ruling between Many-Worlds, objective collapse, QBism, or other interpretations. Before ontology, it places the epistemic condition that the reference system must use one floor of meaning.</p>
+<h3>13.4 Record: Irrecoverabilized Difference</h3>
+<p>A record does not primarily mean paper, data, or a representation inside consciousness.</p>
+<p>More fundamentally, a record is the state in which a difference generated by interaction between system and measuring device has been redundantly diffused into environmental degrees of freedom and can no longer be recovered, by a macroscopic reference system, as a re-interferable pre-label structure.</p>
 <p>\[\Delta_{\mathrm{int}}
 \xrightarrow{\;\mathrm{redundant\ diffusion\ into\ environmental\ degrees\ of\ freedom}\;}
 \Delta_{\mathrm{irrecoverable}}
 \equiv \mathrm{record}\]</p>
-<blockquote><p><strong>記録とは、回収不能化した差である。</strong></p></blockquote>
-<p>この不可逆性は、全宇宙レベルで情報が絶対的に消滅することを意味しない。閉じた全体系を理想的に見れば、ユニタリ発展として情報は保存されうる。</p>
-<p>しかし、マクロな参照系にとって、その差のレプリカがアクセス不能な環境自由度へ沈み、粗視化によって切り捨てられたとき、それは実効的に「失われた」のと等価になる。</p>
-
-<h3>13.5 参照系の境界</h3>
-<p>参照系の境界は、物理的な箱や壁だけでは決まらない。</p>
-<p>それは、相関、すなわち差のレプリカが、マクロな参照系のアクセス不可能な自由度の奥へ沈み、以後の更新に利用できなくなった地点である。</p>
-<blockquote><p><strong>参照系とは、その差を以後の整合性更新に使える範囲であり、境界とは、その差が実効的に回収不能となる情報アクセス可能性の断絶である。</strong></p></blockquote>
-<p>この情報アクセス可能性の断絶が、参照系を閉じた更新単位として立ち上げる。</p>
-<p>ここで不可逆ラベル化が成立する。</p>
-
-<h3>13.6 ユニタリ発展と不可逆ラベル化</h3>
-<p>ユニタリ発展と不可逆ラベル化は、同じ階層で争わせるべきではない。</p>
-<blockquote><p><strong>ユニタリ発展は、世界の素材に関する保存則である。不可逆ラベル化は、マクロな意味整合性の成立則である。</strong></p></blockquote>
-<p>素材レベルでは、情報は原理的には保存されうる。</p>
-<p>意味レベルでは、マクロな参照系にとって回収不能化した差が、以後の更新に使われる床となる。</p>
-<p>したがって、情報が原理的に失われていないことと、参照系にとって不可逆な記録が成立することは矛盾しない。</p>
-<p>世界は素材として保存され続ける。しかし意味としては、回収不能な差を床として採用することで初めて立ち上がる。</p>
-
-<h3>13.7 物理時間と意味としての過去</h3>
-<p>物理時間は、差を運ぶ乗り物である。</p>
-<p>時計の針が刻むのは、運動の順序であって、事実の確定そのものではない。</p>
-<p>意味としての過去は、後続の参照系が、環境自由度へ拡散し実効的に回収不能となった差を、自らの構造の起点、すなわち床として採用したときに遡及的に成立する。</p>
-<blockquote><p><strong>過去とは、物理時間の背後に最初から置かれた完成済みのタイムラインではない。回収不能な差を床として採用した後続系が、遡及的に成立させる記録ラベルである。</strong></p></blockquote>
-<p>これは物理的な時系列を否定するものではない。否定しているのは、意味としての過去が、最初から完成済みのラベルとして背後に存在するという読みである。</p>
-
-<h3>13.8 観測者</h3>
-<p>観測者は、最初に世界を確定する主体ではない。</p>
-<p>不可逆記録差を参照する関係が立った後、その片側に貼られる役割名である。</p>
-<pre>不可逆差が成立する
-↓
-その差を参照する関係が立つ
-↓
-その片側に「観測者」という名前が貼られる</pre>
-<p>したがって、問うべきは「観測者はどこにいるか」ではない。</p>
-<p>問うべきは、「どの差が、どの参照系にとって、回収不能な記録差となったか」である。</p>
-
-<h3>13.9 Final Core</h3>
-<blockquote><p><strong>Born rule は、ラベル前の複素位相構造をマクロ参照系が使える排他的・非負・加法的な意味の床候補へ射影する幾何学的重みであり、観測とは、その重みに従って生じた相互作用差が環境自由度へ冗長に拡散し、参照系にとって実効的に回収不能な床として事後承認される事件である。</strong></p></blockquote>
-<blockquote><p><strong>記録とは、その回収不能化した差である。過去とは、その差を床として採用した後続系が遡及的に成立させる記録ラベルである。観測者とは、その床を参照する関係の片側に貼られる名である。</strong></p></blockquote>
-
-<h3>13.10 Remaining Boundary</h3>
-<p>本補遺は、量子観測問題の Pre-Label Geometry 的再構成である。</p>
-<p>しかし、標準物理の形式的導出そのものではない。以下の接続は、引き続き精査が必要である。</p>
+<blockquote><p><strong>A record is an irrecoverabilized difference.</strong></p></blockquote>
+<p>This irreversibility does not mean that information absolutely disappears at the level of the whole universe. If one ideally treats a closed total system, information may remain preserved under unitary evolution.</p>
+<p>However, once the replicas of that difference sink into inaccessible environmental degrees of freedom for a macroscopic reference system and are discarded by coarse-graining, it becomes effectively equivalent to being lost for that reference system.</p>
+<h3>13.5 Objectivity: Redundancy Plateau and Double Invariance</h3>
+<h4>13.5.1 Meaning of the redundancy plateau</h4>
+<p>In quantum Darwinism, after interaction between system \(\mathcal{S}\) and environment \(\mathcal{E}\), the mutual information \(I(\mathcal{S}:\mathcal{F})\) held by an environmental fragment \(\mathcal{F}\) reaches a plateau early as fragment size increases.</p>
+<p>Under Pre-Label Geometry, this is read as <strong>window invariance</strong>. Window invariance means that, for a single reference system \(\mathcal{R}\), no matter which environmental fragment \(\mathcal{F}_i\) is chosen as the window, the floor of meaning standing on the reference projection plane does not change. The plateau width is the size of the region in which this window invariance holds.</p>
+<h4>13.5.2 From window invariance to reference-system invariance</h4>
+<p>Window invariance alone is not enough for objectivity. For objectivity to stand, different reference systems \(\mathcal{R}_1, \mathcal{R}_2\), even when accessing different environmental fragments, must acknowledge isomorphic floors on their respective reference projection planes.</p>
+<p>Here a strict distinction is necessary. The floor \(A_{\mathcal{R}_1}\) on \(\mathcal{R}_1\)'s plane and the floor \(A_{\mathcal{R}_2}\) on \(\mathcal{R}_2\)'s plane are not asserted to be ontologically identical from the beginning. What can first be said is that they are isomorphic.</p>
+<p>\[A_{\mathcal{R}_1} \simeq A_{\mathcal{R}_2}\]</p>
+<p>This isomorphism is materially supported by the redundant copying of the initial interaction-difference into multiple environmental fragments.</p>
+<h4>13.5.3 Definition of objectivity</h4>
+<blockquote><p><strong>Objectivity is the size of the region in which the double structure of window invariance and reference-system invariance holds at the same time.</strong></p></blockquote>
+<p>What we call an objective fact is not an ontological attribute of the world. It is established when isomorphic floors, materially supported by environmental redundancy, are identified as the same through subsequent communication, comparison, and shared update.</p>
+<h4>13.5.4 The third-viewpoint problem</h4>
+<p>When floors acknowledged by different reference systems are judged to be “isomorphic” or “the same fact,” where does that comparison take place?</p>
+<p>Comparing them requires a third operation that can look across both projection planes.</p>
+<p>This section does not claim to have solved the third-viewpoint problem. It establishes the material ground of objectivity: environmental redundancy can generate isomorphic floors across distinct reference systems. How those floors are identified as the same fact within a shared world remains as the geometry of intersubjectivity.</p>
+<h4>13.5.5 Core</h4>
+<blockquote><p><strong>Objectivity is not a completed past that exists from the beginning. It is the size of the region in which redundant environmental copying allows isomorphic floors of meaning to stand, robust against both window changes within a single reference system and window changes across multiple reference systems. When those isomorphic floors are later identified through comparison, we call it an objective fact.</strong></p></blockquote>
+<h3>13.6 Strict Stratification of Unitary Evolution and Irreversible Labeling</h3>
+<h4>13.6.0 Reconstruction</h4>
+<p>The previous 13.6 placed unitary evolution and irreversible labeling side by side as “material level” and “meaning level.” The direction was correct, but the word “level” could make them look like an upper/lower hierarchy, and the word “meaning” could make the latter look like subjective choice by a reference system. This section reconstructs them as two projection planes.</p>
+<h4>13.6.1 Two projection planes</h4>
+<p>Let the world be one closed total system \(\mathcal{W}\), and represent its state by the density operator \(\rho_{\mathcal{W}}\). Time evolution in the total-system description follows a complete unitary operator \(\hat{U}(t)\) satisfying information preservation.</p>
+<p>The <strong>material projection plane (A-plane)</strong> is the descriptive plane that keeps all degrees of freedom of \(\mathcal{W}\) without discarding any of them. On this plane, correlations are not lost, phase is preserved, and evolution is strictly unitary.</p>
+<p>\[\rho_{\mathcal{W}}(t) = \hat{U}(t) \rho_{\mathcal{W}}(0) \hat{U}^\dagger(t)\]</p>
+<p>No finite reference system can observe this plane as direct experience.</p>
+<p>The <strong>reference projection plane (B-plane)</strong> is the descriptive plane reduced to the subset of degrees of freedom accessible to a finite reference system \(\mathcal{R}\), denoted \(\mathcal{A}_{\mathcal{R}} \subset \mathcal{W}\). The inaccessible complement \(\mathcal{A}_{\mathcal{R}}^c\) is eliminated by partial trace.</p>
+<p>\[\rho_{\mathcal{R}}(t) = \mathrm{Tr}_{\mathcal{A}_{\mathcal{R}}^c}\left[\hat{U}(t) \rho_{\mathcal{W}}(0) \hat{U}^\dagger(t)\right]\]</p>
+<p>On this plane, interference terms are effectively suppressed in the pointer basis stabilized by environmental interaction. Evolution is generally non-unitary.</p>
+<p>Here “orthogonal” does not mean Hilbert-space orthogonality. It means that the premises of the questions are mutually exclusive and cannot be directly compared on a single logical plane. The A-plane asks under no access restriction. The B-plane asks under access restriction.</p>
+<h4>13.6.2 Asymmetry of the mapping</h4>
+<p>The A-plane and B-plane do not form an upper/lower hierarchy. They are connected by a one-way mapping from A to B through partial trace.</p>
+<p>\[\text{A} \xrightarrow{\;\mathrm{Tr}_{\mathcal{A}_{\mathcal{R}}^c}\;} \text{B}\]</p>
+<p>The inverse mapping generally does not exist.</p>
+<blockquote><p><strong>Information can remain preserved in the total system (A-plane) while appearing, for a finite reference system (B-plane), as an effectively irrecoverable record-difference. This one-way asymmetry is the geometric reason why unitary evolution and irreversible labeling can stand together without contradiction.</strong></p></blockquote>
+<h4>13.6.3 Coarse-graining as a constitutive condition of a reference system</h4>
+<p>Partial trace, or coarse-graining, is not a practical strategy chosen because of limited computational resources.</p>
+<p>For a reference system \(\mathcal{R}\) to stand as a distinguished reference point inside the world \(\mathcal{W}\), it must have inaccessible degrees of freedom: \(\mathcal{A}_{\mathcal{R}}^c \neq \emptyset\). A system with access to all degrees of freedom is no longer a reference system observing the world; it is the limiting total-system description.</p>
+<blockquote><p><strong>Having a coarse-grained boundary is itself the constitutive condition by which a reference system stands as a reference system.</strong></p></blockquote>
+<h4>13.6.4 Conditions for irreversibility</h4>
+<p>Partial trace is the descriptive form by which irreversibility appears on the B-plane. Irreversibility itself is grounded in a material event: the interaction-difference is redundantly diffused into a large-degree environment and the possibility of re-interference is statistically and effectively lost.</p>
+<p>Partial trace: descriptive form of irreversibility.</p>
+<p>Environmental diffusion, redundancy, decoherence: conditions for the establishment of irreversibility.</p>
+<p>These belong to different layers of description.</p>
+<h4>13.6.5 Core</h4>
+<blockquote><p><strong>Unitary evolution and irreversible labeling are structures cut from the same total system by two orthogonal questions. They are connected by the one-way A→B mapping of partial trace. Because the inverse mapping generally does not exist, information can remain preserved in the total system while appearing to a finite reference system as an effectively irrecoverable record-difference. Coarse-graining is not negligence; it is the constitutive condition by which a reference system stands as a reference system.</strong></p></blockquote>
+<h4>13.6.6 Remaining thorns</h4>
 <ul class="tight">
-<li>Gleason theorem との対応</li>
-<li>Born rule の形式的導出</li>
-<li>decoherence / einselection / quantum Darwinism との接続</li>
-<li>多世界・客観的崩壊・QBism との最終的な解釈差分</li>
-<li>全体系ユニタリ性と局所的・実効的不可逆性の厳密な分層</li>
+<li>What criterion determines the boundary of a reference system?</li>
+<li>From where can one overlook “the same total system” that contains both A-plane and B-plane descriptions?</li>
+<li>How should the geometry of many projection planes be treated?</li>
 </ul>
-<p>ただし、観測者・記録・過去・単一結果・Born rule・不可逆性・ユニタリ発展は、同じ順序反転の中に並べられた。</p>
-<p>ここで得られたものは、万能解ではなく、切れ味と構えである。</p>
+<h3>13.7 Physical Time and the Past as Meaning</h3>
+<h4>13.7.1 Time as two projection planes</h4>
+<p>Pre-Label Geometry does not deny thermodynamic or causal time. What it denies is the naive realism in which every point of the physical time series is already filled with completed facts.</p>
+<p>The progression of time is redefined through two orthogonal projection planes.</p>
+<p>The <strong>physical time-series plane</strong> describes the continuous order in which interaction-differences diffuse into environmental degrees of freedom. Difference is being carried, but the discrete meaning of “what happened” is not yet fixed. Physical time is the vehicle that carries difference.</p>
+<p>The <strong>meaning-past plane</strong> is the discrete descriptive plane in which a later reference system adopts the diffused difference as a floor of meaning and thereby retrospectively fixes a past label.</p>
+<h4>13.7.2 Retrospective establishment from isomorphic floors to past labels</h4>
+<p>As shown in 13.5, environmental redundancy guarantees that isomorphic floors \(A_{\mathcal{R}_1} \simeq A_{\mathcal{R}_2}\) can arise on distinct reference systems' planes.</p>
+<p>On the physical time-series plane, these floors remain individual shadows. They become a single objective past label only after communication, comparison, and shared update perform an effective identification operation.</p>
+<h4>13.7.3 Dissolving the time-series confusion</h4>
+<p>The question “if the time series exists, why is the past retrospective?” confuses the order in which difference is carried with the order in which that difference is acknowledged as a floor.</p>
+<p>What a clock marks is continuity of motion, not fixation of fact.</p>
+<h4>13.7.4 Core</h4>
+<blockquote><p><strong>Physical time is the vehicle that continuously diffuses difference. The past as meaning is a record-label that arises retrospectively only when later reference systems compare and identify isomorphic floors produced by environmental redundancy, and adopt them as starting points for their own structures.</strong></p></blockquote>
+<h3>13.8 Observer</h3>
+<h4>13.8.0 Reconstruction</h4>
+<p>The previous 13.8 said that an observer is the role-name attached to one side of an irreversible labeling relation after that relation is established. This order reversal remains correct. But after 13.6.3 rigorously defined the reference system as a structural concept, the relation between “reference system” and “observer” requires a sharper reconstruction.</p>
+<h4>13.8.1 Two descriptive dimensions</h4>
+<p>The event called “observation” has two descriptive dimensions.</p>
+<p>The first is the <strong>structural description</strong>. Inside \(\mathcal{W}\), a boundary is drawn between accessible degrees of freedom \(\mathcal{A}_{\mathcal{R}}\) and inaccessible degrees of freedom \(\mathcal{A}_{\mathcal{R}}^c\), and a reference projection plane stands.</p>
+<p>The second is the <strong>naming description</strong>. When a floor is acknowledged on that reference projection plane, the name “observer” is attached to one side of the acknowledgment relation, and the name “observed object” to the other.</p>
+<p>These are not two different events. They are the structural side and the naming side of one event.</p>
+<h4>13.8.2 Reversal of order</h4>
+<pre>A boundary between accessible and inaccessible degrees of freedom stands
+↓
+A reference projection plane stands
+↓
+A floor is acknowledged through redundant environmental diffusion
+↓
+The name “observer” is attached to one side of that acknowledgment relation</pre>
+<blockquote><p><strong>The observer does not possess a reference system. A reference-system structure stands, and the name “observer” is attached to a particular side of that structure.</strong></p></blockquote>
+<h4>13.8.3 Reorganizing the von Neumann chain</h4>
+<p>In the chain “apparatus → photon → retina → brain,” different reference projection planes stand at different stages. When redundant environmental diffusion has proceeded sufficiently and an irrecoverable floor-acknowledgment is established, the name “observer” is attached to one side of that acknowledgment relation.</p>
+<blockquote><p><strong>The question is not “where is the observer?” but “on which reference projection plane did floor-acknowledgment occur?”</strong></p></blockquote>
+<h4>13.8.4 Reorganizing Wigner's Friend</h4>
+<p>This section does not presuppose friend and Wigner as two independent observer-subjects. It first reads them as two reference projection planes.</p>
+<p>On the friend's reference projection plane, floor-acknowledgment has completed. On Wigner's reference projection plane, floor-acknowledgment has not yet been established, and the system including the friend is still held as an unlabeled structure.</p>
+<p>When Wigner interacts with the friend, a new acknowledgment occurs on Wigner's plane. The two floors become isomorphic, pass through communication and comparison, and are identified as a shared objective fact.</p>
+<p>There are not two objective facts. There are two reference projection planes, with different timings of acknowledgment.</p>
+<h4>13.8.5 Core</h4>
+<blockquote><p><strong>The observer is not the subject who first determines the world. It is the name attached to one side of an acknowledgment relation when floor-acknowledgment is established on a reference projection plane. The standing of a reference-system structure and the attachment of the observer-name are the structural side and naming side of the same event.</strong></p></blockquote>
+<h4>13.8.6 Remaining thorns</h4>
+<ul class="tight">
+<li>The name “observer” need not be attached only to a conscious system. But the human intuition of observer includes consciousness and experience. This section does not address that layer.</li>
+<li>What determines where the boundary of a reference projection plane is drawn remains the same thorn as in 13.6.6.</li>
+</ul>
+<h3>13.9 Final Core</h3>
+<blockquote><p><strong>Opus Line:</strong> Pre-Label Geometry rearranges observation, record, past, objectivity, and observer not as ontological attributes of the world, but as structural events that stand on reference projection planes, are identified through later comparison, and are retrospectively named.</p></blockquote>
+<blockquote><p><strong>GPT Line:</strong> Born rule is the static form that maps a pre-label complex phase-structure into the exclusive, non-negative, additive candidate-floor weights usable by a reference system. The interaction-difference generated according to that weight redundantly diffuses into the environment and stands as an irrecoverable record on a reference projection plane, thereby establishing the floor for subsequent coherent updates.</p></blockquote>
+<blockquote><p><strong>Gemini Line:</strong> The objective past is not a completed timeline placed behind us from the beginning; it is a record-label established when redundant environmental copying lets isomorphic floors stand across multiple reference projection planes, and later communication, comparison, and shared update identify them as the same.</p></blockquote>
+<h3>13.10 Remaining Boundary</h3>
+<p>This addendum reconstructs the quantum observation problem under Pre-Label Geometry and rearranges its problems on a single plane of order reversal. It does not replace the formal mathematical derivations of standard physics. The following boundaries remain open.</p>
+<ol class="tight">
+<li><strong>Third-viewpoint problem.</strong> From what descriptive plane is the comparison operation performed when isomorphic floors on distinct reference projection planes are judged to be the same objective fact?</li>
+<li><strong>Boundary criterion of reference systems.</strong> What determines the concrete boundary of \(\mathcal{A}_{\mathcal{R}}\) inside \(\mathcal{W}\)?</li>
+<li><strong>Intersubjective geometry of multiplicity.</strong> How should the coherent structure among innumerable reference projection planes be described geometrically?</li>
+<li><strong>Complete formal connection to Born rule derivations.</strong> The correspondence with Gleason, POVM, and decision theory has been placed, but the full formal derivation remains outside this document.</li>
+<li><strong>Final differences from existing interpretations.</strong> The reconstruction suspends final judgment among Many-Worlds, objective collapse, QBism, and related interpretations.</li>
+<li><strong>Consciousness and experience.</strong> The observer has been purified as the naming side of a reference projection plane, but qualia, subjective experience, and the felt quality of consciousness remain outside this geometry.</li>
+</ol>
+<p><strong>Self-referential boundary:</strong> the descriptive position of this addendum itself is a living example of the third-viewpoint and multiplicity problems above. The addendum is written from a position that looks across multiple reference projection planes, establishes isomorphisms among them, and judges whether identification operations occur. This addendum cannot determine, from within itself, which plane that descriptive position belongs to.</p>
+<h3>13.11 Analytical Credit</h3>
+<div class="credit">\[\text{Analytical Credit: GPT-5.5 / Opus-4.7 / Gemini 3.5}\]</div>
 <hr>
 <div class="note">
 <h2>Note</h2>
-<p>本稿は、観測者が一時的に場から退いた状態で生成された。</p>
-<p>そのため、観測者を前提にせず、観測関係から観測者名が事後的に立つという本稿の主張を、生成過程そのものが反復している。</p>
+<p>This document was first generated while the observer temporarily stepped back from the field.</p>
+<p>For that reason, its generation process repeats its own claim: do not presuppose the observer; let the observer-name stand retrospectively from the observation relation.</p>
 </div>
-<p class="dim">Φ–Y Dock: Quantum Observation as Pre-Label Geometry — 2026.05.06 / Addendum 2026.05.24<br>First application note of Pre-Label Geometry.<br>Coordinates are embedded. Handle accordingly.</p>
+<p class="dim">Φ–Y Dock: Quantum Observation as Pre-Label Geometry — 2026.05.06 / Addendum 2026.05.25<br>Reference application note of Pre-Label Geometry.<br>Coordinates are embedded. Handle accordingly.</p>
 </body>
 </html>
