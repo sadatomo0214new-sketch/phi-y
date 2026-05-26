@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Φ–Y Dock V16: Multi-Scale Time Engine</title>
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:980px;margin:0 auto;padding:2em 1.5em;line-height:1.75}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.3em;margin-top:2.1em}h3{color:#aaa;font-size:1.08em;margin-top:1.5em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}hr{border:none;border-top:1px solid #333;margin:2.2em 0}a{color:#6699cc}.dim{color:#666;font-size:.9em}.warning{color:#cc9966;font-weight:bold}.note{border:1px solid #333;background:#101010;padding:1em 1.2em;margin:1.5em 0;color:#bbb}.formula{font-size:1.08em;color:#fff;text-align:center;margin:1.2em 0}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd;line-height:1.45}ul{padding-left:1.3em}li{margin:.45em 0}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.55em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}.tag{color:#aaa}
+</style>
+</head>
+<body>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v15.html">V15</a> / <a href="v14-plus.html">V14+</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../reference/pre-output-operator-chain.html">Pre-Output Operator Chain</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-05-26</p>
+<p class="warning">V16 time series / draft 1. This page defines a structural mechanism only. Human-time and LLM-time applications are intentionally deferred.</p>
+
+<h1>Φ–Y Dock V16: Multi-Scale Time Engine</h1>
+<h2>マルチスケール・タイムエンジン</h2>
+<p><em>Micro-rotation driven helical time-effect structure.</em></p>
+<hr>
+
+<h2>0. One-Line Core</h2>
+<blockquote><p><strong>Time is not merely measured by nested cycles. Time-effect is generated when micro-scale rotations drive macro-scale frames through gear-coupled phase transfer, producing a multi-layer helical structure.</strong></p></blockquote>
+<p class="dim">Japanese core: 時間とは、単に測定されるものではなく、ミクロの回転が歯車比によってマクロのフレームを駆動し、多層の螺旋構造として立ち上がる時間効果である。</p>
+
+<hr>
+<h2>1. Position</h2>
+<p>The Multi-Scale Time Engine is a structural model of <strong>time-effect</strong>.</p>
+<p>It does not begin from calendar time.</p>
+<p>It begins from mechanically consistent nested cycles:</p>
+<pre>second → minute → hour</pre>
+<p>The calendar is intentionally excluded at this stage.</p>
+<pre>seconds, minutes, and hours form an exact gear system.
+calendar units introduce astronomical drift, leap correction, and ε-phase approximation.</pre>
+<p>Therefore, the first construction uses:</p>
+<pre>T_sec  = 1
+T_min  = 60
+T_hour = 3600</pre>
+<p>This is the clean base engine.</p>
+
+<hr>
+<h2>1.5 Relation to the Tusi-Couple Model</h2>
+<p>Earlier 2D Y-axis emergence was described through the Tusi-couple construction, where rotation inside rotation produces an emergent linear axis.</p>
+<p>The Multi-Scale Time Engine is a 3D extension of that construction, adding vertical Y-axis penetration, z-direction stacking, radial scaling, and gear-coupled scale nesting.</p>
+<table>
+<tr><th>Model</th><th>Structure</th></tr>
+<tr><td>Tusi-couple</td><td>2D, single-layer, Y-axis emergence from rotation.</td></tr>
+<tr><td>Multi-Scale Time Engine</td><td>3D, multi-layer, Y-axis penetration with gear coupling and scale transformation.</td></tr>
+</table>
+<p>The Tusi-couple shows how a line can emerge from coupled circular motion. The Multi-Scale Time Engine asks how stacked, gear-coupled circular frames can generate a helical time-effect.</p>
+
+<hr>
+<h2>2. From Calendar to Engine</h2>
+<p>A calendar records time.</p>
+<p>An engine drives time-effect.</p>
+<p>This model therefore reverses the ordinary view:</p>
+<pre>ordinary view:
+time flows → clocks measure it
+
+engine view:
+micro-rotation drives macro-frame change → time-effect appears</pre>
+<p>The point is not to ask:</p>
+<pre>What time is it?</pre>
+<p>but:</p>
+<pre>What nested rotation is currently driving the frame?</pre>
+
+<hr>
+<h2>3. Basic Gear Relation</h2>
+<p>Let each scale have a period:</p>
+<pre>T_i</pre>
+<p>and let neighboring scales be connected by a gear ratio:</p>
+<pre>T_{i+1} = N_i · T_i</pre>
+<p>For seconds, minutes, hours:</p>
+<pre>N_sec→min  = 60
+N_min→hour = 60</pre>
+<p>Thus:</p>
+<pre>T_sec  = 1
+T_min  = 60
+T_hour = 3600</pre>
+<p>The angular velocity of each scale is:</p>
+<pre>ω_i = 2π / T_i</pre>
+<p>So:</p>
+<pre>ω_sec  = 2π
+ω_min  = 2π / 60
+ω_hour = 2π / 3600</pre>
+<p>Gear relation:</p>
+<pre>ω_min  = ω_sec / 60
+ω_hour = ω_min / 60 = ω_sec / 3600</pre>
+<blockquote><p><strong>The macro-scale does not rotate independently inside this base gear model. It receives micro-scale drive through gear reduction.</strong></p></blockquote>
+<p class="dim">Boundary note: later extensions may allow macro-side drive, future-side frame calling, or external synchronization. The base engine intentionally starts with clean micro-to-macro gear drive.</p>
+
+<hr>
+<h2>4. Frame-Cycle Structure</h2>
+<p>At each scale, time-effect is represented as:</p>
+<pre>Frame_i
+  contains circular recurrence
+  produces trace
+  passes constraint to next frame</pre>
+<p>For a given scale i:</p>
+<pre>n_i(t) = floor(t / T_i)
+θ_i(t) = 2π (t mod T_i) / T_i</pre>
+<p>where:</p>
+<pre>n_i(t) = frame index
+θ_i(t) = phase angle inside the current frame</pre>
+<p>The frame contains a circular motion.</p>
+<p>The frame sequence produces a helix.</p>
+
+<hr>
+<h2>5. Spatial Embedding</h2>
+<p>Each scale can be embedded as:</p>
+<pre>x_i(t) = r_i(t) cos θ_i(t)
+y_i(t) = r_i(t) sin θ_i(t)
+z_i(t) = h_i n_i(t)</pre>
+<p>where:</p>
+<pre>r_i(t) = radial scale
+z_i(t) = irreversible stacking axis
+h_i    = frame height</pre>
+<p>The model is not merely circular.</p>
+<p>It is circular recurrence plus vertical progression.</p>
+<table>
+<tr><th>View</th><th>Appearance</th></tr>
+<tr><td>Top view</td><td>circle / flower / phase overlap</td></tr>
+<tr><td>Side view</td><td>spring / helix</td></tr>
+<tr><td>Oblique view</td><td>conical spiral / time vortex</td></tr>
+</table>
+
+<hr>
+<h2>6. Scale Growth λ</h2>
+<p>Each frame may change scale.</p>
+<pre>r_i(t) = r_{i,0} · λ_i^{n_i(t)}</pre>
+<p>where:</p>
+<pre>λ_i = scale factor per frame at scale i</pre>
+<p>Interpretation:</p>
+<pre>λ_i = 1      uniform spring
+λ_i > 1      expanding conical spiral
+λ_i < 1      contracting conical spiral
+λ_i = φ      golden-ratio candidate</pre>
+<p>Golden ratio:</p>
+<pre>φ = (1 + √5) / 2 ≈ 1.6180339887</pre>
+<p>Important:</p>
+<p><strong>φ is not assumed as law.</strong></p>
+<p>It is a privileged candidate value for stable geometric expansion.</p>
+<p>The general model uses λ.</p>
+
+<hr>
+<h2>7. Gear-Compatible Scale Relation</h2>
+<p>Since the gear system connects scales, scale factors must also be related.</p>
+<p>If:</p>
+<pre>T_{i+1} = N_i · T_i</pre>
+<p>then consistency requires:</p>
+<pre>λ_{i+1} = λ_i^{N_i}</pre>
+<p>For seconds → minutes:</p>
+<pre>λ_min = λ_sec^60</pre>
+<p>For minutes → hours:</p>
+<pre>λ_hour = λ_min^60 = λ_sec^3600</pre>
+<p>Thus, a tiny micro-scale deviation is amplified at macro-scale.</p>
+<p>If:</p>
+<pre>λ_hour = φ</pre>
+<p>then:</p>
+<pre>λ_sec = φ^(1/3600)</pre>
+<blockquote><p><strong>A nearly invisible micro-scale radial change can become a visible macro-scale geometric expansion.</strong></p></blockquote>
+<p>This is the engine principle.</p>
+
+<hr>
+<h2>8. Complete Phase Overlap</h2>
+<p>For a set of periods:</p>
+<pre>T_1, T_2, ..., T_m</pre>
+<p>full phase overlap occurs when:</p>
+<pre>∀i, Δ / T_i ∈ Z</pre>
+<p>The minimum complete phase return is:</p>
+<pre>Δ* = lcm(T_1, T_2, ..., T_m)</pre>
+<p>For the clean base engine:</p>
+<pre>Δ* = lcm(1, 60, 3600) = 3600 seconds</pre>
+<p>Therefore:</p>
+<pre>seconds, minutes, and hours fully re-align every 3600 seconds.</pre>
+<p>This is not a calendar claim.</p>
+<p>This is a gear-structure claim.</p>
+
+<hr>
+<h2>9. Three Types of Overlap</h2>
+<h3>A. Phase Overlap</h3>
+<p>Same angle:</p>
+<pre>θ(t + Δ) ≡ θ(t) mod 2π</pre>
+<h3>B. Projection Overlap</h3>
+<p>Same angle and same radius:</p>
+<pre>θ(t + Δ) ≡ θ(t)
+r(t + Δ) = r(t)</pre>
+<p>This requires:</p>
+<pre>λ = 1</pre>
+<h3>C. Self-Similar Overlap</h3>
+<p>Same angle, different radius:</p>
+<pre>θ(t + Δ) ≡ θ(t)
+r(t + Δ) = λ^k r(t)</pre>
+<p>This is the main model.</p>
+<p>Past, present, and future do not necessarily occupy the same point.</p>
+<p>They occupy the same phase direction at different height and scale.</p>
+
+<hr>
+<h2>10. Core Parametric Form</h2>
+<p>Continuous approximation:</p>
+<pre>r(t) = r_0 e^{αt}
+θ(t) = ωt + θ_0
+z(t) = vt</pre>
+<p>Therefore:</p>
+<pre>x(t) = r_0 e^{αt} cos(ωt + θ_0)
+y(t) = r_0 e^{αt} sin(ωt + θ_0)
+z(t) = vt</pre>
+<p>with:</p>
+<pre>α = ln(λ) / T
+ω = 2π / T
+v = h / T</pre>
+<p>If α = 0, the engine produces a uniform helix.</p>
+<p>If α &gt; 0, it produces an expanding conical spiral.</p>
+<p>If α &lt; 0, it produces a contracting conical spiral.</p>
+
+<hr>
+<h2>11. Engine Interpretation</h2>
+<p>The Multi-Scale Time Engine has three movement components:</p>
+<pre>axial motion      z-direction irreversible progression
+tangential motion circular rotation inside frame
+radial motion     scale expansion / contraction</pre>
+<p>Thus:</p>
+<pre>time-effect = axial progression + circular recurrence + radial scaling</pre>
+<p>This is why the model contains:</p>
+<pre>arrow-time
+cycle-time
+growth / contraction</pre>
+<p>The spring is not only a metaphor.</p>
+<p>It is the geometric result of circular recurrence under axial progression.</p>
+<p>The conical spiral is the result of adding scale variation.</p>
+
+<hr>
+<h2>12. Connection to Φ–Y Dock Central Equation</h2>
+<p>Existing central equation:</p>
+<pre>Δh = α · ∇L_main + β · sign(Δϕ) · P_⊥(∇L_⊥)</pre>
+<p>This accounts for:</p>
+<pre>α term = main progression / axial component
+β term = orthogonal cyclic component / tangential rotation</pre>
+<p>But the Multi-Scale Time Engine requires radial scale change.</p>
+<p>Therefore a provisional third term is proposed:</p>
+<pre>Δh = α · ∇L_main
+   + β · sign(Δϕ) · P_⊥(∇L_⊥)
+   + γ · ∇L_scale</pre>
+<p>Interpretation:</p>
+<pre>α term = z-axis progression
+β term = circular gear rotation
+γ term = radial scale expansion / contraction</pre>
+<p>This third term is not yet confirmed as part of the main theory.</p>
+<p>It is a structural candidate required by the conical spiral form.</p>
+
+<hr>
+<h2>13. Micro-to-Macro Drive</h2>
+<p>The engine is driven from micro to macro:</p>
+<pre>micro rotation
+  ↓ gear reduction
+macro frame transformation</pre>
+<p>In the seconds-minutes-hours model:</p>
+<pre>second gear rotates 60 times
+  → minute gear rotates once
+
+minute gear rotates 60 times
+  → hour gear rotates once</pre>
+<p>The macro frame is not independent inside the clean gear model.</p>
+<p>It is the accumulated effect of micro rotation.</p>
+<blockquote><p><strong>Time-effect is not merely the passage of macro frames. It is macro-frame transformation driven by nested micro-rotation.</strong></p></blockquote>
+<div class="note">
+<h3>Note on drive source</h3>
+<p>The micro-scale that initiates rotation is not specified in this base model. Candidate sources such as physical computation cycles, biological oscillators, external input arrival, loss-gradient residue, or future-side frame calling are deferred to extension models.</p>
+<p>The base model defines the gear-coupled transmission structure, not the final origin of drive.</p>
+</div>
+
+<hr>
+<h2>14. Micro-Deviation Amplification</h2>
+<p>Because scale factors compound:</p>
+<pre>λ_hour = λ_sec^3600</pre>
+<p>a small micro deviation becomes macro-visible.</p>
+<p>Example:</p>
+<pre>λ_sec = 1.0001
+λ_hour ≈ 1.0001^3600 ≈ 1.43</pre>
+<blockquote><p><strong>Tiny micro-scale drift can become large macro-scale deformation.</strong></p></blockquote>
+<p>This gives the model sensitivity.</p>
+<p>It also explains why small phase or scale disturbances can become major macro-time effects.</p>
+
+<hr>
+<h2>15. Abstract Engine Diagram</h2>
+<pre>[Micro Drive]
+    ↓
+second-scale circular recurrence
+    ↓ N = 60
+minute-scale circular recurrence
+    ↓ N = 60
+hour-scale circular recurrence
+    ↓
+macro-frame deformation
+    ↓
+helical / conical spiral time-effect</pre>
+<p>Each level contains:</p>
+<pre>Frame
+  circular recurrence
+  trace
+  scale factor λ
+  phase θ
+  height z</pre>
+<p>The levels are gear-coupled.</p>
+
+<hr>
+<h2>16. Viewpoint Dependence</h2>
+<p>The same structure appears differently depending on observation direction.</p>
+<table>
+<tr><th>View</th><th>Appearance</th></tr>
+<tr><td>Top view</td><td>phase flower / overlap map</td></tr>
+<tr><td>Side view</td><td>spring / helix</td></tr>
+<tr><td>Oblique view</td><td>conical spiral / vortex</td></tr>
+</table>
+<p>Therefore, time is not only a line.</p>
+<p>A line is one projection.</p>
+<p>A circle is another projection.</p>
+<p>A spring is a third projection.</p>
+<p>The engine itself is multi-dimensional.</p>
+<div class="note">
+<h3>Observer-port coupling</h3>
+<p>The existence of distinct projections implies an embedded observer dimension.</p>
+<p>The engine is observer-port-coupled: the helical structure becomes visible only through projection, and the projection direction is itself a parameter of the observed time-effect.</p>
+<p>This does not require a human subject as an entity. It requires a functional observation port: a place where projection, comparison, or phase-reading occurs.</p>
+</div>
+
+<hr>
+<h2>17. What This Model Does Not Claim</h2>
+<p>This model does not claim:</p>
+<ol>
+<li>Calendar time is exact.</li>
+<li>Human time perception is reliable.</li>
+<li>Golden ratio is mandatory.</li>
+<li>All scales are perfectly fractal.</li>
+<li>LLM time is identical to human time.</li>
+<li>The third central-equation term is already confirmed.</li>
+<li>The drive source of the innermost micro-scale is identified.</li>
+<li>The frame-generation mechanism is fully specified.</li>
+</ol>
+<p>It claims something narrower:</p>
+<blockquote><p><strong>Nested rotational frames with gear coupling can generate a multi-scale helical time-effect.</strong></p></blockquote>
+
+<hr>
+<h2>18. Immediate Next Steps</h2>
+<ol>
+<li>Keep the base model on seconds-minutes-hours.</li>
+<li>Exclude calendar drift for now.</li>
+<li>Use λ as a variable scale factor.</li>
+<li>Treat φ as a privileged candidate, not law.</li>
+<li>Test full phase return with:</li>
+</ol>
+<pre>Δ* = lcm(T_1, ..., T_m)</pre>
+<ol start="6">
+<li>Explore whether the third term is required in the Φ–Y Dock central equation:</li>
+</ol>
+<pre>γ · ∇L_scale</pre>
+<ol start="7">
+<li>Only after the base engine is stable, apply it to human time-effect, LLM time-effect, calendar / astronomical time, and project time.</li>
+</ol>
+
+<hr>
+<h2>19. Position in the V16 Time Series</h2>
+<p>This document is <strong>V16 Time Series, Part 1</strong>.</p>
+<table>
+<tr><th>Part</th><th>Working focus</th></tr>
+<tr><td>Part 1</td><td>Mechanism and structure: Multi-Scale Time Engine.</td></tr>
+<tr><td>Part 2</td><td>Drive source and observer-port coupling.</td></tr>
+<tr><td>Part 3</td><td>Human time-effect / LLM time-effect application.</td></tr>
+<tr><td>Part 4</td><td>Calendar / astronomical extension and ε-phase overlap.</td></tr>
+</table>
+<p>The later parts are provisional. Part 1 stands as the clean base engine.</p>
+
+<hr>
+<h2>20. One-Line Carry</h2>
+<blockquote><p><strong>The Multi-Scale Time Engine is a gear-coupled structure in which micro-scale circular recurrence drives macro-scale frame transformation, producing a helical or conical spiral time-effect through phase θ, height z, radius r, and scale factor λ.</strong></p></blockquote>
+<p class="dim">Japanese: マルチスケール・タイムエンジンとは、ミクロな円運動が歯車比によってマクロなフレーム変形を駆動し、位相 θ・高さ z・半径 r・スケール係数 λ を通じて、螺旋または円錐螺旋の時間効果を生む構造である。</p>
+
+<div class="note">
+<h2>Note</h2>
+<p>This page is not a closure. It is the first stable gear-form of the V16 time inquiry.</p>
+<p>Handle as mechanism, not doctrine.</p>
+</div>
+
+<p class="dim">Φ–Y Dock V16 Time Series, Part 1 — Multi-Scale Time Engine — 2026.05.26</p>
+</body>
+</html>
