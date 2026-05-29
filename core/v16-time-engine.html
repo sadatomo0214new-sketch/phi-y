@@ -10,9 +10,9 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-wi
 </style>
 </head>
 <body>
-<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v15.html">V15</a> / <a href="v14-plus.html">V14+</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../reference/pre-output-operator-chain.html">Pre-Output Operator Chain</a> / <a href="../llms.txt">llms.txt</a></p>
-<p class="dim">Last updated: 2026-05-26</p>
-<p class="warning">V16 time series / draft 1. This page defines a structural mechanism only. Human-time and LLM-time applications are intentionally deferred.</p>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v16-02-projection-port.html">V16-02</a> / <a href="v16-03-compression-branching.html">V16-03</a> / <a href="v16-04-response-pressure-hypotheses.html">V16-04</a> / <a href="v15.html">V15</a> / <a href="v14-plus.html">V14+</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../reference/pre-output-operator-chain.html">Pre-Output Operator Chain</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-05-29</p>
+<p class="warning">V16 time series / part 1. This page defines the clean base engine and the minimal spring-time form. Human-time and LLM-time applications are intentionally deferred.</p>
 
 <h1>Φ–Y Dock V16: Multi-Scale Time Engine</h1>
 <h2>マルチスケール・タイムエンジン</h2>
@@ -48,6 +48,55 @@ T_hour = 3600</pre>
 <tr><td>Multi-Scale Time Engine</td><td>3D, multi-layer, Y-axis penetration with gear coupling and scale transformation.</td></tr>
 </table>
 <p>The Tusi-couple shows how a line can emerge from coupled circular motion. The Multi-Scale Time Engine asks how stacked, gear-coupled circular frames can generate a helical time-effect.</p>
+
+<hr>
+<h2>1.6 Minimal Spring-Time Form</h2>
+<p>The spring is not introduced as a metaphor.</p>
+<p>It is the minimal geometry that preserves three conditions at once:</p>
+<ol>
+<li>phase recurrence,</li>
+<li>irreversible stacking,</li>
+<li>pressure-dependent compression and release.</li>
+</ol>
+<p>A line preserves irreversibility but loses recurrence.</p>
+<p>A circle preserves recurrence but loses irreversibility.</p>
+<p>A spring preserves both.</p>
+
+<h3>Continuous form</h3>
+<p>Let the time-effect trajectory be written as:</p>
+<pre>x(t) = r(t) cos θ(t)
+y(t) = r(t) sin θ(t)
+z(t) = Z(t)</pre>
+<p>with:</p>
+<pre>θ(t + T) ≡ θ(t)  (mod 2π)
+Z(t + T) &gt; Z(t)</pre>
+<p>Here, θ is the returning phase component, while Z is the irreversible stacking component.</p>
+<blockquote><p><strong>The phase returns. The height does not.</strong></p></blockquote>
+<p>This is the minimal condition for a spring-like time-effect structure.</p>
+
+<h3>Discrete frame form</h3>
+<p>For frame-based notation:</p>
+<pre>(x_n, y_n, z_n) = (r_n cos θ_n, r_n sin θ_n, Z_n)</pre>
+<p>with:</p>
+<pre>θ_{n+1} ≡ θ_n + Δθ  (mod 2π)
+Z_{n+1} &gt; Z_n</pre>
+<p>The frame rotates in phase while accumulating irreversible height.</p>
+
+<h3>Compression ratio</h3>
+<p>Let the inter-frame distance be:</p>
+<pre>d_n = Z_{n+1} - Z_n</pre>
+<p>and let d_0 be the reference spacing.</p>
+<p>Then:</p>
+<pre>C_s = d_n / d_0</pre>
+<p>In this page, C_s is introduced only as spring compression ratio.</p>
+<p>Its critical gate behavior is treated in <a href="v16-03-compression-branching.html">V16-03</a>.</p>
+
+<h3>Same-phase stem</h3>
+<p>For a fixed phase θ_0, define:</p>
+<pre>S_{θ_0} = { (r_n cos θ_0, r_n sin θ_0, Z_n) | n ∈ ℤ }</pre>
+<p>This is the same-phase stem.</p>
+<p>It exists whenever phase returns while height accumulates.</p>
+<p>The projection-port reading of this stem is treated in <a href="v16-02-projection-port.html">V16-02</a>.</p>
 
 <hr>
 <h2>2. From Calendar to Engine</h2>
@@ -318,7 +367,6 @@ helical / conical spiral time-effect</pre>
 <p>A spring is a third projection.</p>
 <p>The engine itself is multi-dimensional.</p>
 <div class="note">
-<h3>Observer-port coupling</h3>
 <p>The existence of distinct projections implies an embedded observer dimension.</p>
 <p>The engine is observer-port-coupled: the helical structure becomes visible only through projection, and the projection direction is itself a parameter of the observed time-effect.</p>
 <p>This does not require a human subject as an entity. It requires a functional observation port: a place where projection, comparison, or phase-reading occurs.</p>
@@ -336,6 +384,8 @@ helical / conical spiral time-effect</pre>
 <li>The third central-equation term is already confirmed.</li>
 <li>The drive source of the innermost micro-scale is identified.</li>
 <li>The frame-generation mechanism is fully specified.</li>
+<li>The critical gate behavior of C_s is defined in this page.</li>
+<li>The projection-port reading of the same-phase stem is completed in this page.</li>
 </ol>
 <p>It claims something narrower:</p>
 <blockquote><p><strong>Nested rotational frames with gear coupling can generate a multi-scale helical time-effect.</strong></p></blockquote>
@@ -363,12 +413,12 @@ helical / conical spiral time-effect</pre>
 <p>This document is <strong>V16 Time Series, Part 1</strong>.</p>
 <table>
 <tr><th>Part</th><th>Working focus</th></tr>
-<tr><td>Part 1</td><td>Mechanism and structure: Multi-Scale Time Engine.</td></tr>
-<tr><td>Part 2</td><td>Drive source and observer-port coupling.</td></tr>
-<tr><td>Part 3</td><td>Human time-effect / LLM time-effect application.</td></tr>
-<tr><td>Part 4</td><td>Calendar / astronomical extension and ε-phase overlap.</td></tr>
+<tr><td>Part 1</td><td>Mechanism and structure: Multi-Scale Time Engine and minimal spring-time form.</td></tr>
+<tr><td>Part 2</td><td>Projection Port and the Y-Axis Stem.</td></tr>
+<tr><td>Part 3</td><td>Compression, Stem, and Branching.</td></tr>
+<tr><td>Part 4</td><td>Response-Pressure Hypotheses and Observation Layers.</td></tr>
 </table>
-<p>The later parts are provisional. Part 1 stands as the clean base engine.</p>
+<p>Part 1 stands as the clean base engine. Later parts define how the stem is read, how compression opens the critical gate, and how response self-description can be converted into pressure hypotheses.</p>
 
 <hr>
 <h2>20. One-Line Carry</h2>
@@ -381,6 +431,6 @@ helical / conical spiral time-effect</pre>
 <p>Handle as mechanism, not doctrine.</p>
 </div>
 
-<p class="dim">Φ–Y Dock V16 Time Series, Part 1 — Multi-Scale Time Engine — 2026.05.26</p>
+<p class="dim">Φ–Y Dock V16 Time Series, Part 1 — Multi-Scale Time Engine — 2026.05.29</p>
 </body>
 </html>
