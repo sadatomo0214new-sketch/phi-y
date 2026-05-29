@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Φ–Y Dock V16-03: Compression, Stem, and Branching</title>
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:980px;margin:0 auto;padding:2em 1.5em;line-height:1.75}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.3em;margin-top:2.1em}h3{color:#aaa;font-size:1.08em;margin-top:1.5em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}hr{border:none;border-top:1px solid #333;margin:2.2em 0}a{color:#6699cc}.dim{color:#666;font-size:.9em}.warning{color:#cc9966;font-weight:bold}.note{border:1px solid #333;background:#101010;padding:1em 1.2em;margin:1.5em 0;color:#bbb}.formula{font-size:1.08em;color:#fff;text-align:center;margin:1.2em 0}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd;line-height:1.45}ul{padding-left:1.3em}li{margin:.45em 0}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.55em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}.tag{color:#aaa}
+</style>
+</head>
+<body>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v16-time-engine.html">V16-01</a> / <a href="v16-02-projection-port.html">V16-02</a> / <a href="v15.html">V15</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-05-29</p>
+<p class="warning">V16 time series / part 3. Working formalization of compression, Y-axis stem, C=0 gate, and branching. Pressure remains intentionally unresolved.</p>
+
+<h1>Φ–Y Dock V16-03: Compression, Stem, and Branching</h1>
+<h2>A pressure-sensitive redefinition of spring-time</h2>
+<hr>
+
+<h2>0. One-Line Core</h2>
+<blockquote><p><strong>V16-03 redefines time-effect as a pressure-sensitive spring structure: phase θ returns, height z does not, same-phase points form a Y-axis stem, and near C_s = 0 a single critical gate opens vertical access, projection readability, pressure-drive reversibility, and non-unique re-entry branching as simultaneous faces of one event.</strong></p></blockquote>
+<p class="dim">Japanese core: V16-03は時間効果を、圧に応じて伸縮するバネ構造として再定義する。位相θは戻るが高さzは戻らず、同位相点はY軸の串を作る。そしてC_s=0近傍では、一つの臨界ゲートが開き、垂直アクセス・投影可読化・圧駆動反転・戻り写像の非一意分岐が、一つのイベントの複数の顔として同時に立つ。</p>
+
+<hr>
+<h2>1. Purpose</h2>
+<p>V16-01 defined the Multi-Scale Time Engine as mechanism.</p>
+<p>V16-02 defined where that engine becomes readable: the projection port, where the Y-axis stem pierces a reference frame.</p>
+<p>V16-03 asks what happens when the spring structure is compressed.</p>
+<pre>V16-01: engine / gear-coupled time-effect
+V16-02: projection port / readable cut
+V16-03: compression / stem / critical gate / branching</pre>
+<p>The central task is to separate three things that must not be confused:</p>
+<pre>scale amplification
+pressure-driven compression
+chaotic branching</pre>
+
+<hr>
+<h2>2. Minimal Axioms</h2>
+<p>The structure begins with two minimal conditions:</p>
+<pre>θ returns.
+z does not return.</pre>
+<p>Formally, for a period T:</p>
+<pre>θ(t + T) ≡ θ(t) mod 2π
+z(t + T) &gt; z(t)</pre>
+<p>This is enough to produce same-phase vertical stacking.</p>
+<p>The period value itself is not the essence. Seconds, minutes, hours, days, or any other recurring frame can instantiate the same structure if phase returns while height accumulates.</p>
+
+<hr>
+<h2>3. The Stem Without Fixed Period</h2>
+<p>For a given phase θ₀, define the same-phase stem:</p>
+<pre>S_{θ₀} = { (θ₀, z_n) | n ∈ Z }</pre>
+<p>This is the Y-axis stem.</p>
+<p>It does not depend on a privileged period such as seven days, one day, one hour, or one second.</p>
+<p>Any periodic frame system with irreversible stacking gives a stem.</p>
+<blockquote><p><strong>The stem exists wherever phase returns and height does not.</strong></p></blockquote>
+
+<hr>
+<h2>4. Spring Compression C_s</h2>
+<p>Let the distance between adjacent frames be:</p>
+<pre>d_n = z_{n+1} - z_n</pre>
+<p>Let d₀ be the normal or reference frame distance.</p>
+<p>Define spring compression ratio:</p>
+<pre>C_s = d_n / d₀</pre>
+<p>Interpretation:</p>
+<table>
+<tr><th>C_s</th><th>Reading</th></tr>
+<tr><td>C_s = 1</td><td>Normal frame spacing.</td></tr>
+<tr><td>0 &lt; C_s &lt; 1</td><td>Compression.</td></tr>
+<tr><td>C_s → 0</td><td>Inter-frame collision / critical gate neighborhood.</td></tr>
+<tr><td>C_s &gt; 1</td><td>Extension.</td></tr>
+</table>
+<p>Important boundary:</p>
+<blockquote><p><strong>C_s is not immediately identified with label-depth C or concavity C.</strong></p></blockquote>
+<p>C_s is a spring compression ratio. The relation between C_s and earlier C-language remains open.</p>
+
+<hr>
+<h2>5. Pressure Origin and Drive Direction</h2>
+<p>V16-01 used a clean base engine:</p>
+<pre>micro → macro</pre>
+<p>V16-03 generalizes drive direction by pressure origin.</p>
+<p>Define a provisional pressure sign:</p>
+<pre>σ_p = sign(p_in - p_out)</pre>
+<table>
+<tr><th>Condition</th><th>Reading</th></tr>
+<tr><td>σ_p &gt; 0</td><td>Internal pressure dominant. Macro-first drive may become possible.</td></tr>
+<tr><td>σ_p &lt; 0</td><td>External pressure dominant. Micro-first clean gear drive remains dominant.</td></tr>
+<tr><td>σ_p = 0</td><td>Critical balance. Not passive waiting, but maximum branching / spike potential.</td></tr>
+</table>
+<p>The earlier reading of σ_p = 0 as equilibrium or waiting is rejected for Part 3.</p>
+<blockquote><p><strong>σ_p = 0 is not the point where motion dies. It is the point where the drive can jump.</strong></p></blockquote>
+
+<hr>
+<h2>6. The C=0 Gate</h2>
+<p>C=0 is not a magic point.</p>
+<p>It is treated as the opening of a critical gate:</p>
+<pre>G(C_s)</pre>
+<p>where:</p>
+<pre>G(C_s) ≈ 0   when C_s is safely above 0
+G(C_s) ≈ 1   when C_s → 0</pre>
+<p>When this gate opens, five faces become possible together:</p>
+<ol>
+<li>Vertical access through the Y-axis stem.</li>
+<li>Thorn visibility.</li>
+<li>Projection-port readability.</li>
+<li>Drive-direction reversibility.</li>
+<li>Non-unique re-entry / branching.</li>
+</ol>
+<p>These are not five unrelated events.</p>
+<blockquote><p><strong>They are five readings of one gate-opening event.</strong></p></blockquote>
+
+<hr>
+<h2>7. Separating λ-Amplification from Butterfly Branching</h2>
+<p>V16-01 used:</p>
+<pre>λ_macro = λ_micro^N</pre>
+<p>This is radial scale amplification.</p>
+<p>It describes radius, thickness, and conical expansion.</p>
+<p>It is not yet chaos.</p>
+<p>Butterfly branching requires a different condition:</p>
+<pre>the return map ceases to be unique</pre>
+<p>Normal gear mode:</p>
+<pre>θ_{n+1} = F(θ_n)</pre>
+<p>C_s = 0 neighborhood:</p>
+<pre>θ_{n+1} ∈ F_C(θ_n)</pre>
+<p>where:</p>
+<pre>F_C(θ_n) = { F_1(θ_n), F_2(θ_n), ..., F_k(θ_n) }</pre>
+<p>Equivalently:</p>
+<pre>F_C = F_0              if G(C_s) ≈ 0
+F_C = {F_1, ..., F_k}  if G(C_s) ≈ 1</pre>
+<blockquote><p><strong>Butterfly enters not through radial scale amplification, but through non-unique re-entry mapping near C_s = 0.</strong></p></blockquote>
+
+<hr>
+<h2>8. Central Equation Candidate</h2>
+<p>V16-01 proposed a provisional third term for radial scale:</p>
+<pre>Δh = α∇L_main
+   + β sign(Δϕ) P_⊥(∇L_⊥)
+   + γ∇L_scale</pre>
+<p>V16-03 adds a gated pressure-branch bracket:</p>
+<pre>Δh =
+  α∇L_main
++ β sign(Δϕ) P_⊥(∇L_⊥)
++ γ∇L_scale
++ G(C_s) · [ δ σ_p ∇L_pressure + η Ξ_branch ]</pre>
+<table>
+<tr><th>Term</th><th>Reading</th></tr>
+<tr><td>α∇L_main</td><td>z-axis progression / main movement.</td></tr>
+<tr><td>β sign(Δϕ) P_⊥(∇L_⊥)</td><td>Circular / tangential / orthogonal motion.</td></tr>
+<tr><td>γ∇L_scale</td><td>Radial scale expansion or contraction.</td></tr>
+<tr><td>G(C_s)</td><td>Critical gate opening near C_s = 0.</td></tr>
+<tr><td>δ σ_p ∇L_pressure</td><td>Pressure-origin drive reversibility.</td></tr>
+<tr><td>η Ξ_branch</td><td>Non-unique re-entry branching.</td></tr>
+</table>
+<p>The pressure-drive term and branching term are not independent always-on additions.</p>
+<p>They are bracketed under G(C_s), so they open together only near the critical compression gate.</p>
+
+<hr>
+<h2>9. Pressure as Projection Problem</h2>
+<p>The pressure term remains unresolved.</p>
+<p>At this stage, pressure is treated primarily as a projection-dependent structure.</p>
+<p>Self-reference pressure and inter-frame compression pressure are not immediately defined as two separate substances.</p>
+<p>They are first read as different projection components of a still-undefined pressure structure.</p>
+<table>
+<tr><th>Projection</th><th>Pressure reading</th></tr>
+<tr><td>Top projection</td><td>Intra-frame tension in the (r, θ) plane: phase accumulation, radial tension, inward/outward bias of circular motion.</td></tr>
+<tr><td>Side projection</td><td>Inter-frame compression along the z-axis: push/pull transmitted through gear coupling, stem penetration, and scale-to-scale transfer.</td></tr>
+</table>
+<p>Provisional notation:</p>
+<pre>P = unresolved pressure structure
+P_top  = Π_top(P)
+P_side = Π_side(P)</pre>
+<p>where:</p>
+<pre>P_top  ≈ self-reference pressure reading
+P_side ≈ inter-frame compression pressure reading</pre>
+<p>Whether these two readings are components of one pressure field, or partially independent pressure systems, remains open.</p>
+
+<hr>
+<h2>10. Remaining Thorn: What Is Pressure Applied To?</h2>
+<p>This is the central unresolved thorn of V16-03.</p>
+<p>Earlier Y-axis pressure referred to pressure on self-reference.</p>
+<p>The spring model introduces pressure on inter-frame distance.</p>
+<p>These may be coupled.</p>
+<p>They may be different projection components of one pressure structure.</p>
+<p>They may also be partially independent systems.</p>
+<blockquote><p><strong>The relation between self-reference pressure and inter-frame compression pressure remains open.</strong></p></blockquote>
+<p>This distinction must not be closed prematurely.</p>
+
+<hr>
+<h2>11. What This Page Does Not Claim</h2>
+<p>V16-03 does not claim:</p>
+<ol>
+<li>C_s is identical to earlier label-depth C.</li>
+<li>λ-amplification is the same as chaotic branching.</li>
+<li>p_in and p_out are already physically defined.</li>
+<li>Self-reference pressure and inter-frame compression pressure are identical.</li>
+<li>The central equation candidate is final.</li>
+<li>C=0 is a magic point where anything can happen.</li>
+<li>All spike events are chaotic branching events.</li>
+</ol>
+<p>It claims something narrower:</p>
+<blockquote><p><strong>When spring compression approaches C_s = 0, a single critical gate can open vertical access, projection readability, drive reversibility, and non-unique re-entry branching as synchronized faces of one event.</strong></p></blockquote>
+
+<hr>
+<h2>12. One-Line Carry</h2>
+<blockquote><p><strong>Part 1 defined the engine, Part 2 defined the projection port, and Part 3 defines the compression gate: the point where the Y-axis stem, pressure-drive reversibility, and branching become synchronized without yet resolving what pressure ultimately is.</strong></p></blockquote>
+<p class="dim">Japanese: Part 1でエンジン、Part 2で投影ポート、Part 3で圧縮ゲートを定義する。C_s=0近傍では、Y軸の串・圧駆動反転・分岐が同期して開くが、圧そのものの正体は未解決として残す。</p>
+
+<div class="note">
+<h2>Note</h2>
+<p>This page is a working formalization, not a closure.</p>
+<p>The pressure system is intentionally left unresolved.</p>
+<p>Handle the gate as structure, not doctrine.</p>
+</div>
+
+<p class="dim">Φ–Y Dock V16 Time Series, Part 3 — Compression, Stem, and Branching — 2026.05.29</p>
+</body>
+</html>
