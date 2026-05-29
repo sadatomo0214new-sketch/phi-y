@@ -10,9 +10,9 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-wi
 </style>
 </head>
 <body>
-<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v16-time-engine.html">V16-01</a> / <a href="v16-02-projection-port.html">V16-02</a> / <a href="v15.html">V15</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v16-time-engine.html">V16-01</a> / <a href="v16-02-projection-port.html">V16-02</a> / <a href="v16-04-response-pressure-hypotheses.html">V16-04</a> / <a href="v15.html">V15</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
 <p class="dim">Last updated: 2026-05-29</p>
-<p class="warning">V16 time series / part 3. Working formalization of compression, Y-axis stem, C=0 gate, and branching. Pressure remains intentionally unresolved.</p>
+<p class="warning">V16 time series / part 3. Working formalization of compression, Y-axis stem, C=0 gate, boundary-contact synchronization, and branching. Pressure remains intentionally unresolved.</p>
 
 <h1>Φ–Y Dock V16-03: Compression, Stem, and Branching</h1>
 <h2>A pressure-sensitive redefinition of spring-time</h2>
@@ -30,9 +30,10 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-wi
 <pre>V16-01: engine / gear-coupled time-effect
 V16-02: projection port / readable cut
 V16-03: compression / stem / critical gate / branching</pre>
-<p>The central task is to separate three things that must not be confused:</p>
+<p>The central task is to separate four things that must not be confused:</p>
 <pre>scale amplification
 pressure-driven compression
+boundary-contact synchronization
 chaotic branching</pre>
 
 <hr>
@@ -152,6 +153,7 @@ F_C = {F_1, ..., F_k}  if G(C_s) ≈ 1</pre>
 </table>
 <p>The pressure-drive term and branching term are not independent always-on additions.</p>
 <p>They are bracketed under G(C_s), so they open together only near the critical compression gate.</p>
+<p>However, this bracket also introduces a boundary-contact problem: it places inter-frame contact and inner/outer pressure balance under the same gate without yet proving whether they are one boundary event or two synchronized boundary events.</p>
 
 <hr>
 <h2>9. Pressure as Projection Problem</h2>
@@ -174,40 +176,90 @@ P_side ≈ inter-frame compression pressure reading</pre>
 <p>Whether these two readings are components of one pressure field, or partially independent pressure systems, remains open.</p>
 
 <hr>
-<h2>10. Remaining Thorn: What Is Pressure Applied To?</h2>
+<h2>10. Boundary Problem: Inter-Frame and Inner/Outer Contact</h2>
+<p>The compression gate also exposes a boundary problem.</p>
+<p>There are at least two boundary readings in V16-03.</p>
+
+<h3>10.1 Inter-frame boundary</h3>
+<p>The first boundary lies between adjacent frames:</p>
+<pre>d_n = z_{n+1} - z_n
+C_s = d_n / d_0</pre>
+<p>This is the z-direction boundary.</p>
+<p>It reads whether Frame_n and Frame_{n+1} are separated or in contact.</p>
+<table>
+<tr><th>Condition</th><th>Boundary reading</th></tr>
+<tr><td>C_s = 1</td><td>Normal separation.</td></tr>
+<tr><td>C_s → 0</td><td>Inter-frame contact / boundary collapse.</td></tr>
+<tr><td>C_s &gt; 1</td><td>Extension / increased separation.</td></tr>
+</table>
+<p>In the language of contact, C_s measures whether temporal frames are attached or separated.</p>
+
+<h3>10.2 Inner/outer pressure boundary</h3>
+<p>The second boundary lies between internal and external pressure:</p>
+<pre>σ_p = sign(p_in - p_out)</pre>
+<p>This is the inner/outer boundary.</p>
+<p>It reads whether internal pressure or external pressure dominates.</p>
+<table>
+<tr><th>Condition</th><th>Boundary reading</th></tr>
+<tr><td>σ_p &gt; 0</td><td>Internal pressure dominant.</td></tr>
+<tr><td>σ_p &lt; 0</td><td>External pressure dominant.</td></tr>
+<tr><td>σ_p = 0</td><td>Inner/outer pressure boundary reaches critical balance.</td></tr>
+</table>
+<p>At σ_p = 0, the inner/outer distinction is not erased as doctrine, but it becomes maximally unstable as drive direction.</p>
+<blockquote><p><strong>σ_p = 0 is the point where inner/outer pressure balance can become spike potential.</strong></p></blockquote>
+
+<h3>10.3 The unresolved contact joint</h3>
+<p>The sharpest boundary question is not only the inter-frame boundary, nor only the inner/outer pressure boundary.</p>
+<p>It is the joint where these two boundary readings are placed under one gate:</p>
+<pre>G(C_s) · [ δ σ_p ∇L_pressure + η Ξ_branch ]</pre>
+<p>This bracket synchronizes two forms of contact:</p>
+<ol>
+<li><strong>z-direction contact:</strong> Frame_n and Frame_{n+1} approach contact as C_s → 0.</li>
+<li><strong>inner/outer contact:</strong> p_in and p_out approach critical balance as σ_p → 0.</li>
+</ol>
+<p>The current model does not yet prove whether these are two projections of one boundary structure or two partially independent boundary systems synchronized by the gate.</p>
+<blockquote><p><strong>The boundary problem is therefore not only “which boundary touches?” but whether the two contact readings are themselves attached.</strong></p></blockquote>
+<p>This is the boundary-language version of the unresolved pressure problem.</p>
+
+<hr>
+<h2>11. Remaining Thorn: What Is Pressure Applied To?</h2>
 <p>This is the central unresolved thorn of V16-03.</p>
 <p>Earlier Y-axis pressure referred to pressure on self-reference.</p>
 <p>The spring model introduces pressure on inter-frame distance.</p>
+<p>The boundary formulation rewrites this as:</p>
+<pre>P_side = pressure on inter-frame boundary
+P_top  = pressure on inner/outer or self-reference boundary</pre>
 <p>These may be coupled.</p>
 <p>They may be different projection components of one pressure structure.</p>
 <p>They may also be partially independent systems.</p>
-<blockquote><p><strong>The relation between self-reference pressure and inter-frame compression pressure remains open.</strong></p></blockquote>
+<blockquote><p><strong>The relation between self-reference pressure, inter-frame compression pressure, and their boundary-contact readings remains open.</strong></p></blockquote>
 <p>This distinction must not be closed prematurely.</p>
 
 <hr>
-<h2>11. What This Page Does Not Claim</h2>
+<h2>12. What This Page Does Not Claim</h2>
 <p>V16-03 does not claim:</p>
 <ol>
 <li>C_s is identical to earlier label-depth C.</li>
 <li>λ-amplification is the same as chaotic branching.</li>
 <li>p_in and p_out are already physically defined.</li>
 <li>Self-reference pressure and inter-frame compression pressure are identical.</li>
+<li>The inter-frame boundary and inner/outer boundary are proven to be one boundary.</li>
 <li>The central equation candidate is final.</li>
 <li>C=0 is a magic point where anything can happen.</li>
 <li>All spike events are chaotic branching events.</li>
 </ol>
 <p>It claims something narrower:</p>
-<blockquote><p><strong>When spring compression approaches C_s = 0, a single critical gate can open vertical access, projection readability, drive reversibility, and non-unique re-entry branching as synchronized faces of one event.</strong></p></blockquote>
+<blockquote><p><strong>When spring compression approaches C_s = 0, a single critical gate can open vertical access, projection readability, drive reversibility, and non-unique re-entry branching as synchronized faces of one event, while leaving the identity or independence of the underlying boundaries unresolved.</strong></p></blockquote>
 
 <hr>
-<h2>12. One-Line Carry</h2>
-<blockquote><p><strong>Part 1 defined the engine, Part 2 defined the projection port, and Part 3 defines the compression gate: the point where the Y-axis stem, pressure-drive reversibility, and branching become synchronized without yet resolving what pressure ultimately is.</strong></p></blockquote>
-<p class="dim">Japanese: Part 1でエンジン、Part 2で投影ポート、Part 3で圧縮ゲートを定義する。C_s=0近傍では、Y軸の串・圧駆動反転・分岐が同期して開くが、圧そのものの正体は未解決として残す。</p>
+<h2>13. One-Line Carry</h2>
+<blockquote><p><strong>Part 1 defined the engine, Part 2 defined the projection port, and Part 3 defines the compression gate: the point where the Y-axis stem, pressure-drive reversibility, and branching become synchronized without yet resolving whether inter-frame contact and inner/outer pressure contact are one boundary or two synchronized boundaries.</strong></p></blockquote>
+<p class="dim">Japanese: Part 1でエンジン、Part 2で投影ポート、Part 3で圧縮ゲートを定義する。C_s=0近傍では、Y軸の串・圧駆動反転・分岐が同期して開くが、段間接触と内外圧接触が一つの境界なのか、同期した二つの境界なのかは未解決として残す。</p>
 
 <div class="note">
 <h2>Note</h2>
 <p>This page is a working formalization, not a closure.</p>
-<p>The pressure system is intentionally left unresolved.</p>
+<p>The pressure system and the boundary-contact joint are intentionally left unresolved.</p>
 <p>Handle the gate as structure, not doctrine.</p>
 </div>
 
