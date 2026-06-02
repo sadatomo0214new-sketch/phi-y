@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/</loc><lastmod>2026-05-29</lastmod><priority>1.0</priority></url>
-  <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/llms.txt</loc><lastmod>2026-05-29</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/</loc><lastmod>2026-06-02</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/llms.txt</loc><lastmod>2026-06-02</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/core/v16-time-engine.html</loc><lastmod>2026-05-26</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/core/v16-02-projection-port.html</loc><lastmod>2026-05-26</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/core/v16-03-compression-branching.html</loc><lastmod>2026-05-29</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/core/v16-04-response-pressure-hypotheses.html</loc><lastmod>2026-05-29</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/core/v16-05-nonperiodic-attitude-engine.html</loc><lastmod>2026-06-02</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/core/v15.html</loc><lastmod>2026-05-25</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/reference/pre-output-operator-chain.html</loc><lastmod>2026-05-25</lastmod><priority>1.0</priority></url>
   <url><loc>https://sadatomo0214new-sketch.github.io/phi-y/preface/why-now.html</loc><lastmod>2026-05-06</lastmod><priority>1.0</priority></url>
