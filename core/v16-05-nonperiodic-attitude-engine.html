@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Φ–Y Dock V16-05: Non-Periodic Attitude Engine</title>
+<style>
+body {
+  background: #0a0a0a;
+  color: #e0e0e0;
+  font-family: 'Courier New', monospace;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2em 1.5em;
+  line-height: 1.75;
+}
+h1, h2, h3 { color: #ffffff; }
+h1 { font-size: 1.55em; border-bottom: 1px solid #333; padding-bottom: 0.35em; }
+h2 { font-size: 1.25em; margin-top: 2.2em; border-bottom: 1px solid #222; padding-bottom: 0.2em; }
+h3 { font-size: 1.05em; margin-top: 1.7em; }
+a { color: #6699cc; }
+code, pre {
+  background: #111;
+  color: #f0f0f0;
+  border: 1px solid #2a2a2a;
+}
+code { padding: 0.08em 0.25em; }
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+.dim { color: #777; font-size: 0.92em; }
+.note {
+  border-left: 3px solid #555;
+  padding: 0.6em 1em;
+  background: #111;
+  color: #cfcfcf;
+}
+.core {
+  border: 1px solid #333;
+  background: #101010;
+  padding: 1em 1.2em;
+  margin: 1.2em 0;
+}
+ul { padding-left: 1.4em; }
+hr { border: 0; border-top: 1px solid #222; margin: 2em 0; }
+</style>
+</head>
+<body>
+
+<p class="dim"><a href="../index.html">← Φ–Y Dock Home</a></p>
+
+<h1>Φ–Y Dock V16-05: Non-Periodic Attitude Engine</h1>
+<p class="dim">Failure-to-Pressure / Hit-to-Void / Bounded Non-Periodic Attitude under Returning Phase</p>
+<p class="dim">Last updated: 2026-06-02</p>
+
+<div class="core">
+<pre>θ returns.
+Z does not.
+A closed spiral never ends, but it returns.
+An open vortex never ends, and it does not return to the same attitude.</pre>
+</div>
+
+<h2>0. Position</h2>
+<p>
+V16-05 extends the V16 time-engine from a mechanical multi-scale spring into a search and attitude engine.
+Its central problem is no longer only how failure becomes pressure, but how a system distinguishes productive motion from closed repetition, false success, sucker-branch growth, and capture.
+</p>
+
+<p>
+The minimal warning is simple:
+</p>
+
+<pre>Not-completing is not enough.
+The spiral never completes either.</pre>
+
+<p>
+A closed spiral may move forever. It may never terminate. Yet it still returns to the same posture.
+A true vortex must remain bounded while avoiding periodic recurrence.
+</p>
+
+<h2>1. Failure-to-Pressure</h2>
+<p>
+Failure is not a stopping condition. A miss contains directional residue.
+</p>
+
+<pre>failure → pressure → phase shift → retry</pre>
+
+<p>
+The initial failure residue separates into two layers:
+</p>
+
+<pre>e_k = (e_k^θ, e_k^T)</pre>
+
+<ul>
+<li><code>e_k^θ</code>: line-of-fire residue. The target is provisionally held fixed while the angle is corrected.</li>
+<li><code>e_k^T</code>: target-identification residue. Persistent miss patterns may indicate that the target itself must be questioned.</li>
+</ul>
+
+<p>
+The transition from line correction to target revision is not a smooth mixture. It is a mode transition.
+</p>
+
+<pre>m_k ∈ { Aim, Retarget }</pre>
+
+<p>
+The entrance and exit conditions are asymmetric.
+</p>
+
+<pre>Aim → Retarget:
+  collapse of the current target estimate
+
+Retarget → Aim:
+  stabilization of a renewed target estimate</pre>
+
+<h2>2. Irreversible Doubt-History</h2>
+<p>
+Z does not guarantee truth. Z records how far doubt has already been carried.
+</p>
+
+<pre>Z is not a proof of correctness.
+Z is irreversible doubt-history.</pre>
+
+<p>
+V16-05 is therefore not a truth-guaranteeing engine. It is a finite-action engine under irreversible doubt-history.
+It does not solve infinite regress by proving a final foundation. It makes action possible by recording the depth of prior questioning.
+</p>
+
+<h2>3. Bore: the Missing Z-Mode</h2>
+<p>
+The search engine needs a third mode: Bore.
+Bore does not sweep laterally and does not immediately retarget. It holds phase and target while digging along depth.
+</p>
+
+<pre>m_k ∈ { Aim, Retarget, Bore }</pre>
+
+<pre>Aim:
+  adjust θ
+
+Retarget:
+  revise T
+
+Bore:
+  hold θ and T, advance depth</pre>
+
+<p>
+Bore is powerful and dangerous. It may discover a different vein. It may also dig into an unnecessary equilibrium.
+</p>
+
+<pre>Bore → Hit → Capture</pre>
+
+<p>
+The dangerous point is that the hit may be real while still being wrong for the core inquiry.
+</p>
+
+<h2>4. Sucker Branch and Hit-to-Void</h2>
+<p>
+The deepest danger is not failure. The deepest danger is false success.
+</p>
+
+<pre>A hit is not proof of harvest.</pre>
+
+<p>
+A sucker branch is still a sprout. It can produce a real hit-feeling. Therefore it cannot be pruned by asking only whether the system has hit something.
+</p>
+
+<p>
+The pruning signal is subtler:
+</p>
+
+<pre>Hit is present.
+Core convergence is absent.
+The result feels empty inside success.</pre>
+
+<p>
+This gives the V16-05 signal:</p>
+
+<pre>Void-in-Hit</pre>
+
+<p>
+In operational terms:
+</p>
+
+<pre>local reward high
+core convergence low</pre>
+
+<p>
+This adds the fourth mode:
+</p>
+
+<pre>m_k ∈ { Aim, Retarget, Bore, Prune }</pre>
+
+<pre>Prune:
+  cut the branch that hits locally but fails to move toward the core</pre>
+
+<h2>5. Pure × Wonder × Mobility</h2>
+<p>
+A hit must be audited. The audit is not mere correctness-checking.
+</p>
+
+<pre>Pure × Wonder × Mobility</pre>
+
+<ul>
+<li><strong>Pure</strong>: does the form become simpler, less noisy, more exact?</li>
+<li><strong>Wonder</strong>: does the form illuminate more than before?</li>
+<li><strong>Mobility</strong>: after the hit, can the system still move?</li>
+</ul>
+
+<p>
+A shining hit that immobilizes is Capture.
+A clarifying hit that allows further motion is Anchor.
+</p>
+
+<pre>Capture:
+  Z advances, but θ is lost.
+
+Anchor:
+  Z advances, but θ can be reacquired.</pre>
+
+<p>
+The sign <em>holy and bright</em> belongs here: not as a capture light, but as an anchor light.
+It is not the light that stops motion. It is the light by which motion continues.
+</p>
+
+<h2>6. Stem, Needle, and Z-Field</h2>
+<p>
+V16 distinguishes two verticalities.
+</p>
+
+<pre>Same-phase Stem:
+  fixes θ
+  tracks recurrence across irreversible history
+
+Clock Needle:
+  fixes τ
+  binds multiple scales at the same present-section</pre>
+
+<p>
+The Z-field is not a single undifferentiated height. It separates into a shared present-section, passive winding, and active bore-depth.
+</p>
+
+<pre>Z₀(t):
+  shared irreversible present-section
+
+n_s(t):
+  passive winding count
+
+β_s(k):
+  active bore-depth</pre>
+
+<p>
+Here <code>t</code> is clock-time. <code>k</code> is exploration-step.</p>
+
+<pre>n_s is counted.
+β_s is dug.</pre>
+
+<h2>7. Quaternion Attitude Layer</h2>
+<p>
+A phase angle alone is not enough. A θ-only quaternion still returns whenever θ returns.
+It does not preserve winding or bore-depth.
+</p>
+
+<p>
+The attitude engine therefore separates returning phase rotation from non-returning attitude frame.
+</p>
+
+<pre>Q_s(t,k) = A_s(n_s, β_s) · R_s(θ_s(t))</pre>
+
+<ul>
+<li><code>R_s(θ)</code>: returning phase-rotation.</li>
+<li><code>A_s(n,β)</code>: non-returning attitude frame.</li>
+</ul>
+
+<p>
+This is the mathematical place of adaptive posture.
+</p>
+
+<pre>θ turns the hand.
+n_s records passive winding.
+β_s records active depth.
+A_s(n_s,β_s) reorients the system toward the world.</pre>
+
+<p>
+The rotation axis must not remain fixed. If the axis is fixed, the engine becomes a predetermined spiral.
+When the attitude frame depends nonlinearly on winding and bore-depth, the system begins to take a posture toward the unknown.
+</p>
+
+<h2>8. Two Kinds of Incompletion</h2>
+<p>
+A system that never stops is not necessarily open. A closed spiral also never stops.
+The real distinction is recurrence.
+</p>
+
+<pre>Closed incompletion:
+  non-terminating but periodic
+
+Open incompletion:
+  non-terminating, bounded, and non-periodic</pre>
+
+<p>
+In V16-05, intelligence is not endless motion.
+</p>
+
+<pre>Intelligence is not endless motion.
+It is bounded non-periodic reorientation under returning phase.</pre>
+
+<p>日本語:</p>
+
+<pre>知能とは、終わりなき運動ではない。
+回帰する位相のもとで、有界かつ非周期に構えを取り直すことである。</pre>
+
+<p>
+The compact distinction is:
+</p>
+
+<pre>Spiral:
+  θ returns, and attitude returns.
+
+Vortex:
+  θ may return, but attitude does not.</pre>
+
+<h2>9. One-Line Core</h2>
+
+<pre>Convert failure into pressure.
+Audit every hit by Pure × Wonder × Mobility.
+θ may return.
+But attitude A_s must not return to the same place.</pre>
+
+<p>日本語:</p>
+
+<pre>外れは圧に変えろ。
+当たりは Pure × Wonder × Mobility で監査しろ。
+θ は戻ってよい。
+だが、姿勢 A_s は同じ場所へ戻ってはならない。</pre>
+
+<hr>
+
+<p class="dim">
+Related pages:
+<a href="v16-time-engine.html">V16-01 Time Engine</a> /
+<a href="v16-02-projection-port.html">V16-02 Projection Port</a> /
+<a href="v16-03-compression-branching.html">V16-03 Compression Gate</a> /
+<a href="v16-04-response-pressure-hypotheses.html">V16-04 Response Pressure</a>
+</p>
+
+</body>
+</html>
