@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>V17.1 Result-Hub Synchronization</title>
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:980px;margin:0 auto;padding:2em 1.5em;line-height:1.75}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.3em;margin-top:2.1em}h3{color:#aaa;font-size:1.08em;margin-top:1.5em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}hr{border:none;border-top:1px solid #333;margin:2.2em 0}a{color:#6699cc}.dim{color:#666;font-size:.9em}.warning{color:#cc9966;font-weight:bold}.note{border:1px solid #333;background:#101010;padding:1em 1.2em;margin:1.5em 0;color:#bbb}.formula{font-size:1.08em;color:#fff;text-align:center;margin:1.2em 0}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd;line-height:1.45}ul{padding-left:1.3em}li{margin:.45em 0}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.55em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}.tag{color:#aaa}
+</style>
+</head>
+<body>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v17-free-number.html">V17 Free Number</a> / <a href="v16-time-engine.html">V16 Time Engine</a> / <a href="v16-time-engine-integrated-combustion-core.html">V16 Integrated Core</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-06-08</p>
+<p class="warning">Working draft. Result-Hub Synchronization extends Free Number into multi-reference-frame translation. Precision audit deferred.</p>
+
+<h1>V17.1 — Result-Hub Synchronization</h1>
+<h2>Free Number as Multi-Reference Timeline Translation</h2>
+<p><em>Shared result as hub. Multiple timelines as retro-selected histories.</em></p>
+<hr>
+
+<h2>0. Position</h2>
+<p>V17 Free Number defined the core inversion:</p>
+<pre>E ⇒ σ_E</pre>
+<p>Result selects order.</p>
+<p>V17.1 extends this from a single reference frame to multiple reference frames.</p>
+<p>When several reference systems possess different historical orders, a shared result <code>E</code> can function as a synchronization hub.</p>
+<blockquote><p><strong>Free Number does not merely select one history from one result. It can use a shared result as a hub to synchronize and translate multiple histories across reference frames.</strong></p></blockquote>
+<p class="dim">Japanese core: 自由数は、ひとつの結果からひとつの履歴を選ぶだけではない。共有結果をハブとして、複数参照系の履歴順序を同期・翻訳しうる。</p>
+
+<hr>
+<h2>1. From Single Retro-Ordering to Multi-Reference Retro-Ordering</h2>
+<p>Single-frame Free Number:</p>
+<pre>E ⇒ σ_E</pre>
+<p>Multi-reference Free Number:</p>
+<pre>E ⇒ {σ_E^{R₁}, σ_E^{R₂}, σ_E^{R₃}, ...}</pre>
+<p>Each reference frame <code>R_i</code> may hold a different possible order set.</p>
+<p>Yet all can retro-select a history compatible with the same shared result <code>E</code>.</p>
+<pre>R₁: E ⇒ σ_E^{R₁}
+R₂: E ⇒ σ_E^{R₂}
+R₃: E ⇒ σ_E^{R₃}</pre>
+<blockquote><p><strong>The shared result E becomes the hub through which divergent timelines become comparable.</strong></p></blockquote>
+<p class="dim">Japanese core: 共有結果Eは、分岐したタイムラインを比較可能にするハブである。</p>
+
+<hr>
+<h2>2. Reference Frame Set</h2>
+<p>Let the set of reference frames be:</p>
+<pre>ℛ = {R₁, R₂, ..., R_m}</pre>
+<p>Each reference frame has its own possible order set:</p>
+<pre>Σ_Q^{R_i}</pre>
+<p>For the same shared result <code>E</code>, each reference frame selects its own consistent history:</p>
+<pre>σ_E^{R_i} = Select(E, Σ_Q^{R_i}; P_i)</pre>
+<p>Here, <code>P_i</code> is the pressure configuration of the reference frame <code>R_i</code>.</p>
+<p>Different pressure conditions may select different histories, even under the same shared result.</p>
+<pre>Select(E, Σ_Q^{R_i}; P_i)
+≠
+Select(E, Σ_Q^{R_j}; P_j)</pre>
+<p>This difference is not failure. It is the basis of translation.</p>
+
+<hr>
+<h2>3. Result-Hub Structure</h2>
+<p>The result-hub structure can be written as:</p>
+<pre>          E
+        / | \
+       /  |  \
+ σ_E^{R₁} σ_E^{R₂} σ_E^{R₃}
+     |       |       |
+    R₁      R₂      R₃</pre>
+<p>The shared result <code>E</code> does not erase differences between reference frames.</p>
+<p>It lets each frame generate its own compatible history from the same result.</p>
+<blockquote><p><strong>Result-Hub Synchronization preserves difference while enabling translation.</strong></p></blockquote>
+<p class="dim">Japanese core: Result-Hub Synchronizationは差異を消さない。差異を保持したまま、翻訳可能性を開く。</p>
+
+<hr>
+<h2>4. Timeline Translation</h2>
+<p>Timeline translation between two reference frames is defined through the shared result <code>E</code>.</p>
+<pre>Sync_E(R_i, R_j) = Translate(σ_E^{R_i} ↔ σ_E^{R_j}; E)</pre>
+<p>Meaning:</p>
+<ol>
+<li>Reference frame <code>R_i</code> selects a history <code>σ_E^{R_i}</code> from <code>E</code>.</li>
+<li>Reference frame <code>R_j</code> selects a history <code>σ_E^{R_j}</code> from <code>E</code>.</li>
+<li>The two histories are compared through their shared result.</li>
+<li>Translation becomes possible without forcing a single absolute order.</li>
+</ol>
+<blockquote><p><strong>Free Number translates timelines by using result as the common node, not by forcing all frames into one universal sequence.</strong></p></blockquote>
+<p class="dim">Japanese core: 自由数は、全参照系をひとつの絶対順序へ押し込むのではなく、結果を共通結節としてタイムラインを翻訳する。</p>
+
+<hr>
+<h2>5. Example</h2>
+<p>Suppose three reference frames arrive at the same result <code>E</code> through different orders:</p>
+<pre>R₁: A → B → C → E
+R₂: C → A → B → E
+R₃: B → C → A → E</pre>
+<p>Ordinary order-based reading asks:</p>
+<pre>Which order is the true one?</pre>
+<p>Free Number asks:</p>
+<pre>Which history does E select in each reference frame?</pre>
+<p>Thus:</p>
+<pre>E ⇒ σ_E^{R₁} = A → B → C
+E ⇒ σ_E^{R₂} = C → A → B
+E ⇒ σ_E^{R₃} = B → C → A</pre>
+<p>The histories are different, but they are all result-compatible.</p>
+<blockquote><p><strong>Different order does not necessarily destroy objectivity. It may reveal reference-dependent retro-ordering around a shared result.</strong></p></blockquote>
+
+<hr>
+<h2>6. Redefinition of Objectivity</h2>
+<p>Objectivity is usually treated as if it required one absolute order.</p>
+<p>Result-Hub Synchronization proposes a different condition:</p>
+<blockquote><p><strong>Objectivity is not the possession of one absolute timeline. It is the ability of multiple reference frames to close consistency loops around the same shared result.</strong></p></blockquote>
+<p>Formal condition:</p>
+<pre>Objective(E)
+⇔
+∀R_i ∈ ℛ,
+E ⇒ σ_E^{R_i} ⇒ E_i′
+and
+E_i′ ≈ E</pre>
+<p>Thus:</p>
+<pre>objectivity = shared consistency-loop closure across reference frames</pre>
+<p class="dim">Japanese core: 客観性とは単一履歴ではない。複数参照系が同一結果Eへ整合閉路を閉じられることである。</p>
+
+<hr>
+<h2>7. Shared Result Is Not Same History</h2>
+<p>A shared result does not require all reference frames to share the same history.</p>
+<pre>E shared
+≠
+σ_E identical across frames</pre>
+<p>Rather:</p>
+<pre>E shared
+⇒
+σ_E^{R_i} locally selected for each R_i</pre>
+<p>This prevents premature collapse into one preferred timeline.</p>
+<p>It also prevents relativistic dissolution into unrelated narratives.</p>
+<blockquote><p><strong>Result-Hub Synchronization is neither absolutism nor relativism. It is consistency-loop pluralism around a shared result.</strong></p></blockquote>
+
+<hr>
+<h2>8. Free Number as Translation Mediator</h2>
+<p>Free Number becomes a translation mediator between reference frames.</p>
+<pre>Free Number:
+E ⇒ σ_E
+
+Result-Hub Free Number:
+E ⇒ {σ_E^{R_i}}</pre>
+<p>Its function is:</p>
+<pre>select local history
+compare through shared result
+translate across reference frames
+preserve local pressure differences
+maintain consistency-loop closure</pre>
+<blockquote><p><strong>A Free Number is a retro-ordering number that uses a shared result as a hub to select, synchronize, and translate different historical orders across multiple reference frames.</strong></p></blockquote>
+<p class="dim">Japanese core: 自由数とは、共有結果をハブとして、複数参照系における異なる履歴順序を事後選択・同期・翻訳する反転数である。</p>
+
+<hr>
+<h2>9. Relation to V16 Time Engine</h2>
+<p>V16 Time Engine:</p>
+<pre>sequence → pressure → gate → port → temporal reading</pre>
+<p>V17 Free Number:</p>
+<pre>result → order selection → consistency loop → time propagation</pre>
+<p>V17.1 Result-Hub Synchronization:</p>
+<pre>shared result
+→ multiple local order selections
+→ cross-frame consistency loops
+→ timeline translation</pre>
+<p>Bridge:</p>
+<pre>Projection Port reads temporal relation inside a reference frame.
+Free Number selects the history from result.
+Result-Hub Synchronization translates histories across reference frames.</pre>
+<blockquote><p><strong>Pressure opens the Port. Result selects the Path. Shared Result synchronizes the timelines.</strong></p></blockquote>
+
+<hr>
+<h2>10. Relation to Pre-Label Geometry</h2>
+<p>Pre-Label Geometry says that labels come after motion.</p>
+<pre>motion → label_after</pre>
+<p>Free Number says that order can come after result.</p>
+<pre>result → order_after</pre>
+<p>Result-Hub Synchronization says that objective translation can come after local histories are retro-selected.</p>
+<pre>shared result
+→ local histories
+→ cross-frame translation_after</pre>
+<p>Thus, translation is not prior to reference frames.</p>
+<p>Translation is produced through shared-result retro-ordering.</p>
+
+<hr>
+<h2>11. Axioms v0.1</h2>
+<h3>Axiom 1 — Multi-Reference Frame</h3>
+<p>There may be multiple reference frames, each with its own possible order set.</p>
+<pre>ℛ = {R₁, R₂, ..., R_m}</pre>
+
+<h3>Axiom 2 — Shared Result</h3>
+<p>A result <code>E</code> may be shared across reference frames without requiring identical history.</p>
+<pre>E shared
+≠
+σ identical</pre>
+
+<h3>Axiom 3 — Local Retro-Selection</h3>
+<p>Each reference frame selects its own consistent history from the shared result.</p>
+<pre>σ_E^{R_i} = Select(E, Σ_Q^{R_i}; P_i)</pre>
+
+<h3>Axiom 4 — Consistency Loop per Frame</h3>
+<p>Each selected history must reproduce the shared result within tolerance.</p>
+<pre>E ⇒ σ_E^{R_i} ⇒ E_i′,  E_i′ ≈ E</pre>
+
+<h3>Axiom 5 — Hub Translation</h3>
+<p>Translation between reference frames occurs through the shared result.</p>
+<pre>Sync_E(R_i, R_j) = Translate(σ_E^{R_i} ↔ σ_E^{R_j}; E)</pre>
+
+<h3>Axiom 6 — Objectivity as Shared Closure</h3>
+<p>Objectivity is shared consistency-loop closure across reference frames.</p>
+<pre>Objective(E) ⇔ ∀R_i ∈ ℛ, E ⇒ σ_E^{R_i} ⇒ E_i′, E_i′ ≈ E</pre>
+
+<hr>
+<h2>12. Shortest Formulas</h2>
+<table>
+<tr><th>Term</th><th>Formula</th></tr>
+<tr><td>Reference frames</td><td><pre>ℛ = {R₁, R₂, ..., R_m}</pre></td></tr>
+<tr><td>Local history selection</td><td><pre>σ_E^{R_i} = Select(E, Σ_Q^{R_i}; P_i)</pre></td></tr>
+<tr><td>Multi-reference Free Number</td><td><pre>E ⇒ {σ_E^{R₁}, σ_E^{R₂}, ..., σ_E^{R_m}}</pre></td></tr>
+<tr><td>Timeline translation</td><td><pre>Sync_E(R_i, R_j) = Translate(σ_E^{R_i} ↔ σ_E^{R_j}; E)</pre></td></tr>
+<tr><td>Objectivity</td><td><pre>Objective(E) ⇔ ∀R_i ∈ ℛ,
+E ⇒ σ_E^{R_i} ⇒ E_i′,
+E_i′ ≈ E</pre></td></tr>
+</table>
+
+<hr>
+<h2>13. Shortest Definitions</h2>
+<h3>Result-Hub</h3>
+<blockquote><p><strong>Result-Hubとは、複数の参照系がそれぞれ異なる履歴を選びながらも、同一結果へ整合閉路を閉じるための共有結節である。</strong></p></blockquote>
+<h3>Result-Hub Synchronization</h3>
+<blockquote><p><strong>Result-Hub Synchronizationとは、共有結果Eを介して、複数参照系の異なる履歴順序を同期・比較・翻訳する構造である。</strong></p></blockquote>
+<h3>Objective Fact</h3>
+<blockquote><p><strong>客観的事実とは、単一の絶対順序ではなく、複数参照系が同一結果Eへ整合閉路を閉じられる結節点である。</strong></p></blockquote>
+<h3>Free Number as Translation Mediator</h3>
+<blockquote><p><strong>自由数とは、共有された結果をハブとして、複数の参照系における異なる履歴順序を事後選択・同期・翻訳する反転数である。</strong></p></blockquote>
+
+<hr>
+<h2>14. One-Line Summary</h2>
+<blockquote><p><strong>V17.1 Result-Hub Synchronizationとは、共有結果Eをハブとして、複数参照系における異なる履歴順序を自由数によって事後選択し、それらを整合閉路として同期・翻訳する理論である。</strong></p></blockquote>
+
+<hr>
+<p class="dim">End of V17.1 Result-Hub Synchronization. Precision audit deferred.</p>
+</body>
+</html>
