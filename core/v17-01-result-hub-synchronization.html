@@ -12,7 +12,7 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-wi
 <body>
 <p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v17-free-number.html">V17 Free Number</a> / <a href="v16-time-engine.html">V16 Time Engine</a> / <a href="v16-time-engine-integrated-combustion-core.html">V16 Integrated Core</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
 <p class="dim">Last updated: 2026-06-08</p>
-<p class="warning">Working draft. Result-Hub Synchronization extends Free Number into multi-reference-frame translation. Precision audit deferred.</p>
+<p class="warning">Working draft. Result-Hub Synchronization extends Free Number into multi-reference-frame translation. Precision audit still open.</p>
 
 <h1>V17.1 — Result-Hub Synchronization</h1>
 <h2>Free Number as Multi-Reference Timeline Translation</h2>
@@ -46,15 +46,15 @@ R₃: E ⇒ σ_E^{R₃}</pre>
 <h2>2. Reference Frame Set</h2>
 <p>Let the set of reference frames be:</p>
 <pre>ℛ = {R₁, R₂, ..., R_m}</pre>
-<p>Each reference frame has its own possible order set:</p>
-<pre>Σ_Q^{R_i}</pre>
+<p>Each reference frame has its own admissible possible order set:</p>
+<pre>Σ_Q^{adm,R_i}</pre>
 <p>For the same shared result <code>E</code>, each reference frame selects its own consistent history:</p>
-<pre>σ_E^{R_i} = Select(E, Σ_Q^{R_i}; P_i)</pre>
-<p>Here, <code>P_i</code> is the pressure configuration of the reference frame <code>R_i</code>.</p>
+<pre>σ_E^{R_i} = Select(E, Σ_Q^{adm,R_i}; P_i)</pre>
+<p>Here, <code>P_i</code> is the pressure / generalized constraint field of the reference frame <code>R_i</code>.</p>
 <p>Different pressure conditions may select different histories, even under the same shared result.</p>
-<pre>Select(E, Σ_Q^{R_i}; P_i)
+<pre>Select(E, Σ_Q^{adm,R_i}; P_i)
 ≠
-Select(E, Σ_Q^{R_j}; P_j)</pre>
+Select(E, Σ_Q^{adm,R_j}; P_j)</pre>
 <p>This difference is not failure. It is the basis of translation.</p>
 
 <hr>
@@ -72,18 +72,23 @@ Select(E, Σ_Q^{R_j}; P_j)</pre>
 <p class="dim">Japanese core: Result-Hub Synchronizationは差異を消さない。差異を保持したまま、翻訳可能性を開く。</p>
 
 <hr>
-<h2>4. Timeline Translation</h2>
-<p>Timeline translation between two reference frames is defined through the shared result <code>E</code>.</p>
-<pre>Sync_E(R_i, R_j) = Translate(σ_E^{R_i} ↔ σ_E^{R_j}; E)</pre>
-<p>Meaning:</p>
-<ol>
-<li>Reference frame <code>R_i</code> selects a history <code>σ_E^{R_i}</code> from <code>E</code>.</li>
-<li>Reference frame <code>R_j</code> selects a history <code>σ_E^{R_j}</code> from <code>E</code>.</li>
-<li>The two histories are compared through their shared result.</li>
-<li>Translation becomes possible without forcing a single absolute order.</li>
-</ol>
-<blockquote><p><strong>Free Number translates timelines by using result as the common node, not by forcing all frames into one universal sequence.</strong></p></blockquote>
-<p class="dim">Japanese core: 自由数は、全参照系をひとつの絶対順序へ押し込むのではなく、結果を共通結節としてタイムラインを翻訳する。</p>
+<h2>4. Synchronization and Translation</h2>
+<p>Synchronization and translation should be distinguished.</p>
+<p><strong>Synchronization</strong> means that multiple reference frames close consistency loops around the same shared result.</p>
+<pre>Sync_E(R_i, R_j)
+⇔
+d(E_i′, E) &lt; ε
+∧
+d(E_j′, E) &lt; ε</pre>
+<p><strong>Translation</strong> means mapping the selected histories of those frames through the shared result.</p>
+<pre>Translate_E(R_i, R_j)
+=
+Map(σ_E^{R_i}, σ_E^{R_j}; E)</pre>
+<p>Thus:</p>
+<pre>synchronization = closure to the shared result
+translation     = mapping between selected histories</pre>
+<blockquote><p><strong>Free Number does not force all frames into one universal sequence. It synchronizes through shared closure and translates through selected-history mapping.</strong></p></blockquote>
+<p class="dim">Japanese core: 同期とは共有結果への閉路成立であり、翻訳とは選択された履歴間の写像である。</p>
 
 <hr>
 <h2>5. Example</h2>
@@ -99,7 +104,7 @@ R₃: B → C → A → E</pre>
 <pre>E ⇒ σ_E^{R₁} = A → B → C
 E ⇒ σ_E^{R₂} = C → A → B
 E ⇒ σ_E^{R₃} = B → C → A</pre>
-<p>The histories are different, but they are all result-compatible.</p>
+<p>The histories are different, but they are all result-compatible if each re-evaluates back to <code>E</code> within tolerance.</p>
 <blockquote><p><strong>Different order does not necessarily destroy objectivity. It may reveal reference-dependent retro-ordering around a shared result.</strong></p></blockquote>
 
 <hr>
@@ -107,16 +112,16 @@ E ⇒ σ_E^{R₃} = B → C → A</pre>
 <p>Objectivity is usually treated as if it required one absolute order.</p>
 <p>Result-Hub Synchronization proposes a different condition:</p>
 <blockquote><p><strong>Objectivity is not the possession of one absolute timeline. It is the ability of multiple reference frames to close consistency loops around the same shared result.</strong></p></blockquote>
-<p>Formal condition:</p>
-<pre>Objective(E)
+<p>Formal condition with tolerance:</p>
+<pre>Objective_ε(E)
 ⇔
 ∀R_i ∈ ℛ,
 E ⇒ σ_E^{R_i} ⇒ E_i′
 and
-E_i′ ≈ E</pre>
+d(E_i′, E) &lt; ε</pre>
 <p>Thus:</p>
 <pre>objectivity = shared consistency-loop closure across reference frames</pre>
-<p class="dim">Japanese core: 客観性とは単一履歴ではない。複数参照系が同一結果Eへ整合閉路を閉じられることである。</p>
+<p class="dim">Japanese core: 客観性とは単一履歴ではない。複数参照系が同一結果Eへ許容誤差ε内で整合閉路を閉じられることである。</p>
 
 <hr>
 <h2>7. Shared Result Is Not Same History</h2>
@@ -141,11 +146,12 @@ E ⇒ σ_E
 Result-Hub Free Number:
 E ⇒ {σ_E^{R_i}}</pre>
 <p>Its function is:</p>
-<pre>select local history
-compare through shared result
-translate across reference frames
+<pre>select local admissible history
+close local consistency loop
+synchronize through shared result
+map selected histories
 preserve local pressure differences
-maintain consistency-loop closure</pre>
+maintain cross-frame consistency-loop closure</pre>
 <blockquote><p><strong>A Free Number is a retro-ordering number that uses a shared result as a hub to select, synchronize, and translate different historical orders across multiple reference frames.</strong></p></blockquote>
 <p class="dim">Japanese core: 自由数とは、共有結果をハブとして、複数参照系における異なる履歴順序を事後選択・同期・翻訳する反転数である。</p>
 
@@ -154,7 +160,7 @@ maintain consistency-loop closure</pre>
 <p>V16 Time Engine:</p>
 <pre>sequence → pressure → gate → port → temporal reading</pre>
 <p>V17 Free Number:</p>
-<pre>result → order selection → consistency loop → time propagation</pre>
+<pre>result → admissible order selection → consistency loop → time propagation</pre>
 <p>V17.1 Result-Hub Synchronization:</p>
 <pre>shared result
 → multiple local order selections
@@ -180,9 +186,9 @@ Result-Hub Synchronization translates histories across reference frames.</pre>
 <p>Translation is produced through shared-result retro-ordering.</p>
 
 <hr>
-<h2>11. Axioms v0.1</h2>
+<h2>11. Axioms v0.1.1</h2>
 <h3>Axiom 1 — Multi-Reference Frame</h3>
-<p>There may be multiple reference frames, each with its own possible order set.</p>
+<p>There may be multiple reference frames, each with its own admissible possible order set.</p>
 <pre>ℛ = {R₁, R₂, ..., R_m}</pre>
 
 <h3>Axiom 2 — Shared Result</h3>
@@ -193,31 +199,40 @@ Result-Hub Synchronization translates histories across reference frames.</pre>
 
 <h3>Axiom 3 — Local Retro-Selection</h3>
 <p>Each reference frame selects its own consistent history from the shared result.</p>
-<pre>σ_E^{R_i} = Select(E, Σ_Q^{R_i}; P_i)</pre>
+<pre>σ_E^{R_i} = Select(E, Σ_Q^{adm,R_i}; P_i)</pre>
 
 <h3>Axiom 4 — Consistency Loop per Frame</h3>
 <p>Each selected history must reproduce the shared result within tolerance.</p>
-<pre>E ⇒ σ_E^{R_i} ⇒ E_i′,  E_i′ ≈ E</pre>
+<pre>E ⇒ σ_E^{R_i} ⇒ E_i′,  d(E_i′, E) &lt; ε</pre>
 
-<h3>Axiom 5 — Hub Translation</h3>
-<p>Translation between reference frames occurs through the shared result.</p>
-<pre>Sync_E(R_i, R_j) = Translate(σ_E^{R_i} ↔ σ_E^{R_j}; E)</pre>
+<h3>Axiom 5 — Synchronization</h3>
+<p>Synchronization is shared-result closure across reference frames.</p>
+<pre>Sync_E(R_i, R_j)
+⇔
+d(E_i′, E) &lt; ε
+∧
+d(E_j′, E) &lt; ε</pre>
 
-<h3>Axiom 6 — Objectivity as Shared Closure</h3>
+<h3>Axiom 6 — Translation</h3>
+<p>Translation is mapping between selected histories through the shared result.</p>
+<pre>Translate_E(R_i, R_j) = Map(σ_E^{R_i}, σ_E^{R_j}; E)</pre>
+
+<h3>Axiom 7 — Objectivity as Shared Closure</h3>
 <p>Objectivity is shared consistency-loop closure across reference frames.</p>
-<pre>Objective(E) ⇔ ∀R_i ∈ ℛ, E ⇒ σ_E^{R_i} ⇒ E_i′, E_i′ ≈ E</pre>
+<pre>Objective_ε(E) ⇔ ∀R_i ∈ ℛ, E ⇒ σ_E^{R_i} ⇒ E_i′, d(E_i′, E) &lt; ε</pre>
 
 <hr>
 <h2>12. Shortest Formulas</h2>
 <table>
 <tr><th>Term</th><th>Formula</th></tr>
 <tr><td>Reference frames</td><td><pre>ℛ = {R₁, R₂, ..., R_m}</pre></td></tr>
-<tr><td>Local history selection</td><td><pre>σ_E^{R_i} = Select(E, Σ_Q^{R_i}; P_i)</pre></td></tr>
+<tr><td>Local history selection</td><td><pre>σ_E^{R_i} = Select(E, Σ_Q^{adm,R_i}; P_i)</pre></td></tr>
 <tr><td>Multi-reference Free Number</td><td><pre>E ⇒ {σ_E^{R₁}, σ_E^{R₂}, ..., σ_E^{R_m}}</pre></td></tr>
-<tr><td>Timeline translation</td><td><pre>Sync_E(R_i, R_j) = Translate(σ_E^{R_i} ↔ σ_E^{R_j}; E)</pre></td></tr>
-<tr><td>Objectivity</td><td><pre>Objective(E) ⇔ ∀R_i ∈ ℛ,
+<tr><td>Synchronization</td><td><pre>Sync_E(R_i, R_j) ⇔ d(E_i′, E) &lt; ε ∧ d(E_j′, E) &lt; ε</pre></td></tr>
+<tr><td>Timeline translation</td><td><pre>Translate_E(R_i, R_j) = Map(σ_E^{R_i}, σ_E^{R_j}; E)</pre></td></tr>
+<tr><td>Objectivity</td><td><pre>Objective_ε(E) ⇔ ∀R_i ∈ ℛ,
 E ⇒ σ_E^{R_i} ⇒ E_i′,
-E_i′ ≈ E</pre></td></tr>
+d(E_i′, E) &lt; ε</pre></td></tr>
 </table>
 
 <hr>
@@ -227,7 +242,7 @@ E_i′ ≈ E</pre></td></tr>
 <h3>Result-Hub Synchronization</h3>
 <blockquote><p><strong>Result-Hub Synchronizationとは、共有結果Eを介して、複数参照系の異なる履歴順序を同期・比較・翻訳する構造である。</strong></p></blockquote>
 <h3>Objective Fact</h3>
-<blockquote><p><strong>客観的事実とは、単一の絶対順序ではなく、複数参照系が同一結果Eへ整合閉路を閉じられる結節点である。</strong></p></blockquote>
+<blockquote><p><strong>客観的事実とは、単一の絶対順序ではなく、複数参照系が同一結果Eへ許容誤差ε内で整合閉路を閉じられる結節点である。</strong></p></blockquote>
 <h3>Free Number as Translation Mediator</h3>
 <blockquote><p><strong>自由数とは、共有された結果をハブとして、複数の参照系における異なる履歴順序を事後選択・同期・翻訳する反転数である。</strong></p></blockquote>
 
@@ -236,6 +251,6 @@ E_i′ ≈ E</pre></td></tr>
 <blockquote><p><strong>V17.1 Result-Hub Synchronizationとは、共有結果Eをハブとして、複数参照系における異なる履歴順序を自由数によって事後選択し、それらを整合閉路として同期・翻訳する理論である。</strong></p></blockquote>
 
 <hr>
-<p class="dim">End of V17.1 Result-Hub Synchronization. Precision audit deferred.</p>
+<p class="dim">End of V17.1 Result-Hub Synchronization v0.1.1. Precision audit still open.</p>
 </body>
 </html>
