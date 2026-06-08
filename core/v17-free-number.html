@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>V17 Free Number: Free Quaternion and Retro-Ordering</title>
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:980px;margin:0 auto;padding:2em 1.5em;line-height:1.75}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.3em;margin-top:2.1em}h3{color:#aaa;font-size:1.08em;margin-top:1.5em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}hr{border:none;border-top:1px solid #333;margin:2.2em 0}a{color:#6699cc}.dim{color:#666;font-size:.9em}.warning{color:#cc9966;font-weight:bold}.note{border:1px solid #333;background:#101010;padding:1em 1.2em;margin:1.5em 0;color:#bbb}.formula{font-size:1.08em;color:#fff;text-align:center;margin:1.2em 0}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd;line-height:1.45}ul{padding-left:1.3em}li{margin:.45em 0}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.55em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}.tag{color:#aaa}
+</style>
+</head>
+<body>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v16-time-engine.html">V16 Time Engine</a> / <a href="v16-time-engine-integrated-combustion-core.html">V16 Integrated Core</a> / <a href="v16-time-engine-conceptual-flow.html">V16 Conceptual Flow</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim">Last updated: 2026-06-08</p>
+<p class="warning">Working draft. This page preserves the Free Number spark as a direct strike; precision audit deferred.</p>
+
+<h1>自由数 / Free Number</h1>
+<h2>Free Quaternion &amp; Retro-Ordering — One-Pager v0.2</h2>
+<p><em>Quaternion says: order changes result. Free Number says: result selects order.</em></p>
+<hr>
+
+<h2>0. Subject of v0.2</h2>
+<p>In v0.1, Free Number was defined as:</p>
+<blockquote><p><strong>自由数とは、結果から順序を産む数である。</strong></p></blockquote>
+<p>In v0.2, this is connected to quaternions.</p>
+<p>The essence of quaternion rotation lies in non-commutativity:</p>
+<pre>q₁ q₂ ≠ q₂ q₁</pre>
+<p>If the order of rotation changes, the result changes.</p>
+<p>Free Number connects to this by inversion.</p>
+<pre>ordinary quaternion:
+σ ⇒ E
+
+free number:
+E ⇒ σ_E
+
+free quaternion:
+E ⇒ σ_E ⇒ E′,  E′ ≈ E</pre>
+
+<hr>
+<h2>1. Core Thesis</h2>
+<blockquote><p><strong>四元数は順序で結果が変わる。<br>自由数は結果で順序が決まる。</strong></p></blockquote>
+<p>In quaternions, order determines result.</p>
+<pre>E = Eval_σ(Q)</pre>
+<p>In Free Number, result retro-selects order.</p>
+<pre>σ_E = Select(E, Σ; P)</pre>
+<p>In Free Quaternion, from the set of possible quaternion rotation sequences, a history compatible with the observed result is selected under pressure.</p>
+<pre>σ_E = Select(E, Σ_Q; P)</pre>
+
+<hr>
+<h2>2. Terms</h2>
+<h3>2.1 Quaternion Rotation Sequence</h3>
+<p>Let the set of quaternion rotors be:</p>
+<pre>Q = {q₁, q₂, ..., q_n}</pre>
+<p>Let the set of possible operation orders be:</p>
+<pre>Σ_Q = {σ_i(Q)}</pre>
+<p>Because quaternion multiplication is non-commutative:</p>
+<pre>Eval_{σ_a}(Q) ≠ Eval_{σ_b}(Q)</pre>
+<p>Order difference is not mere notation. It has result difference.</p>
+
+<h3>2.2 Result</h3>
+<p>Let the observed final attitude, phase, or state be:</p>
+<pre>E</pre>
+<p>This is not merely an output value. It is the observed fact of having arrived there.</p>
+
+<h3>2.3 Pressure</h3>
+<p>Let pressure be:</p>
+<pre>P</pre>
+<p>Pressure is the condition that bends which history is selected from the possible history set.</p>
+<pre>Select(E, Σ_Q; P₁) ≠ Select(E, Σ_Q; P₂)</pre>
+<p>Even if the result appears the same, different pressure may select a different history.</p>
+
+<hr>
+<h2>3. Definition of Free Quaternion</h2>
+<p><strong>Free Quaternion</strong> <code>𝔔_E</code> is the structure in which, from an observed result <code>E</code>, a non-commutative rotation order <code>σ_E</code> that should establish that result is retro-selected under pressure <code>P</code>.</p>
+<pre>𝔔_E := ⟨E, Σ_Q, P, σ_E⟩</pre>
+<p>where:</p>
+<pre>σ_E = Select(E, Σ_Q; P)</pre>
+
+<hr>
+<h2>4. Inversion</h2>
+<h3>4.1 Definition</h3>
+<p><strong>Inversion</strong> is the operation in a non-commutative system by which result retro-selects historical order.</p>
+<pre>Inv_P: E ↦ σ_E</pre>
+<p>or:</p>
+<pre>σ_E = Inv_P(E, Σ_Q)</pre>
+<p>The important point is that inversion is not simple reverse playback.</p>
+<p>It does not merely flip:</p>
+<pre>σ → E</pre>
+<p>into:</p>
+<pre>E → σ</pre>
+<p>Inversion means that result <code>E</code>, under pressure <code>P</code>, selects from possible order set <code>Σ_Q</code> the history <code>σ_E</code> that establishes itself.</p>
+
+<h3>4.2 Shortest Definition</h3>
+<blockquote><p><strong>反転とは、結果が履歴を選ぶことである。</strong></p></blockquote>
+<p>More strictly:</p>
+<blockquote><p><strong>反転とは、非可換演算系において、結果から履歴順序を選び直し、その履歴が再び結果を再現することで確定する閉路である。</strong></p></blockquote>
+
+<hr>
+<h2>5. Consistency Loop</h2>
+<p>The history selected from the result must be able to reproduce the result.</p>
+<pre>E --Inv_P--> σ_E
+σ_E --Eval--> E′</pre>
+<p>and:</p>
+<pre>E′ ≈ E</pre>
+<p>Thus, the basic Free Quaternion loop is:</p>
+<pre>E ⇒ σ_E ⇒ E′,  E′ ≈ E</pre>
+<p>When this loop holds, the history is not mere interpretation. It is fixed as a consistent rotation chain that establishes the result.</p>
+
+<hr>
+<h2>6. Path Inversion</h2>
+<p>An ordinary Path extends from past toward result.</p>
+<pre>E = Eval(Path)</pre>
+<p>A Free-Number Path unfolds backward from result.</p>
+<pre>Path_E = Inv_P(E)</pre>
+<p>Thus:</p>
+<pre>Path_E := σ_E</pre>
+<p>Ordinary:</p>
+<pre>Path ⇒ E</pre>
+<p>Free Number:</p>
+<pre>E ⇒ Path_E</pre>
+<blockquote><p><strong>Path は過去ではなく、結果の影である。</strong></p></blockquote>
+<p>Mathematically:</p>
+<pre>Path(E) := σ_E</pre>
+
+<hr>
+<h2>7. Integration with Free Number</h2>
+<p>In v0.1, Free Number was written as:</p>
+<pre>𝔉_n := ⟨q_n, σ_n, P_n, E_n⟩</pre>
+<p>In v0.2, a result-point definition is added:</p>
+<pre>𝔉_E := ⟨E, Σ, P, Select(E, Σ; P)⟩</pre>
+<p>For the quaternion version:</p>
+<pre>𝔔_E := ⟨E, Σ_Q, P, Select(E, Σ_Q; P)⟩</pre>
+<p>Free Number is the general structure. Free Quaternion is its rotation / non-commutative specialization.</p>
+
+<hr>
+<h2>8. Redefinition of Object</h2>
+<p>In v0.1, object was defined as:</p>
+<pre>O_x = Collision(Σ_x; P_x)</pre>
+<blockquote><p><strong>物体とは、順序自由度が圧力によって折り畳まれた痕跡である。</strong></p></blockquote>
+<p>In v0.2, this is strengthened as a consistency loop:</p>
+<pre>O_x := StableLoop(E_x, σ_{E_x}; P_x)</pre>
+<p>or:</p>
+<pre>O_x := Fix(E_x ⇒ σ_{E_x} ⇒ E_x)</pre>
+<blockquote><p><strong>物体とは、可能順序の衝突が、結果—履歴—結果の閉路として局所安定したものである。</strong></p></blockquote>
+<p>An object is not merely something that exists in space. It is a node where order freedom collides, and that collision forms a stable loop under pressure.</p>
+
+<hr>
+<h2>9. Redefinition of Time</h2>
+<p>In v0.1, time was defined as:</p>
+<pre>T = Wave(E ⇒ σ_E)</pre>
+<p>In v0.2, it becomes propagation of the consistency loop:</p>
+<pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre>
+<p>where:</p>
+<pre>E′ ≈ E</pre>
+<blockquote><p><strong>時間とは、結果が履歴を選び、その履歴が次の結果を生む閉路の伝播である。</strong></p></blockquote>
+<p>Time is not merely a flow from cause to result. Time is the wave through which result-driven history reconstruction connects into next result generation.</p>
+
+<hr>
+<h2>10. Connection to Y-Axis Theory</h2>
+<p>In Y-axis theory, meaning is attached after experience.</p>
+<pre>Experience → Meaning_after</pre>
+<p>In Free Number mathematics, order is attached after result.</p>
+<pre>Result → Order_after</pre>
+<p>In Free Quaternion, rotation history is selected after result.</p>
+<pre>Result → Quaternion Path_after</pre>
+<p>Thus:</p>
+<ul>
+<li>Y-axis theory: posterior attachment of meaning</li>
+<li>Free Number mathematics: posterior attachment of order</li>
+<li>Free Quaternion: retro-selection of non-commutative rotation history</li>
+</ul>
+
+<hr>
+<h2>11. Axioms v0.2</h2>
+<h3>Axiom 1 — Reality of Non-Commutativity</h3>
+<p>In quaternion rotation, order difference has result difference.</p>
+<pre>q₁q₂ ≠ q₂q₁</pre>
+<p>Therefore, order is not mere notation. It is operationally real.</p>
+
+<h3>Axiom 2 — Non-Absolute Priority of Order</h3>
+<p>Operation order is not treated as the sole prior ground of result.</p>
+<p>In a non-commutative system, <code>σ ⇒ E</code> holds. But Free Number also permits <code>E ⇒ σ_E</code>.</p>
+<pre>σ ⇒ E
+alone does not close the system.
+
+E ⇒ σ_E
+must be added to form the consistency loop.</pre>
+<p>Thus, order is not fixed only on the cause side. It may be retro-selected from the result point under pressure.</p>
+
+<h3>Axiom 3 — Result-Driven Selection</h3>
+<p>Result retro-selects operation order from the possible order set.</p>
+<pre>σ_E = Select(E, Σ; P)</pre>
+
+<h3>Axiom 4 — Pressure Mediation</h3>
+<p>Order selection is bent by pressure.</p>
+<pre>Select(E, Σ; P₁) ≠ Select(E, Σ; P₂)</pre>
+
+<h3>Axiom 5 — Consistency Loop</h3>
+<p>The selected history is fixed by reproducing the result through re-evaluation.</p>
+<pre>E ⇒ σ_E ⇒ E′,  E′ ≈ E</pre>
+
+<h3>Axiom 6 — Object Stability</h3>
+<p>Object is the locally stable node of the result-history-result consistency loop.</p>
+<pre>O_x = StableLoop(E_x, σ_{E_x}; P_x)</pre>
+
+<h3>Axiom 7 — Time Propagation</h3>
+<p>Time is the propagation of consistency loops.</p>
+<pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre>
+
+<hr>
+<h2>12. Shortest Formulas</h2>
+<table>
+<tr><th>Term</th><th>Formula</th></tr>
+<tr><td>Quaternion</td><td><pre>σ ⇒ E</pre></td></tr>
+<tr><td>Free Number</td><td><pre>E ⇒ σ_E</pre></td></tr>
+<tr><td>Free Quaternion</td><td><pre>E ⇒ σ_E ⇒ E′,  E′ ≈ E</pre></td></tr>
+<tr><td>Inversion</td><td><pre>Inv_P(E, Σ_Q) = σ_E</pre></td></tr>
+<tr><td>Select</td><td><pre>σ_E = Select(E, Σ_Q; P)</pre></td></tr>
+<tr><td>Object</td><td><pre>O_x = StableLoop(E_x, σ_{E_x}; P_x)</pre></td></tr>
+<tr><td>Time</td><td><pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre></td></tr>
+</table>
+
+<hr>
+<h2>13. Shortest Definitions</h2>
+<h3>Free Number</h3>
+<blockquote><p><strong>自由数とは、結果から順序を産む数である。</strong></p></blockquote>
+<h3>Free Quaternion</h3>
+<blockquote><p><strong>自由四元数とは、観測された結果から、その結果を成立させる非可換な回転履歴を、圧力下で事後選択し、再評価によって整合閉路を閉じる構造である。</strong></p></blockquote>
+<h3>Inversion</h3>
+<blockquote><p><strong>反転とは、非可換演算系において、結果から履歴順序を選び直し、その履歴が再び結果を再現することで確定する閉路である。</strong></p></blockquote>
+<h3>Object</h3>
+<blockquote><p><strong>物体とは、可能順序の衝突が、結果—履歴—結果の閉路として局所安定したものである。</strong></p></blockquote>
+<h3>Time</h3>
+<blockquote><p><strong>時間とは、結果が履歴を選び、その履歴が次の結果を生む閉路の伝播である。</strong></p></blockquote>
+
+<hr>
+<h2>14. One-Line Summary</h2>
+<blockquote><p><strong>自由数理 v0.2 とは、四元数の非可換性を足場に、結果が圧力下で回転履歴を事後選択し、その整合閉路の安定を物体、伝播を時間として記述する反転数理である。</strong></p></blockquote>
+
+<hr>
+<h2>15. Bridge to V16 Time Engine</h2>
+<p>V16 Time Engine describes how sequence becomes readable as time.</p>
+<p>V17 Free Number describes how result selects order under pressure.</p>
+<pre>V16 Time Engine:
+sequence → pressure → gate → port → temporal reading
+
+V17 Free Number:
+result → order selection → consistency loop → time propagation</pre>
+<blockquote><p><strong>Pressure opens the Port. Result selects the Path. Consistency Loop propagates as Time.</strong></p></blockquote>
+
+<hr>
+<p class="dim">End of Free Number / Free Quaternion v0.2. Precision audit deferred.</p>
+</body>
+</html>
