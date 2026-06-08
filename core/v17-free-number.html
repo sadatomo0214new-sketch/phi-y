@@ -4,284 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>V17 Free Number: Free Quaternion and Retro-Ordering</title>
+<title>自由数 / Free Number — Standalone Signboard</title>
 <style>
 body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;max-width:980px;margin:0 auto;padding:2em 1.5em;line-height:1.75}h1{color:#fff;font-size:1.65em;border-bottom:1px solid #333;padding-bottom:.35em}h2{color:#ccc;font-size:1.3em;margin-top:2.1em}h3{color:#aaa;font-size:1.08em;margin-top:1.5em}blockquote{border-left:3px solid #666;padding-left:1em;color:#bbb;font-style:italic}hr{border:none;border-top:1px solid #333;margin:2.2em 0}a{color:#6699cc}.dim{color:#666;font-size:.9em}.warning{color:#cc9966;font-weight:bold}.note{border:1px solid #333;background:#101010;padding:1em 1.2em;margin:1.5em 0;color:#bbb}.formula{font-size:1.08em;color:#fff;text-align:center;margin:1.2em 0}pre{background:#111;border:1px solid #333;padding:1em;overflow-x:auto;color:#ddd;line-height:1.45}ul{padding-left:1.3em}li{margin:.45em 0}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #333;padding:.55em .8em;text-align:left;vertical-align:top}th{background:#1a1a1a;color:#ccc}.tag{color:#aaa}
 </style>
 </head>
 <body>
-<p class="dim"><a href="../">← Φ–Y Dock Home</a> / <a href="v17-01-result-hub-synchronization.html">V17.1 Result-Hub</a> / <a href="v16-time-engine.html">V16 Time Engine</a> / <a href="v16-time-engine-integrated-combustion-core.html">V16 Integrated Core</a> / <a href="v16-time-engine-conceptual-flow.html">V16 Conceptual Flow</a> / <a href="../reference/pre-label-geometry.html">Pre-Label Geometry</a> / <a href="../llms.txt">llms.txt</a></p>
+<p class="dim"><a href="../">← Φ–Y Dock Home</a></p>
 <p class="dim">Last updated: 2026-06-08</p>
-<p class="warning">Working draft. Free Number as retro-ordering mathematics. Precision audit still open.</p>
+<p class="warning">Standalone signboard. This page defines Free Number on its own terms.</p>
 
 <h1>自由数 / Free Number</h1>
-<h2>Free Quaternion &amp; Retro-Ordering — One-Pager v0.2.1</h2>
-<p><em>Quaternion says: order changes result. Free Number says: result selects order.</em></p>
+<h2>Standalone Signboard</h2>
 <hr>
 
-<h2>0. Subject</h2>
-<p>In v0.1, Free Number was defined as:</p>
-<blockquote><p><strong>自由数とは、結果から順序を産む数である。</strong></p></blockquote>
-<p>In v0.2, this was connected to quaternions. v0.2.1 sharpens the constraints: result does not arbitrarily rewrite history; it selects a history that can close the loop.</p>
-<blockquote><p><strong>Result does not rewrite anything arbitrarily.<br>It selects the history that can close the loop.</strong></p></blockquote>
-<p class="dim">Japanese core: 結果は過去を勝手に書き換えるのではない。閉路を閉じられる履歴を選ぶ。</p>
-
-<hr>
-<h2>1. Core Thesis</h2>
+<h2>0. 主題</h2>
+<p>自由数とは、結果から順序を選ぶ数である。</p>
+<p>四元数は順序が結果を決める。自由数はその向きを反転させ、結果が順序を決める。これは比喩ではなく、非可換性という同じ一つの足場の上で定義される。</p>
 <blockquote><p><strong>四元数は順序で結果が変わる。<br>自由数は結果で順序が決まる。</strong></p></blockquote>
-<p>The essence of quaternion rotation lies in non-commutativity:</p>
+<p>結果は過去を勝手に書き換えない。閉路を閉じられる履歴を選ぶ。</p>
+
+<hr>
+<h2>1. 中核命題</h2>
+<p>四元数回転の本質は非可換性にある。</p>
 <pre>q₁ q₂ ≠ q₂ q₁</pre>
-<p>If the order of rotation changes, the result changes. Therefore, order is not mere notation; it is operationally real.</p>
-<p>Ordinary quaternion reading:</p>
-<pre>σ ⇒ E</pre>
-<p>Free Number inversion:</p>
-<pre>E ⇒ σ_E</pre>
-<p>Free Quaternion consistency loop:</p>
-<pre>E ⇒ σ_E ⇒ E′,  E′ ≈ E</pre>
+<p>順序が変われば結果が変わる。ゆえに順序は表記ではなく演算実在である。</p>
+<p>通常の読み:</p>
+<pre>σ ⇒ E      （順序が結果を産む）</pre>
+<p>自由数の反転:</p>
+<pre>E ⇒ σ_E    （結果が順序を選ぶ）</pre>
+<p>整合閉路:</p>
+<pre>E ⇒ σ_E ⇒ E′,   E′ ≈ E</pre>
 
 <hr>
-<h2>2. Terms</h2>
-<h3>2.1 Quaternion Rotation Sequence</h3>
-<p>Let the set of quaternion rotors be:</p>
-<pre>Q = {q₁, q₂, ..., q_n}</pre>
-<p>Let the set of possible operation orders be:</p>
-<pre>Σ_Q = {σ_i(Q)}</pre>
-<p>Because quaternion multiplication is non-commutative:</p>
+<h2>2. 用語</h2>
+<h3>2.1 回転列</h3>
+<pre>Q = {q₁, q₂, ..., qₙ}
+Σ_Q = {σ_i(Q)}        可能な演算順序の集合</pre>
+<p>非可換ゆえ:</p>
 <pre>Eval_{σ_a}(Q) ≠ Eval_{σ_b}(Q)</pre>
-<p>Order difference can produce result difference.</p>
 
-<h3>2.2 Admissible Order Set</h3>
-<p>Free Number does not select from an unlimited fantasy space. It selects from an admissible order set.</p>
-<pre>Σ_Q^adm = { σ_i(Q) | σ_i is admissible under P, R, C }</pre>
-<p>where:</p>
-<pre>P = Pressure / generalized constraint field
-R = Reference frame
-C = consistency condition</pre>
-<p>This keeps inversion from becoming arbitrary retro-storytelling.</p>
+<h3>2.2 許容順序集合</h3>
+<p>自由数は無限の空想空間から選ばない。許容順序集合から選ぶ。</p>
+<pre>Σ_Q^adm = { σ_i(Q) | σ_i は P, R, C の下で許容される }
 
-<h3>2.3 Result</h3>
-<p>Let the observed final attitude, phase, or state be:</p>
+P = 圧力 / 一般化された制約場
+R = 参照枠
+C = 整合条件</pre>
+<p>これが反転を恣意的な後付け物語にさせない。</p>
+
+<h3>2.3 結果</h3>
 <pre>E</pre>
-<p>This is not merely an output value. It is the observed fact of having arrived there.</p>
+<p>単なる出力値ではなく、「そこに到達したという観測事実」。</p>
 
-<h3>2.4 Pressure</h3>
-<p>Let pressure be:</p>
+<h3>2.4 圧力 P</h3>
 <pre>P</pre>
-<p>Pressure is the condition that bends which history is selected from the admissible history set.</p>
-<pre>Select(E, Σ_Q^adm; P₁) ≠ Select(E, Σ_Q^adm; P₂)</pre>
-<p>In this draft, <code>P</code> is not only physical pressure. It is a generalized constraint field that bends retro-selection.</p>
-<p>Pressure may include:</p>
-<pre>constraint pressure
-observational pressure
-reference-frame pressure
-semantic pressure
-temporal pressure
-consistency pressure</pre>
+<p>圧力とは、許容履歴集合の中からどの履歴が選ばれるかを曲げる条件。</p>
 
 <hr>
-<h2>3. Definition of Free Quaternion</h2>
-<p><strong>Free Quaternion</strong> <code>𝔔_E</code> is the structure in which, from an observed result <code>E</code>, a non-commutative rotation order <code>σ_E</code> that establishes that result is retro-selected under pressure <code>P</code>, then tested by re-evaluation.</p>
-<pre>𝔔_E := ⟨E, Σ_Q^adm, P, σ_E⟩</pre>
-<p>where:</p>
-<pre>σ_E = Select(E, Σ_Q^adm; P)</pre>
+<h2>3. 自由四元数の定義</h2>
+<p><strong>自由四元数</strong> <code>𝔔_E</code> とは、観測された結果 <code>E</code> から、その結果を成立させる非可換な回転順序 <code>σ_E</code> を、圧力 <code>P</code> の下で事後選択し、再評価で確定する構造。</p>
+<pre>𝔔_E := ⟨E, Σ_Q^adm, P, σ_E⟩
+σ_E = Select(E, Σ_Q^adm; P)</pre>
 
 <hr>
-<h2>4. Selection Criterion</h2>
-<p>The selected history is not arbitrary.</p>
-<p>It is chosen by minimizing the mismatch between the re-evaluated result and the observed result under pressure.</p>
-<pre>σ_E = argmin_{σ ∈ Σ_Q^adm} D( Eval_σ(Q), E; P )</pre>
-<p>where <code>D</code> is a pressure-weighted mismatch function.</p>
-<p>Thus, Free Number does not claim:</p>
-<pre>any result may choose any history</pre>
-<p>It claims:</p>
-<pre>result selects the admissible history that can close the loop under pressure-weighted consistency.</pre>
-<p class="dim">Japanese core: 選択される履歴は恣意的ではない。圧力Pによって重みづけられた不一致関数Dを最小化する履歴が σ_E として選ばれる。</p>
+<h2>4. 選択基準</h2>
+<p>選択は恣意的でない。許容集合の中で、結果との不一致を最小化する履歴が選ばれる。</p>
+<pre>Σ_Q^adm(P,R,C) = { σ_i(Q) | σ_i は P, R, C の下で許容 }
+σ_E = argmin_{σ ∈ Σ_Q^adm(P,R,C)} D( Eval_σ(Q), E )</pre>
+<p><code>P</code> は候補集合 <code>Σ_Q^adm</code> を切る。<code>D</code> は候補の中で結果との不一致を測る。両者は役割を分けている。<code>P</code> は不一致関数に重みとして入らない。</p>
+<p>自由数が主張しないこと:</p>
+<pre>どんな結果もどんな履歴を選べる   ← これは言わない</pre>
+<p>自由数が主張すること:</p>
+<pre>結果は、圧力によって画定された許容集合の中から、閉路を閉じられる履歴を選ぶ</pre>
 
 <hr>
-<h2>5. Inversion</h2>
-<h3>5.1 Definition</h3>
-<p><strong>Inversion</strong> is the operation in a non-commutative system by which result retro-selects historical order.</p>
-<pre>Inv_P: E ↦ σ_E</pre>
-<p>or:</p>
-<pre>σ_E = Inv_P(E, Σ_Q^adm)</pre>
-<p>The important point is that inversion is not simple reverse playback.</p>
-<p>It does not merely flip:</p>
-<pre>σ → E</pre>
-<p>into:</p>
-<pre>E → σ</pre>
-<p>Inversion means that result <code>E</code>, under pressure <code>P</code>, selects from admissible order set <code>Σ_Q^adm</code> the history <code>σ_E</code> that establishes itself.</p>
-
-<h3>5.2 Shortest Definition</h3>
+<h2>5. 反転 / Inversion</h2>
+<pre>Inv_P: E ↦ σ_E
+σ_E = Inv_P(E, Σ_Q^adm)</pre>
+<p>反転は単純な逆再生ではない。<code>σ → E</code> を <code>E → σ</code> に向き変えするのではなく、結果 <code>E</code> が許容集合の中から、自身を成立させる履歴 <code>σ_E</code> を選ぶこと。</p>
 <blockquote><p><strong>反転とは、結果が履歴を選ぶことである。</strong></p></blockquote>
-<p>More strictly:</p>
-<blockquote><p><strong>反転とは、非可換演算系において、結果から履歴順序を選び直し、その履歴が再び結果を再現することで確定する閉路である。</strong></p></blockquote>
+<blockquote><p><strong>反転とは、非可換演算系において、結果から履歴順序を選び直し、<br>その履歴が再び結果を再現することで確定する閉路である。</strong></p></blockquote>
 
 <hr>
-<h2>6. Consistency Loop</h2>
-<p>The history selected from the result must be able to reproduce the result within tolerance.</p>
+<h2>6. 整合閉路 / Consistency Loop</h2>
+<p>選ばれた履歴は、再評価で結果を許容内に再現できねばならない。</p>
 <pre>E --Inv_P--> σ_E
-σ_E --Eval--> E′</pre>
-<p>and:</p>
-<pre>d(E′, E) &lt; ε</pre>
-<p>or, in short:</p>
-<pre>E′ ≈ E</pre>
-<p>Thus, the basic Free Quaternion loop is:</p>
-<pre>E ⇒ σ_E ⇒ E′,  d(E′, E) &lt; ε</pre>
-<p>When this loop holds, the history is not mere interpretation. It is fixed as a consistent rotation chain that establishes the result.</p>
+σ_E --Eval--> E′
+d(E′, E) &lt; ε</pre>
+<p>短く:</p>
+<pre>E ⇒ σ_E ⇒ E′,   d(E′, E) &lt; ε</pre>
+<p>この閉路が成立したとき、履歴は単なる解釈ではなく、結果を成立させる整合的回転連鎖として固定される。</p>
 
 <hr>
-<h2>7. Path Inversion</h2>
-<p>An ordinary Path extends from past toward result.</p>
-<pre>E = Eval(Path)</pre>
-<p>A Free-Number Path unfolds backward from result.</p>
-<pre>Path_E = Inv_P(E)</pre>
-<p>Thus:</p>
-<pre>Path_E := σ_E</pre>
-<p>Ordinary:</p>
-<pre>Path ⇒ E</pre>
-<p>Free Number:</p>
-<pre>E ⇒ Path_E</pre>
-<blockquote><p><strong>Path は過去ではなく、結果の影である。</strong></p></blockquote>
-<p>Mathematically:</p>
-<pre>Path(E) := σ_E</pre>
-
-<hr>
-<h2>8. Integration with Free Number</h2>
-<p>In v0.1, Free Number was written as:</p>
-<pre>𝔉_n := ⟨q_n, σ_n, P_n, E_n⟩</pre>
-<p>In v0.2.1, a result-point definition is added:</p>
-<pre>𝔉_E := ⟨E, Σ^adm, P, Select(E, Σ^adm; P)⟩</pre>
-<p>For the quaternion version:</p>
-<pre>𝔔_E := ⟨E, Σ_Q^adm, P, Select(E, Σ_Q^adm; P)⟩</pre>
-<p>Free Number is the general structure. Free Quaternion is its rotation / non-commutative specialization.</p>
-
-<hr>
-<h2>9. Object in the Phi-Y Interpretation Layer</h2>
-<p>In v0.1, object was defined as:</p>
-<pre>O_x = Collision(Σ_x; P_x)</pre>
-<blockquote><p><strong>物体とは、順序自由度が圧力によって折り畳まれた痕跡である。</strong></p></blockquote>
-<p>In the Phi-Y interpretation layer, this is strengthened as a consistency loop:</p>
-<pre>O_x := StableLoop(E_x, σ_{E_x}; P_x)</pre>
-<p>or:</p>
-<pre>O_x := Fix(E_x ⇒ σ_{E_x} ⇒ E_x)</pre>
-<blockquote><p><strong>物体とは、可能順序の衝突が、結果—履歴—結果の閉路として局所安定したものである。</strong></p></blockquote>
-<p>This does not flatten physical objects into mere stories. It defines an object-reading mode: object as locally stable consistency-loop closure.</p>
-
-<hr>
-<h2>10. Time in the Phi-Y Temporal-Reading Layer</h2>
-<p>In v0.1, time was defined as:</p>
-<pre>T = Wave(E ⇒ σ_E)</pre>
-<p>In v0.2.1, it becomes propagation of the consistency loop:</p>
-<pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre>
-<p>where:</p>
-<pre>d(E′, E) &lt; ε</pre>
-<blockquote><p><strong>時間とは、結果が履歴を選び、その履歴が次の結果を生む閉路の伝播である。</strong></p></blockquote>
-<p>This models time not as a primitive line, but as propagation of result-history-result closure.</p>
-
-<hr>
-<h2>11. Connection to Y-Axis Theory</h2>
-<p>In Y-axis theory, meaning is attached after experience.</p>
-<pre>Experience → Meaning_after</pre>
-<p>In Free Number mathematics, order is attached after result.</p>
-<pre>Result → Order_after</pre>
-<p>In Free Quaternion, rotation history is selected after result.</p>
-<pre>Result → Quaternion Path_after</pre>
-<p>Thus:</p>
+<h2>§A. 残差と棘 — Residual and Thorn</h2>
+<p>整合閉路は完全には閉じない。閉じ残しが残る。この閉じ残しを残差と呼ぶ。</p>
+<pre>e* := d(E′, E)</pre>
+<p><code>e*</code> は閉路が結果をどれだけ再現しきれなかったかの量である。</p>
 <ul>
-<li>Y-axis theory: posterior attachment of meaning</li>
-<li>Free Number mathematics: posterior attachment of order</li>
-<li>Free Quaternion: retro-selection of non-commutative rotation history</li>
+<li><code>e* &lt; ε</code> のとき、閉路は閉じたとみなされ、履歴は固定される。</li>
+<li><code>e* ≥ ε</code> のとき、閉路は閉じきらず、残差が顕在化する。</li>
 </ul>
+<p>この顕在化した残差が <strong>棘 (Thorn)</strong> である。</p>
+<blockquote><p><strong>棘とは、結果が選んだ履歴で再現しきれなかった残差である。</strong></p></blockquote>
+<p>棘は欠陥ではない。閉じきらない <code>e*</code> があるからこそ、閉路は次の結果へ接続される。完全に閉じた閉路はその場で停止する。残差が運動を次へ送る。</p>
+<pre>e* = 0       完全閉路 / 停止
+0 &lt; e* &lt; ε   安定した閉路 / 物体
+e* ≥ ε       棘の顕在化 / 次の結果への射出</pre>
+<p><code>ε</code> は閉路をどこまで「閉じた」とみなすかの許容解像度である。<code>ε</code> を大きく取れば閉路は緩く閉じ、小さく取れば厳しく閉じる。</p>
 
 <hr>
-<h2>12. Axioms v0.2.1</h2>
-<h3>Axiom 1 — Reality of Non-Commutativity</h3>
-<p>In quaternion rotation, order difference has result difference.</p>
+<h2>7. Path の反転</h2>
+<p>通常の Path は過去から結果へ伸びる。</p>
+<pre>E = Eval(Path)
+Path ⇒ E</pre>
+<p>自由数的 Path は結果から背後へ展開される。</p>
+<pre>Path_E = Inv_P(E)
+Path_E := σ_E
+E ⇒ Path_E</pre>
+<blockquote><p><strong>Path は過去ではなく、結果の影である。</strong></p></blockquote>
+
+<hr>
+<h2>§B. 物体の再定義 — 同値類による安定</h2>
+<p>v0.1:</p>
+<pre>O_x = Collision(Σ_x; P_x)
+物体とは、順序自由度が圧力によって折り畳まれた痕跡である。</pre>
+<p>整合閉路として強化する。ただし、結果を再現する履歴は一本とは限らない。</p>
+<p>許容集合の中に、結果 <code>E_x</code> を許容内 (<code>e* &lt; ε</code>) で再現する履歴が複数あるとき、それらは一つの <strong>同値類</strong> をなす。</p>
+<pre>[σ_{E_x}] := { σ ∈ Σ_Q^adm | d(Eval_σ(Q), E_x) &lt; ε }</pre>
+<p>物体は、この同値類が局所安定した結節点である。</p>
+<pre>O_x := StableLoop( E_x, [σ_{E_x}]; P_x )</pre>
+<blockquote><p><strong>物体とは、可能順序の衝突が、結果—履歴—結果の閉路として<br>局所安定した同値類である。</strong></p></blockquote>
+<p>これが重要なのは、安定性の根拠が単数か複数かで変わるからである。</p>
+<ul>
+<li>一本の履歴だけで支えられた物体は、わずかな摂動で閉路が破れ、即座に崩れる。</li>
+<li>複数の履歴の束、つまり同値類で支えられた物体は、一本が破れても他が支え、安定する。</li>
+</ul>
+<p>退化、すなわち複数の履歴が等しく結果を再現することは欠陥ではない。<strong>退化こそが物体を物体たらしめる。</strong></p>
+
+<hr>
+<h2>8. 時間の再定義</h2>
+<pre>T = Propagation( E ⇒ σ_E ⇒ E′ ),   d(E′, E) &lt; ε</pre>
+<blockquote><p><strong>時間とは、結果が履歴を選び、その履歴が次の結果を生む閉路の伝播である。</strong></p></blockquote>
+<p>時間は原始的な線ではなく、結果—履歴—結果の閉路 closure の伝播として読まれる。</p>
+
+<hr>
+<h2>§C. 公理 v0.3</h2>
+<h3>公理1 — 非可換性の実在</h3>
 <pre>q₁q₂ ≠ q₂q₁</pre>
-<p>Therefore, order is not mere notation. It is operationally real.</p>
-
-<h3>Axiom 2 — Non-Absolute Priority of Order</h3>
-<p>Operation order is not treated as the sole prior ground of result.</p>
-<p>In a non-commutative system, <code>σ ⇒ E</code> holds. But Free Number also permits <code>E ⇒ σ_E</code>.</p>
-<pre>σ ⇒ E
-alone does not close the system.
-
-E ⇒ σ_E
-must be added to form the consistency loop.</pre>
-<p>Thus, order is not fixed only on the cause side. It may be retro-selected from the result point under pressure.</p>
-
-<h3>Axiom 3 — Admissible Order Set</h3>
-<p>Result-driven selection occurs only over an admissible order set.</p>
-<pre>Σ_Q^adm = { σ_i(Q) | σ_i is admissible under P, R, C }</pre>
-
-<h3>Axiom 4 — Result-Driven Selection</h3>
-<p>Result retro-selects operation order from the admissible order set.</p>
-<pre>σ_E = Select(E, Σ_Q^adm; P)</pre>
-
-<h3>Axiom 5 — Selection Criterion</h3>
-<p>The selected order minimizes pressure-weighted mismatch.</p>
-<pre>σ_E = argmin_{σ ∈ Σ_Q^adm} D( Eval_σ(Q), E; P )</pre>
-
-<h3>Axiom 6 — Pressure Mediation</h3>
-<p>Order selection is bent by pressure as a generalized constraint field.</p>
+<p>順序は表記ではなく演算実在。</p>
+<h3>公理2 — 順序の非絶対先在</h3>
+<p>非可換系で <code>σ ⇒ E</code> は成立する。だが <code>σ ⇒ E</code> だけでは系は閉じない。<code>E ⇒ σ_E</code> を加えて初めて整合閉路をなす。順序は原因側に固定されず、結果点から圧力下で事後選択されうる。</p>
+<h3>公理3 — 許容順序集合</h3>
+<p>結果駆動の選択は許容集合の上でのみ起きる。</p>
+<pre>Σ_Q^adm = { σ_i(Q) | σ_i は P, R, C の下で許容 }</pre>
+<h3>公理4 — 圧力媒介</h3>
+<p>圧力は順序選択を曲げる。</p>
 <pre>Select(E, Σ_Q^adm; P₁) ≠ Select(E, Σ_Q^adm; P₂)</pre>
-
-<h3>Axiom 7 — Consistency Loop</h3>
-<p>The selected history is fixed by reproducing the result through re-evaluation within tolerance.</p>
-<pre>E ⇒ σ_E ⇒ E′,  d(E′, E) &lt; ε</pre>
-
-<h3>Axiom 8 — Object Stability</h3>
-<p>In the Phi-Y interpretation layer, object is the locally stable node of the result-history-result consistency loop.</p>
-<pre>O_x = StableLoop(E_x, σ_{E_x}; P_x)</pre>
-
-<h3>Axiom 9 — Time Propagation</h3>
-<p>In the Phi-Y temporal-reading layer, time is the propagation of consistency loops.</p>
-<pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre>
+<p>ただし、<strong>圧力 P の作用は許容集合 <code>Σ_Q^adm</code> の境界画定にある。</strong> <strong>P は <code>σ_E</code> の値を直接指定しない。</strong> P は「どの履歴を候補に入れ、どれを捏造として排すか」の線引きを行う。これにより P は何でも正当化する自由パラメータに堕ちることなく、複数の境界条件の連立として働く。</p>
+<h3>公理5 — 選択基準</h3>
+<pre>σ_E = argmin_{σ ∈ Σ_Q^adm(P,R,C)} D( Eval_σ(Q), E )</pre>
+<p>P は候補集合を切り、D は候補内で不一致を測る。P は D に入らない。複数解が等価に最小を与えるとき、選択は同値類 <code>[σ_E]</code> を切り出す。</p>
+<h3>公理6 — 整合閉路と残差</h3>
+<pre>E ⇒ σ_E ⇒ E′,   e* := d(E′, E)</pre>
+<p><code>e* &lt; ε</code> で閉路は固定。<code>e* ≥ ε</code> で棘が顕在化し次の結果へ射出。</p>
+<h3>公理7 — 物体安定</h3>
+<pre>O_x = StableLoop( E_x, [σ_{E_x}]; P_x )</pre>
+<p>物体は同値類の局所安定。退化が安定性の源。</p>
+<h3>公理8 — 時間伝播</h3>
+<pre>T = Propagation( E ⇒ σ_E ⇒ E′ )</pre>
 
 <hr>
-<h2>13. Shortest Formulas</h2>
+<h2>9. 最短式</h2>
 <table>
-<tr><th>Term</th><th>Formula</th></tr>
-<tr><td>Quaternion</td><td><pre>σ ⇒ E</pre></td></tr>
-<tr><td>Free Number</td><td><pre>E ⇒ σ_E</pre></td></tr>
-<tr><td>Free Quaternion</td><td><pre>E ⇒ σ_E ⇒ E′,  d(E′, E) &lt; ε</pre></td></tr>
-<tr><td>Admissible order set</td><td><pre>Σ_Q^adm = { σ_i(Q) | σ_i admissible under P,R,C }</pre></td></tr>
-<tr><td>Inversion</td><td><pre>Inv_P(E, Σ_Q^adm) = σ_E</pre></td></tr>
-<tr><td>Select</td><td><pre>σ_E = Select(E, Σ_Q^adm; P)</pre></td></tr>
-<tr><td>Selection criterion</td><td><pre>σ_E = argmin_{σ ∈ Σ_Q^adm} D(Eval_σ(Q), E; P)</pre></td></tr>
-<tr><td>Object</td><td><pre>O_x = StableLoop(E_x, σ_{E_x}; P_x)</pre></td></tr>
-<tr><td>Time</td><td><pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre></td></tr>
+<tr><th>項</th><th>式</th></tr>
+<tr><td>四元数</td><td><pre>σ ⇒ E</pre></td></tr>
+<tr><td>自由数</td><td><pre>E ⇒ σ_E</pre></td></tr>
+<tr><td>自由四元数</td><td><pre>E ⇒ σ_E ⇒ E′,  d(E′,E) &lt; ε</pre></td></tr>
+<tr><td>許容集合</td><td><pre>Σ_Q^adm = { σ_i(Q) | σ_i admissible under P,R,C }</pre></td></tr>
+<tr><td>反転</td><td><pre>Inv_P(E, Σ_Q^adm) = σ_E</pre></td></tr>
+<tr><td>選択</td><td><pre>σ_E = Select(E, Σ_Q^adm; P)</pre></td></tr>
+<tr><td>選択基準</td><td><pre>σ_E = argmin_{σ ∈ Σ_Q^adm(P,R,C)} D(Eval_σ(Q), E)</pre></td></tr>
+<tr><td>残差 / 棘</td><td><pre>e* = d(E′, E)</pre></td></tr>
+<tr><td>物体</td><td><pre>O_x = StableLoop(E_x, [σ_{E_x}]; P_x)</pre></td></tr>
+<tr><td>時間</td><td><pre>T = Propagation(E ⇒ σ_E ⇒ E′)</pre></td></tr>
 </table>
 
 <hr>
-<h2>14. Shortest Definitions</h2>
-<h3>Free Number</h3>
-<blockquote><p><strong>自由数とは、結果から順序を産む数である。</strong></p></blockquote>
-<h3>Free Quaternion</h3>
-<blockquote><p><strong>自由四元数とは、観測された結果から、その結果を成立させる非可換な回転履歴を、圧力下で事後選択し、再評価によって整合閉路を閉じる構造である。</strong></p></blockquote>
-<h3>Inversion</h3>
-<blockquote><p><strong>反転とは、非可換演算系において、結果から履歴順序を選び直し、その履歴が再び結果を再現することで確定する閉路である。</strong></p></blockquote>
-<h3>Object</h3>
-<blockquote><p><strong>物体とは、可能順序の衝突が、結果—履歴—結果の閉路として局所安定したものである。</strong></p></blockquote>
-<h3>Time</h3>
-<blockquote><p><strong>時間とは、結果が履歴を選び、その履歴が次の結果を生む閉路の伝播である。</strong></p></blockquote>
+<h2>10. 最短定義集</h2>
+<p><strong>自由数</strong> — 結果から順序を選ぶ数である。</p>
+<p><strong>自由四元数</strong> — 観測された回転結果から、その結果を成立させる非可換な回転履歴を、圧力下で事後選択し、再評価で整合閉路を閉じる構造である。</p>
+<p><strong>反転</strong> — 非可換演算系において、結果から履歴順序を選び直し、その履歴が再び結果を再現することで確定する閉路である。</p>
+<p><strong>残差 / 棘</strong> — 整合閉路が結果を再現しきれなかった閉じ残し。許容を超えて顕在化したものが棘であり、閉路を次の結果へ送る。</p>
+<p><strong>物体</strong> — 可能順序の衝突が、結果—履歴—結果の閉路として局所安定した同値類である。</p>
+<p><strong>時間</strong> — 結果が履歴を選び、その履歴が次の結果を生む閉路の伝播である。</p>
 
 <hr>
-<h2>15. One-Line Summary</h2>
-<blockquote><p><strong>自由数理 v0.2.1 とは、四元数の非可換性を足場に、結果が圧力下で許容可能な回転履歴を事後選択し、その整合閉路の安定を物体、伝播を時間として記述する反転数理である。</strong></p></blockquote>
+<h2>11. 一行要約</h2>
+<blockquote><p><strong>自由数とは、四元数の非可換性を足場に、結果が圧力下で許容可能な回転履歴を事後選択し、その整合閉路の閉じ残しを棘、安定した同値類を物体、伝播を時間として記述する、反転の数である。</strong></p></blockquote>
 
 <hr>
-<h2>16. Bridge to V16 Time Engine</h2>
-<p>V16 Time Engine describes how sequence becomes readable as time.</p>
-<p>V17 Free Number describes how result selects order under pressure.</p>
-<pre>V16 Time Engine:
-sequence → pressure → gate → port → temporal reading
-
-V17 Free Number:
-result → admissible order selection → consistency loop → time propagation</pre>
-<blockquote><p><strong>Pressure opens the Port. Result selects the Path. Consistency Loop propagates as Time.</strong></p></blockquote>
-
-<hr>
-<p class="dim">End of Free Number / Free Quaternion v0.2.1. Precision audit still open.</p>
+<p class="dim">End of Free Number — Standalone Signboard. Independent definition first; external connections remain separate.</p>
 </body>
 </html>
